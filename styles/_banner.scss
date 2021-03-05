@@ -1,0 +1,99 @@
+$pink-color:#EA3F4F;
+$yellow-color:rgb(255, 246, 128);
+$purple-color: #6E7DF8;
+.banner {
+    background-image: url('../images/banner.png');
+    background-size: cover;
+    width: 100%;
+    height: 600px;
+    position: relative;
+    &__info {
+        height: 560px;
+        display: flex;
+        align-items: center;
+    }
+    &__card {
+        margin-left: 50px;
+        margin-bottom: 15px;
+    }
+    &__text {
+        font-family: 'Roboto Mono', monospace;
+        font-size: 70px;
+        line-height: 1;
+        color: white;
+        margin: 0;
+    }
+}
+
+.header {
+    height: 70px;
+    width: 100%;
+    background-color: black;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding-left: 30px;
+    padding-right: 30px;
+    justify-content: space-between;
+    &__logo {
+        height: 30%;
+    }
+    &__items {
+        height: 100%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+}
+
+.navigator {
+    background-color: rgba(42, 42, 42, 0.5);
+    height: 40px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    &__item {
+        font-family: Roboto Mono, monospace;
+        font-weight: 900;
+        border: none;
+        background: none;
+        color: white;
+        outline: none;
+        font-size: 14px;
+        &:hover {
+            color: rgb(120, 120, 120);
+        }
+    }
+    &__feedback {
+        width: 70px;
+        height: 4px;
+        background-color: #EA3F4F;
+        align-items: flex-end;
+        position: absolute;
+        margin-top: 36px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    &__block {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        justify-content: center;
+        align-items: center;
+    }
+    &__sep {
+        width: 2px;
+        height: 60%;
+        margin-right: 10px;
+        margin-left: 10px;
+        background-color: $yellow-color;
+        &--purple {
+            background-color: $purple-color
+        }
+        &--pink {
+            background-color: $pink-color;
+        }
+    }
+}

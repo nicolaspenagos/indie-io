@@ -1,0 +1,27 @@
+.container {
+    margin: auto;
+    display: table;
+}
+
+.animtext {
+    float: left;
+    position: relative;
+}
+
+.spananim {
+    position: absolute;
+    right: 0;
+    width: 0;
+    background-color: black;
+    border-left: 1px solid white;
+    animation: machine 5s infinite alternate;
+}
+
+@keyframes machine {
+    from {
+        width: 100%;
+    }
+    to {
+        width: 0%;
+    }
+}

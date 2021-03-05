@@ -1,0 +1,48 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+}
+
+main {
+    position: relative;
+    display: flex;
+}
+
+.button {
+    background-color: white;
+    border: 0;
+    font-size: 13px;
+    letter-spacing: 2px;
+    height: 45px;
+    width: 230px;
+    font-family: Roboto, monospace;
+    font-weight: 400;
+    &__shadow {
+        height: 45px;
+        width: 230px;
+        border: solid white 1px;
+        position: absolute;
+        margin-left: 4px;
+        margin-top: 4px;
+    }
+    &:hover {
+        background-color: rgb(120, 120, 120);
+    }
+    &__div {
+        margin-top: 50px;
+        display: flex;
+    }
+}
+
+.input {
+    background-color: rgb(42, 42, 42);
+    border: 0px;
+    height: 40%;
+    font-family: Roboto Mono, monospace;
+    color: white;
+    padding-left: 10%;
+    outline: none;
+}
