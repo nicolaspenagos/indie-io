@@ -1,5 +1,7 @@
 * {
     box-sizing: border-box;
+    font-family: $font-main;
+    font-weight: 400;
 }
 
 body {
@@ -64,4 +66,10 @@ main {
 .button:hover {
     box-shadow: inset 230px 0 0 0 rgb(250, 250, 250);
     color: #EA3F4F;
+}
+
+h2 {
+    font-size: 35px;
+    margin-top: 40px;
+    font-family: $font-mono;
 }
