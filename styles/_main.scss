@@ -1,11 +1,7 @@
 .gallery {
     width: 1000px;
     background-color: #E7E6E2;
-    position: absolute;
-    top: -40px;
-    right: 0;
-    left: 0;
-    margin: auto;
+    margin-top: -55px;
     display: flex;
     flex-direction: column;
     &__row {
@@ -49,10 +45,12 @@
 
 .main {
     display: flex;
-    position: relative;
+    flex-direction: column;
     justify-content: center;
+    align-items: center;
     &__graphic {
         position: absolute;
+        z-index: 0;
         &--one {
             left: 0px;
             width: 60px;
@@ -71,7 +69,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 615px;
+    margin-top: 70px;
     width: 990px;
     height: 500px;
     &__logo {
@@ -79,9 +77,9 @@
         height: 61px;
     }
     &__text {
-        font-size: 26px;
+        font-size: 22px;
         text-align: center;
-        width: 800px;
+        width: 600px;
     }
     &__container {
         display: flex;
