@@ -1,5 +1,5 @@
 .gallery {
-    width: 1000px;
+    width: 77%;
     background-color: #E7E6E2;
     margin-top: -55px;
     display: flex;
@@ -64,7 +64,7 @@
         }
         &--three {
             position: absolute;
-            top: 800px;
+            top: 860px;
             left: 0px;
             width: 200px;
         }
@@ -89,7 +89,7 @@
     position: relative;
     align-items: center;
     margin-top: 70px;
-    width: 990px;
+    width: 75%;
     &__logo {
         width: 280px;
         height: 61px;

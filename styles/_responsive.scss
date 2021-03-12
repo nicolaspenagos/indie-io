@@ -1,0 +1,19 @@
+//Mobile layout
+@media(max-width:1250x) {
+    .banner {
+        &__info {
+            width: 90%;
+        }
+        &card {
+            margin-left: 0px;
+        }
+    }
+    .main {
+        &__graphic {
+            display: none;
+        }
+    }
+    .gallery {
+        width: 90%;
+    }
+}
