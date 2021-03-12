@@ -1,6 +1,9 @@
 .banner {
-    background-image: url('../images/banner.png');
     background-size: cover;
+    background-position: center;
+    transition: all .1s ease-in-out;
+    background-image: url('../images/banner1.png');
+    animation: banner 21s infinite linear;
     width: 100%;
     height: 600px;
     position: relative;
@@ -25,6 +28,55 @@
         color: white;
         margin: 0;
     }
+    &__anim {
+        float: left;
+        color: white;
+        position: relative;
+        font-family: 'Roboto Mono';
+        font-size: 14px;
+        font-weight: lighter;
+        margin-left: 20px;
+    }
+}
+
+.span__anim {
+    position: absolute;
+    right: 0;
+    width: 0;
+    height: 20px;
+    background-color: black;
+    border-left: 1px solid white;
+    animation: machine 5s infinite alternate steps(28);
+}
+
+@keyframes machine {
+    from {
+        width: 100%;
+    }
+    to {
+        width: 0;
+    }
+}
+
+@keyframes banner {
+    0% {
+        background-image: url('../images/banner1.png');
+    }
+    33% {
+        background-image: url('../images/banner1.png');
+    }
+    34% {
+        background-image: url('../images/banner3.png');
+    }
+    66% {
+        background-image: url('../images/banner3.png');
+    }
+    67% {
+        background-image: url('../images/banner2.png');
+    }
+    100% {
+        background-image: url('../images/banner2.png');
+    }
 }
 
 .header {
@@ -45,6 +97,16 @@
         display: flex;
         flex-direction: row;
         align-items: center;
+    }
+    &__container {
+        height: 70px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+    &__acontainer {
+        margin: auto;
+        display: table;
     }
 }
 
