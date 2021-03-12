@@ -62,16 +62,34 @@
             right: 0px;
             width: 85px;
         }
+        &--three {
+            position: absolute;
+            top: 800px;
+            left: 0px;
+            width: 200px;
+        }
+        &--four {
+            position: absolute;
+            top: 600px;
+            right: -5px;
+            width: 400px;
+        }
+        &--five {
+            position: absolute;
+            top: 800px;
+            right: -5px;
+            width: 40px;
+        }
     }
 }
 
 .infoblock {
     display: flex;
     flex-direction: column;
+    position: relative;
     align-items: center;
     margin-top: 70px;
     width: 990px;
-    height: 500px;
     &__logo {
         width: 280px;
         height: 61px;
@@ -79,7 +97,7 @@
     &__text {
         font-size: 22px;
         text-align: center;
-        width: 600px;
+        width: 700px;
     }
     &__container {
         display: flex;
@@ -139,4 +157,18 @@
             top: 0px;
         }
     }
+    &__shadow {
+        height: 300px;
+        width: 300px;
+        border: solid $main-black 1px;
+        position: absolute;
+        margin-left: 12px;
+        margin-top: 24px;
+    }
+}
+
+.advertising {
+    height: 500px;
+    background-color: blue;
+    width: 500px;
 }

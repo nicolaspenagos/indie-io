@@ -3,4 +3,26 @@
         width: 116px;
         height: 102px;
     }
+    &__share {
+        width: 106px;
+        height: 106px;
+    }
+    &__play {
+        width: 146px;
+        height: 122px;
+    }
+    &__slimes {
+        left: 90px;
+        top: 90px;
+        width: 135px;
+        height: 122px;
+        position: absolute;
+    }
+    &__mushroom {
+        right: 90px;
+        top: 250px;
+        width: 60px;
+        height: 59px;
+        position: absolute;
+    }
 }
