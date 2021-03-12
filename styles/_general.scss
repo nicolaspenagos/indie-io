@@ -73,3 +73,33 @@ h2 {
     margin-top: 40px;
     font-family: $font-mono;
 }
+
+.text {
+    margin: 0;
+    font-weight: normal;
+    text-align: center;
+    &__mono {
+        font-family: 'Roboto Mono', monospace;
+    }
+    &__white {
+        color: white;
+    }
+    &__light {
+        font-weight: lighter;
+    }
+    &__heading {
+        font-size: 26px;
+    }
+    &__bold {
+        font-weight: bold;
+    }
+    &__mleft {
+        margin-left: 5px;
+    }
+    &__mtop {
+        margin-top: 5px;
+    }
+    &__cuerpo {
+        font-size: 20px;
+    }
+}

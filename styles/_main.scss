@@ -93,6 +93,7 @@
 .card {
     position: relative;
     display: flex;
+    align-items: center;
     width: 300px;
     height: 300px;
     background-color: $main-black;
@@ -112,10 +113,30 @@
     &__squares {
         display: flex;
         flex-direction: row;
-        align-self: flex-end;
         &--column {
             flex-direction: column;
             align-self: flex-start;
+        }
+    }
+    &__info {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+    }
+    &__title {
+        display: flex;
+        flex-direction: row;
+    }
+    &__squarescontainer {
+        position: absolute;
+        display: flex;
+        flex-direction: row;
+        bottom: 0px;
+        &--column {
+            flex-direction: column;
+            top: 0px;
         }
     }
 }
