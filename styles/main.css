@@ -284,12 +284,6 @@ main {
     outline: none;
 }
 
-.button:hover {
-    -webkit-box-shadow: inset 230px 0 20px 0 #fafafa;
-    box-shadow: inset 230px 0 20px 0 #fafafa;
-    color: #EA3F4F;
-}
-
 h2 {
     font-size: 35px;
     margin-top: 40px;
@@ -642,9 +636,11 @@ h2 {
 }
 
 .advertising {
-    height: 500px;
-    background-color: blue;
-    width: 500px;
+    height: 590px;
+    width: 100%;
+    margin-top: 120px;
+    background-image: url("../images/cup_head.png");
+    background-size: cover;
 }
 
 
