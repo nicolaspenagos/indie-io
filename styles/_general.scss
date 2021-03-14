@@ -1,6 +1,7 @@
 * {
     box-sizing: border-box;
     font-family: $font-main;
+    outline: none;
 }
 
 body {
@@ -36,10 +37,17 @@ main {
         position: absolute;
         margin-left: 4px;
         margin-top: 4px;
+        &--footer {
+            width: 100px;
+        }
     }
     &__div {
         margin-top: 50px;
         display: flex;
+        &--footer {
+            margin-top: 0px;
+            width: 100px;
+        }
     }
     &--gallery {
         background-color: transparent;
