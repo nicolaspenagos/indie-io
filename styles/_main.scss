@@ -112,7 +112,7 @@
     position: relative;
     display: flex;
     align-items: center;
-    width: 300px;
+    width: 30%;
     height: 300px;
     background-color: $main-black;
     &__square {
@@ -159,7 +159,7 @@
     }
     &__shadow {
         height: 300px;
-        width: 300px;
+        width: 100%;
         border: solid $main-black 1px;
         position: absolute;
         margin-left: 12px;
@@ -168,9 +168,32 @@
 }
 
 .advertising {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
     height: 590px;
     width: 100%;
     margin-top: 120px;
-    background-image: url('../images/cup_head.png');
+    background-color: #FFCF10;
     background-size: cover;
+    &__info {
+        width: 75%;
+        height: 590px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+    &__text {
+        color: $main-black;
+        font-size: 60px;
+    }
+    &__card {
+        display: flex;
+        flex-direction: column;
+    }
+    &__button:hover {
+        box-shadow: inset 240px 0 20px 0 rgb(30, 30, 30);
+        color: #EA3F4F;
+    }
 }

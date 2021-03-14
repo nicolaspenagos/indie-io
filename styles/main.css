@@ -37,6 +37,11 @@
   position: absolute;
 }
 
+.image__cuphead {
+  width: 602px;
+  height: 217px;
+}
+
 .banner {
   background-size: cover;
   background-position: center;
@@ -379,6 +384,15 @@ main {
   margin-left: 20px;
 }
 
+.button__adv {
+  background-color: black;
+  color: white;
+}
+
+.button__adv--shadow {
+  border: solid black 1px;
+}
+
 .input {
   background-color: #2a2a2a;
   border: 0px;
@@ -634,7 +648,7 @@ h2 {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  width: 300px;
+  width: 30%;
   height: 300px;
   background-color: black;
 }
@@ -724,7 +738,7 @@ h2 {
 
 .card__shadow {
   height: 300px;
-  width: 300px;
+  width: 100%;
   border: solid black 1px;
   position: absolute;
   margin-left: 12px;
@@ -732,25 +746,74 @@ h2 {
 }
 
 .advertising {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   height: 590px;
   width: 100%;
   margin-top: 120px;
-  background-image: url("../images/cup_head.png");
+  background-color: #FFCF10;
   background-size: cover;
 }
 
-@media (max-width: 1250x) {
-  .banner__info {
-    width: 90%;
-  }
-  .bannercard {
-    margin-left: 0px;
-  }
+.advertising__info {
+  width: 75%;
+  height: 590px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.advertising__text {
+  color: black;
+  font-size: 60px;
+}
+
+.advertising__card {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.advertising__button:hover {
+  -webkit-box-shadow: inset 240px 0 20px 0 #1e1e1e;
+          box-shadow: inset 240px 0 20px 0 #1e1e1e;
+  color: #EA3F4F;
+}
+
+@media (max-width: 1300px) {
   .main__graphic {
     display: none;
   }
   .gallery {
-    width: 90%;
+    width: 100%;
+  }
+}
+
+@media (max-width: 1000px) {
+  .infoblock {
+    width: 100%;
   }
 }
 /*# sourceMappingURL=main.css.map */

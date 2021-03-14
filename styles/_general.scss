@@ -50,6 +50,13 @@ main {
         margin-bottom: 20px;
         margin-left: 20px;
     }
+    &__adv {
+        background-color: $main-black;
+        color: white;
+        &--shadow {
+            border: solid $main-black 1px;
+        }
+    }
 }
 
 .input {
