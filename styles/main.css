@@ -46,6 +46,14 @@
   width: 50px;
 }
 
+.image__facebook {
+  width: 60px;
+  height: 60px;
+  position: absolute;
+  bottom: 100px;
+  right: 100px;
+}
+
 .banner {
   background-size: cover;
   background-position: center;
@@ -461,6 +469,18 @@ h2 {
   font-size: 20px;
 }
 
+.text__footer {
+  margin-top: 15px;
+  margin-bottom: 15px;
+  text-align: left;
+  cursor: pointer;
+}
+
+.text__footer:hover {
+  margin-left: 20px;
+  color: #a0a0a0;
+}
+
 .animtext {
   float: left;
   position: relative;
@@ -846,7 +866,7 @@ h2 {
 
 .footer__left {
   width: 50%;
-  padding: 50px;
+  padding: 100px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -854,12 +874,25 @@ h2 {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
 .footer__right {
   width: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 100px;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  position: relative;
 }
 
 .footer__text--header {
@@ -912,5 +945,21 @@ h2 {
 .footer__input::placeholder {
   color: #a5a4a4;
   font-weight: lighter;
+}
+
+.footer__grid {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  height: 100%;
+  width: 200px;
+}
+
+.footer__grid--left {
+  margin-right: 30px;
 }
 /*# sourceMappingURL=main.css.map */
