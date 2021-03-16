@@ -337,6 +337,10 @@
   outline: none;
 }
 
+a {
+  text-decoration: none;
+}
+
 body {
   margin: 0;
 }
@@ -834,6 +838,10 @@ h2 {
   -webkit-box-shadow: inset 240px 0 20px 0 #1e1e1e;
           box-shadow: inset 240px 0 20px 0 #1e1e1e;
   color: #EA3F4F;
+}
+
+.slider {
+  height: 600px;
 }
 
 @media (max-width: 1300px) {
