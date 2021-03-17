@@ -10,6 +10,13 @@
 </head>
 
 <body>
+    <section class="modal">
+        <div class="modal__backdrop">
+            <article class="modal__content">
+                <p>Let's try</p>
+            </article>
+        </div>
+    </section>
     <header class="header">
         <div class="header__container">
             <img class="header__logo" src="./images/logo.png">
@@ -70,6 +77,7 @@
         <img src="./images/asset_three.png" class="main__graphic main__graphic--three">
         <img src="./images/asset_four.png" class="main__graphic main__graphic--four">
         <img src="./images/asset_five.png" class="main__graphic main__graphic--five">
+        <img src="./images/asset__six.png" class="main__graphic main__graphic--six">
         <article class=" gallery ">
             <div class="gallery__row ">
                 <div class="gallery__container gallery__container--left ">
@@ -102,7 +110,7 @@
         </article>
         <article class="infoblock" id="infoblock">
             <img src="./images/logo_black.png " class="infoblock__logo ">
-            <h2>WHO WHE ARE?</h2>
+            <h2>Who we are?</h2>
             <img src="./images/slimes.png " class="image__slimes ">
             <img src="./images/mushroom.png " class="image__mushroom ">
             <p class="infoblock__text text__light ">
@@ -115,7 +123,7 @@
                         <img src="./images/code.png " class="image__code ">
                         <div class="card__title ">
                             <p class="text text__mono text__white text__heading text__light ">01 </p>
-                            <p class="text text__mono text__white text__heading text__bold text__mleft "> Code</p>
+                            <p class="text text__mono text__white text__heading text__bold text__mleft "> CODE</p>
                         </div>
                         <p class="text text__white text__light text__cuerpo text__mtop ">Develop your open <br>source games
                         </p>
@@ -138,7 +146,7 @@
                         <img src="./images/share.png " class="image__share ">
                         <div class="card__title ">
                             <p class="text text__mono text__white text__heading text__light ">02 </p>
-                            <p class="text text__mono text__white text__heading text__bold text__mleft "> Share</p>
+                            <p class="text text__mono text__white text__heading text__bold text__mleft "> SHARE</p>
                         </div>
                         <p class="text text__white text__light text__cuerpo text__mtop ">Upload and share them<br>with the community</p>
                     </article>
@@ -163,7 +171,7 @@
                         <img src="./images/spider.png " class="image__play ">
                         <div class="card__title ">
                             <p class="text text__mono text__white text__heading text__light ">03 </p>
-                            <p class="text text__mono text__white text__heading text__bold text__mleft "> Play</p>
+                            <p class="text text__mono text__white text__heading text__bold text__mleft "> PLAY</p>
                         </div>
 
                         <p class="text text__white text__light text__cuerpo text__mtop ">Download, install them<br>and let's play</p>
@@ -208,7 +216,21 @@
                     <img src="./images/computer.png" class="image__computer">
                     <img src="./images/controller.png" class="image__controller">
                 </div>
-                <h2>POPULAR GAMES!</h2>
+                <div class="carrousel__container">
+                    <div class="card__shadow card__shadow--carrousel"></div>
+                    <div class="card__squarescontainer--carrousel">
+                        <div class="card__square--carrousel card__square--one ">
+
+                        </div>
+                        <div class="card__square--carrousel card__square--two ">
+
+                        </div>
+                        <div class="card__square--carrousel card__square--three ">
+
+                        </div>
+                    </div>
+                    <h2 class="carrousel__title">POPULAR GAMES!</h2>
+                </div>
                 <p class="infoblock__text text__light ">
                     <strong class="text__cuerpo ">Indie.io</strong> has an extensive category of third party games and open source programs from our users for our users. <strong class="text__cuerpo ">Let's explore</strong>
                 </p>
@@ -217,9 +239,11 @@
 
                 <article class="carrousel__card">
                     <img src="./images/shipped.png" class="carrousel__image">
+                    <button class="button--open--modal">Abrir modal</button>
                 </article>
                 <article class="carrousel__card">
                     <img src="./images/pureya.png" class="carrousel__image">
+
                 </article>
                 <article class="carrousel__card">
                     <img src="./images/banner.png" class="carrousel__image">
@@ -252,6 +276,7 @@
     <footer class="footer">
         <section class="footer__left">
             <div class="footer__bigcontainer">
+
                 <h1 class="footer__text--header">Subscribe to our<br>newsletter</h1>
                 <div class="footer__container">
                     <input class="footer__input" placeholder="Email">

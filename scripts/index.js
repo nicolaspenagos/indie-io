@@ -13,6 +13,7 @@ const forwardBtn = document.querySelector('.image__slider--forward');
 const backBtn = document.querySelector('.image__slider--back');
 const cards = document.querySelectorAll('.carrousel__card');
 
+
 // -------------------------------------
 // LINKS 
 // -------------------------------------
@@ -24,12 +25,17 @@ linksMap.set(4, 'https://playvalorant.com');
 linksMap.set(5, 'http://www.cupheadgame.com');
 
 buttons.forEach(function(value, index) {
+
+
     function handleButtonClick() {
         console.log(index);
         console.log(linksMap.get(index));
         window.open(linksMap.get(index));
     }
     value.addEventListener('click', handleButtonClick);
+
+
+
 
 });
 
@@ -122,3 +128,26 @@ function windowSize() {
     }
     return size;
 }
+
+// -------------------------------------
+// MODAL
+// -------------------------------------
+const modalButton = document.querySelector('.button--open--modal');
+const modal = document.querySelector('.modal');
+const modalContent = document.querySelector('.modal__content');
+
+function handleOpenModal() {
+    document.body.style.overflow = 'hidden';
+    modal.style.display = 'block';
+    setTimeout(handleModalAppear, 5);
+
+
+
+}
+
+function handleModalAppear() {
+    modal.style.opacity = 1;
+    modalContent.style.transform = 'translate(0px, 0px)';
+}
+
+modalButton.addEventListener('click', handleOpenModal);

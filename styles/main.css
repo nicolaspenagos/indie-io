@@ -78,14 +78,14 @@
   position: absolute;
   width: 130px;
   left: 390px;
-  top: 100px;
+  top: 115px;
 }
 
 .image__controller {
   position: absolute;
   width: 110px;
-  right: 350px;
-  top: 60px;
+  right: 370px;
+  top: 80px;
 }
 
 .banner {
@@ -404,7 +404,7 @@ main {
   -webkit-transition: ease-out 0.3s;
   transition: ease-out 0.3s;
   position: relative;
-  z-index: 100;
+  z-index: 1;
 }
 
 .button:hover {
@@ -492,7 +492,7 @@ h2 {
 }
 
 .text__heading {
-  font-size: 26px;
+  font-size: 23px;
 }
 
 .text__bold {
@@ -636,6 +636,7 @@ h2 {
 }
 
 .main__graphic {
+  opacity: 1;
   position: absolute;
   z-index: 0;
 }
@@ -663,7 +664,7 @@ h2 {
 
 .main__graphic--four {
   position: absolute;
-  top: 600px;
+  top: 630px;
   right: -5px;
   width: 400px;
 }
@@ -673,6 +674,12 @@ h2 {
   top: 800px;
   right: -5px;
   width: 40px;
+}
+
+.main__graphic--six {
+  position: absolute;
+  top: 1995px;
+  left: 0px;
 }
 
 .main__graphic--slider {
@@ -739,8 +746,8 @@ h2 {
 }
 
 .card__square {
-  width: 30px;
-  height: 30px;
+  width: 24px;
+  height: 24px;
 }
 
 .card__square--one {
@@ -753,6 +760,11 @@ h2 {
 
 .card__square--three {
   background-color: #60F77F;
+}
+
+.card__square--carrousel {
+  width: 18px;
+  height: 18px;
 }
 
 .card__squares {
@@ -821,6 +833,17 @@ h2 {
   top: 0px;
 }
 
+.card__squarescontainer--carrousel {
+  position: relative;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
 .card__shadow {
   height: 300px;
   width: 100%;
@@ -828,6 +851,12 @@ h2 {
   position: absolute;
   margin-left: 12px;
   margin-top: 24px;
+}
+
+.card__shadow--carrousel {
+  margin-top: 15px;
+  width: 350px;
+  height: 70px;
 }
 
 .advertising {
@@ -913,9 +942,8 @@ h2 {
   display: -ms-flexbox;
   display: flex;
   width: 100%;
-  padding-top: 60px;
-  padding-bottom: 60px;
-  margin-top: 20px;
+  padding-top: 40px;
+  padding-bottom: 40px;
 }
 
 .carrousel__info {
@@ -933,12 +961,11 @@ h2 {
 
 .carrousel__card {
   width: 350px;
-  height: 400px;
+  height: 350px;
   margin-left: 60px;
   background-color: #e7e6e3;
   -webkit-box-shadow: 0px 40px 19px -30px rgba(50, 50, 50, 0.2);
           box-shadow: 0px 40px 19px -30px rgba(50, 50, 50, 0.2);
-  padding: 15px;
   -ms-flex-negative: 0;
       flex-shrink: 0;
   -webkit-transition: all .4s ease;
@@ -950,6 +977,20 @@ h2 {
           transform: translateY(-20px);
   -webkit-box-shadow: 0px 40px 19px -30px rgba(50, 50, 50, 0.54);
           box-shadow: 0px 40px 19px -30px rgba(50, 50, 50, 0.54);
+}
+
+.carrousel__title {
+  color: white;
+  margin-right: 30px;
+  margin-left: 30px;
+  margin-top: 3px;
+  margin-bottom: 13px;
+}
+
+.carrousel__container {
+  background-color: black;
+  margin-top: 40px;
+  margin-bottom: 20px;
 }
 
 .carrousel__image {
@@ -1085,5 +1126,43 @@ h2 {
 
 .footer__grid--left {
   margin-right: 30px;
+}
+
+.modal {
+  z-index: 3;
+  position: fixed;
+  left: 0px;
+  top: 0px;
+  width: 100vw;
+  height: 100vh;
+  padding: 20px;
+  display: none;
+  -webkit-transition: opacity .5s ease;
+  transition: opacity .5s ease;
+  opacity: 0;
+}
+
+.modal__backdrop {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal__content {
+  padding: 20px;
+  background-color: white;
+  margin: 10% auto;
+  width: 100%;
+  max-width: 400px;
+  -webkit-transition: -webkit-transform .5s ease;
+  transition: -webkit-transform .5s ease;
+  transition: transform .5s ease;
+  transition: transform .5s ease, -webkit-transform .5s ease;
+  -webkit-transform: translate(0px, -500px);
+          transform: translate(0px, -500px);
+  position: relative;
 }
 /*# sourceMappingURL=main.css.map */
