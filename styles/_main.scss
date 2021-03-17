@@ -200,9 +200,11 @@
 
 .carrousel {
     display: flex;
+    flex-direction: column;
     width: 100%;
+    padding-top: 40px;
     overflow: hidden;
-    height: 700px;
+    height: 800px;
     position: relative;
     align-items: center;
     &__slider {
@@ -211,14 +213,24 @@
         padding-top: 60px;
         padding-bottom: 60px;
     }
+    &__info {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
     &__card {
         width: 350px;
         height: 400px;
         margin-left: 60px;
         background-color: rgb(231, 230, 227);
+        box-shadow: 0px 40px 19px -30px rgba(50, 50, 50, 0.2);
         padding: 15px;
         flex-shrink: 0;
-        box-shadow: 2px 2px 2px 1px rgba(41, 41, 41, 0.1);
+        transition: all .4s ease;
+        &:hover {
+            transform: translateY(-20px);
+            box-shadow: 0px 40px 19px -30px rgba(50, 50, 50, 0.54);
+        }
     }
     &__image {
         width: 100%;

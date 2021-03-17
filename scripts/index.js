@@ -25,7 +25,9 @@ linksMap.set(5, 'http://www.cupheadgame.com');
 
 buttons.forEach(function(value, index) {
     function handleButtonClick() {
-        window.open(linksMap.get(index), "New link", "width=300, height=200");
+        console.log(index);
+        console.log(linksMap.get(index));
+        window.open(linksMap.get(index));
     }
     value.addEventListener('click', handleButtonClick);
 

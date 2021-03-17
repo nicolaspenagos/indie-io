@@ -57,9 +57,7 @@
 .image__slider {
   height: 40px;
   position: absolute;
-  top: 0;
-  bottom: 0;
-  margin: auto;
+  top: 500px;
   z-index: 1;
 }
 
@@ -865,9 +863,14 @@ h2 {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   width: 100%;
+  padding-top: 40px;
   overflow: hidden;
-  height: 700px;
+  height: 800px;
   position: relative;
   -webkit-box-align: center;
       -ms-flex-align: center;
@@ -883,16 +886,38 @@ h2 {
   padding-bottom: 60px;
 }
 
+.carrousel__info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
 .carrousel__card {
   width: 350px;
   height: 400px;
   margin-left: 60px;
   background-color: #e7e6e3;
+  -webkit-box-shadow: 0px 40px 19px -30px rgba(50, 50, 50, 0.2);
+          box-shadow: 0px 40px 19px -30px rgba(50, 50, 50, 0.2);
   padding: 15px;
   -ms-flex-negative: 0;
       flex-shrink: 0;
-  -webkit-box-shadow: 2px 2px 2px 1px rgba(41, 41, 41, 0.1);
-          box-shadow: 2px 2px 2px 1px rgba(41, 41, 41, 0.1);
+  -webkit-transition: all .4s ease;
+  transition: all .4s ease;
+}
+
+.carrousel__card:hover {
+  -webkit-transform: translateY(-20px);
+          transform: translateY(-20px);
+  -webkit-box-shadow: 0px 40px 19px -30px rgba(50, 50, 50, 0.54);
+          box-shadow: 0px 40px 19px -30px rgba(50, 50, 50, 0.54);
 }
 
 .carrousel__image {
