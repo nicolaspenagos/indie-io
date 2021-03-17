@@ -1,5 +1,21 @@
-const buttons = document.querySelectorAll('.button');
+/**~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ * @author Nicolás Penagos Montoya
+ * nicolas.penagosm98@gmail.com
+ **~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ */
 
+// -------------------------------------
+// REFERENCES
+// -------------------------------------
+const buttons = document.querySelectorAll('.button');
+const slider = document.querySelector('.carrousel__slider');
+const forwardBtn = document.querySelector('.image__slider--forward');
+const backBtn = document.querySelector('.image__slider--back');
+const cards = document.querySelectorAll('.carrousel__card');
+
+// -------------------------------------
+// LINKS 
+// -------------------------------------
 let linksMap = new Map();
 linksMap.set(1, 'https://na.leagueoflegends.com/es-mx/');
 linksMap.set(2, 'https://teamfighttactics.leagueoflegends.com/es-mx/');
@@ -7,10 +23,100 @@ linksMap.set(3, 'https://playruneterra.com/en-us/');
 linksMap.set(4, 'https://playvalorant.com');
 linksMap.set(5, 'http://www.cupheadgame.com');
 
-
-buttons.forEach(function(valor, indice) {
+buttons.forEach(function(value, index) {
     function handleButtonClick() {
-        window.open(linksMap.get(indice), "New link", "width=300, height=200");
+        window.open(linksMap.get(index), "New link", "width=300, height=200");
     }
-    valor.addEventListener('click', handleButtonClick);
+    value.addEventListener('click', handleButtonClick);
+
 });
+
+
+// -------------------------------------
+// SLIDER
+// -------------------------------------
+let counter = 0;
+let keep = false;
+let direction = 0;
+let speedFactor = 1;
+let speedCounter = 0;
+let speed = 40;
+const card = cards[cards.length - 1];
+var posicion = card.getBoundingClientRect();
+
+backBtn.onmousedown = function() {
+    keep = true;
+    direction = -1;
+    moveCarrousel();
+    speed = 40;
+}
+
+backBtn.onmouseup = function() {
+    keep = false;
+}
+
+forwardBtn.onmousedown = function() {
+    keep = true;
+    direction = 1;
+    moveCarrousel(1);
+    speed = 40;
+}
+
+forwardBtn.onmouseup = function() {
+    keep = false;
+}
+
+function moveCarrousel(direction) {
+
+    updateCounter();
+    moveSlider(direction);
+    speedCounter++;
+    if (speedCounter % 2 === 0) {
+        if (speed > 4) {
+            speed = speed - 2;
+        }
+    }
+
+    if (keep)
+        setTimeout(moveCarrousel, speed);
+}
+
+function updateCounter() {
+    posicion = card.getBoundingClientRect();
+    if (direction === 1) {
+        if (windowSize()[0] - 60 < posicion.right)
+            counter++;
+    } else {
+        if (counter > 0)
+            counter--;
+    }
+}
+
+function moveSlider() {
+
+    slider.style.transform = `translate(-${(counter*10)}px, 0px)`;
+}
+
+
+// -------------------------------------
+// UTILS
+// -------------------------------------
+function windowSize() {
+    var size = [0, 0];
+    if (typeof window.innerWidth != 'undefined') {
+        size = [window.innerWidth, window.innerHeight];
+    } else if (typeof document.documentElement != 'undefined' &&
+        typeof document.documentElement.clientWidth !=
+        'undefined' && document.documentElement.clientWidth != 0) {
+        size = [
+            document.documentElement.clientWidth,
+            document.documentElement.clientHeight
+        ];
+    } else {
+        size = [
+            document.getElementsByTagName('body')[0].clientWidth,
+            document.getElementsByTagName('body')[0].clientHeight
+        ];
+    }
+    return size;
+}
