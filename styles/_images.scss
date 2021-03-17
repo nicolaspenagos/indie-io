@@ -51,4 +51,20 @@
             left: 15px;
         }
     }
+    &__controller {
+        position: absolute;
+        width: 100px;
+    }
+    &__computer {
+        position: absolute;
+        width: 130px;
+        left: 390px;
+        top: 100px;
+    }
+    &__controller {
+        position: absolute;
+        width: 110px;
+        right: 350px;
+        top: 60px;
+    }
 }
