@@ -146,11 +146,15 @@ function random(min, max) { return Math.floor(Math.random() * (max - min + 1) + 
 
 
 function handleOpenModal() {
-    document.body.style.overflow = 'hidden';
-    modal.style.display = 'block';
-    modalTextAnim();
-    setTimeout(handleModalAppear, 15);
+    if (open) {
+        open = false;
+        console.log('OpenModal');
+        document.body.style.overflow = 'hidden';
+        modal.style.display = 'block';
+        modalTextAnim();
+        setTimeout(handleModalAppear, 15);
 
+    }
 }
 
 function handleModalAppear() {
@@ -172,7 +176,6 @@ function startGame() {
 
 
 buttonsModal.forEach(function(value, index) {
-    console.log('hey');
     value.addEventListener('click', handleOpenModal);
 });
 
@@ -182,12 +185,14 @@ let opacity = true;
 let refreshIntervalId;
 
 function handleCloseModal() {
+    open = true;
     clearInterval(refreshIntervalId);
     clearInterval(refreshIntervalId1);
     handleLeave();
     modal.style.opacity = 0;
     modalContent.style.transform = 'translate(0px, -500px)';
     document.body.style.overflow = 'hidden scroll';
+    document.body.style.overflowX = 'hidden';
     setTimeout(function() {
         modal.style.display = 'none';
     }, 500);
@@ -286,6 +291,7 @@ let posFy;
 let posIx;
 let posIy;
 const animText = document.querySelector('.modal__text--anim');
+var open = true;
 
 function posModal(pos) {
 

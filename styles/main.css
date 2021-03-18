@@ -213,8 +213,11 @@
   67% {
     background-image: url("../images/banner2cc.jpg");
   }
-  100% {
+  99% {
     background-image: url("../images/banner2cc.jpg");
+  }
+  100% {
+    background-image: url("../images/banner1c.jpg");
   }
 }
 
@@ -234,8 +237,11 @@
   67% {
     background-image: url("../images/banner2cc.jpg");
   }
-  100% {
+  99% {
     background-image: url("../images/banner2cc.jpg");
+  }
+  100% {
+    background-image: url("../images/banner1c.jpg");
   }
 }
 
@@ -387,12 +393,6 @@
           box-sizing: border-box;
   font-family: "Lato";
   outline: none;
-}
-
-html,
-body {
-  max-width: 100%;
-  overflow-x: hidden;
 }
 
 a {
