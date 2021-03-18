@@ -190,7 +190,8 @@
         &--carrousel {
             margin-top: 15px;
             width: 350px;
-            height: 70px;
+            height: 53px;
+            z-index: 0;
         }
     }
 }
@@ -269,6 +270,8 @@
         margin-left: 30px;
         margin-top: 3px;
         margin-bottom: 13px;
+        position: relative;
+        z-index: 2;
     }
     &__container {
         background-color: black;
