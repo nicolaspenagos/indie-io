@@ -67,4 +67,14 @@
         right: 370px;
         top: 80px;
     }
+    &__keyboard {
+        width: 250px;
+    }
+    &__close {
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        top: 15px;
+        right: 15px;
+    }
 }
