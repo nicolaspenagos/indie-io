@@ -101,12 +101,17 @@
   right: 15px;
 }
 
+.image__preload {
+  position: absolute;
+  opacity: 0;
+}
+
 .banner {
   background-size: cover;
   background-position: center;
-  -webkit-transition: all .1s ease-in-out;
-  transition: all .1s ease-in-out;
-  background-image: url("../images/banner1.png");
+  -webkit-transition: all .1s ease-out;
+  transition: all .1s ease-out;
+  background-image: url("../images/banner1c.png");
   -webkit-animation: banner 21s infinite linear;
           animation: banner 21s infinite linear;
   width: 100%;
@@ -206,10 +211,10 @@
     background-image: url("../images/banner3c.jpg");
   }
   67% {
-    background-image: url("../images/banner2.png");
+    background-image: url("../images/banner2cc.jpg");
   }
   100% {
-    background-image: url("../images/banner2.png");
+    background-image: url("../images/banner2cc.jpg");
   }
 }
 
@@ -227,10 +232,10 @@
     background-image: url("../images/banner3c.jpg");
   }
   67% {
-    background-image: url("../images/banner2.png");
+    background-image: url("../images/banner2cc.jpg");
   }
   100% {
-    background-image: url("../images/banner2.png");
+    background-image: url("../images/banner2cc.jpg");
   }
 }
 

@@ -194,8 +194,9 @@ function handleCloseModal() {
 }
 
 function modalTextAnim() {
-    //refreshIntervalId = setInterval(changeOpacity, 800);
-    //refreshIntervalId1 = setInterval(changeOpacityAnim, 200);
+    console.log('Anim!');
+    refreshIntervalId = setInterval(changeOpacity, 800);
+    refreshIntervalId1 = setInterval(changeOpacityAnim, 200);
 }
 
 function changeOpacity() {

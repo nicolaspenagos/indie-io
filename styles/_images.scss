@@ -77,4 +77,8 @@
         top: 15px;
         right: 15px;
     }
+    &__preload {
+        position: absolute;
+        opacity: 0;
+    }
 }
