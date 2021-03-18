@@ -384,6 +384,12 @@
   outline: none;
 }
 
+html,
+body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
 a {
   text-decoration: none;
 }
@@ -716,7 +722,7 @@ h2 {
 
 .main__graphic--six {
   position: absolute;
-  top: 1995px;
+  top: 1992px;
   left: 0px;
 }
 
@@ -894,7 +900,7 @@ h2 {
 .card__shadow--carrousel {
   margin-top: 15px;
   width: 350px;
-  height: 53px;
+  height: 51px;
   z-index: 0;
 }
 
@@ -983,6 +989,7 @@ h2 {
   width: 100%;
   padding-top: 40px;
   padding-bottom: 40px;
+  margin-top: 30px;
 }
 
 .carrousel__info {
@@ -996,6 +1003,7 @@ h2 {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  margin-top: 10px;
 }
 
 .carrousel__card {

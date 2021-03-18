@@ -84,7 +84,7 @@
         }
         &--six {
             position: absolute;
-            top: 1995px;
+            top: 1992px;
             left: 0px;
         }
         &--slider {
@@ -190,7 +190,7 @@
         &--carrousel {
             margin-top: 15px;
             width: 350px;
-            height: 53px;
+            height: 51px;
             z-index: 0;
         }
     }
@@ -244,11 +244,13 @@
         width: 100%;
         padding-top: 40px;
         padding-bottom: 40px;
+        margin-top: 30px;
     }
     &__info {
         display: flex;
         flex-direction: column;
         align-items: center;
+        margin-top: 10px;
     }
     &__card {
         position: relative;
