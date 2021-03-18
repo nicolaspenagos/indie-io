@@ -139,7 +139,7 @@ const modalContent = document.querySelector('.modal__content');
 function handleOpenModal() {
     document.body.style.overflow = 'hidden';
     modal.style.display = 'block';
-    setTimeout(handleModalAppear, 5);
+    setTimeout(handleModalAppear, 15);
 
 
 

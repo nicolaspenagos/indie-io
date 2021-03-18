@@ -181,43 +181,43 @@
 
 @-webkit-keyframes banner {
   0% {
-    background-image: url("../images/banner1.png");
+    background-image: url("../images/banner1c.jpg");
   }
   33% {
-    background-image: url("../images/banner1.png");
+    background-image: url("../images/banner1c.jpg");
   }
   34% {
-    background-image: url("../images/banner3.png");
+    background-image: url("../images/banner3c.jpg");
   }
   66% {
-    background-image: url("../images/banner3.png");
+    background-image: url("../images/banner3c.jpg");
   }
   67% {
-    background-image: url("../images/banner2.png");
+    background-image: url("../images/banner2c.jpg");
   }
   100% {
-    background-image: url("../images/banner2.png");
+    background-image: url("../images/banner2c.jpg");
   }
 }
 
 @keyframes banner {
   0% {
-    background-image: url("../images/banner1.png");
+    background-image: url("../images/banner1c.jpg");
   }
   33% {
-    background-image: url("../images/banner1.png");
+    background-image: url("../images/banner1c.jpg");
   }
   34% {
-    background-image: url("../images/banner3.png");
+    background-image: url("../images/banner3c.jpg");
   }
   66% {
-    background-image: url("../images/banner3.png");
+    background-image: url("../images/banner3c.jpg");
   }
   67% {
-    background-image: url("../images/banner2.png");
+    background-image: url("../images/banner2c.jpg");
   }
   100% {
-    background-image: url("../images/banner2.png");
+    background-image: url("../images/banner2c.jpg");
   }
 }
 
@@ -405,6 +405,31 @@ main {
   transition: ease-out 0.3s;
   position: relative;
   z-index: 1;
+}
+
+.button--tryme {
+  background-color: transparent;
+  border: solid white 1px;
+  height: 35px;
+  width: 120px;
+  -webkit-box-shadow: inset 0 0 0 0 rgba(42, 42, 42, 0.3);
+          box-shadow: inset 0 0 0 0 rgba(42, 42, 42, 0.3);
+  color: white;
+  -webkit-transition: ease-out 0.3s;
+  transition: ease-out 0.3s;
+  font-family: Roboto, monospace;
+  font-weight: 400;
+  font-size: 13px;
+  letter-spacing: 2px;
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+}
+
+.button--tryme:hover {
+  -webkit-box-shadow: inset 120px 0 20px 0 white;
+          box-shadow: inset 120px 0 20px 0 white;
+  color: #EA3F4F;
 }
 
 .button:hover {
@@ -960,10 +985,11 @@ h2 {
 }
 
 .carrousel__card {
+  position: relative;
   width: 350px;
   height: 350px;
   margin-left: 60px;
-  background-color: #e7e6e3;
+  background-color: #e4e4e4;
   -webkit-box-shadow: 0px 40px 19px -30px rgba(50, 50, 50, 0.2);
           box-shadow: 0px 40px 19px -30px rgba(50, 50, 50, 0.2);
   -ms-flex-negative: 0;
@@ -1148,7 +1174,7 @@ h2 {
   top: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.8);
 }
 
 .modal__content {
