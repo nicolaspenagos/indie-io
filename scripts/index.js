@@ -140,7 +140,7 @@ const modalContent = document.querySelector('.modal__content');
 const modalTitle = document.querySelector('.modal__text--title');
 const closeButton = document.querySelector('.image__close');
 
-let options = ['right', 'left', 'jump'];
+let options = ['right', 'left', 'jump', 'shoot'];
 
 function random(min, max) { return Math.floor(Math.random() * (max - min + 1) + min); }
 
@@ -148,6 +148,7 @@ function random(min, max) { return Math.floor(Math.random() * (max - min + 1) + 
 function handleOpenModal() {
     document.body.style.overflow = 'hidden';
     modal.style.display = 'block';
+    modalTextAnim();
     setTimeout(handleModalAppear, 15);
 
 }
@@ -155,15 +156,17 @@ function handleOpenModal() {
 function handleModalAppear() {
     modal.style.opacity = 1;
     modalContent.style.transform = 'translate(0px, 0px)';
-    modalTextAnim();
     setTimeout(startGame, 500);
 
 }
 
 function startGame() {
-    let index = random(0, 2);
-    posModal(options[index]);
-    current = options[index];
+    let index = random(0, 3);
+    if (finish == true) {
+        posModal(options[index]);
+        current = options[index];
+    }
+
 }
 
 
@@ -191,7 +194,8 @@ function handleCloseModal() {
 }
 
 function modalTextAnim() {
-    refreshIntervalId = setInterval(changeOpacity, 800);
+    //refreshIntervalId = setInterval(changeOpacity, 800);
+    //refreshIntervalId1 = setInterval(changeOpacityAnim, 200);
 }
 
 function changeOpacity() {
@@ -224,18 +228,27 @@ function changeOpacityAnim() {
 
 document.addEventListener('keydown', function(event) {
     if (event.keyCode == 37 || event.keyCode == 65) {
-        if (current == 'left') {
+        if (current === 'left') {
+            console.log("L")
             handleLeave();
             setTimeout(startGame, 300);
         }
     } else if (event.keyCode == 39 || event.keyCode == 68) {
-        if (current == 'right') {
+        if (current === 'right') {
+            console.log("R")
             handleLeave();
             setTimeout(startGame, 300);
         }
     } else if (event.keyCode == 32 || event.keyCode == 87 || event.keyCode == 38) {
-        if (current == 'jump') {
+        if (current === 'jump') {
+            console.log("J")
             handleLeave();
+            setTimeout(startGame, 300);
+        }
+    } else if (event.keyCode == 13) {
+        if (current === 'shoot') {
+            console.log("S")
+            shootLeave();
             setTimeout(startGame, 300);
         }
     }
@@ -267,8 +280,6 @@ function handleLeave() {
 }
 
 
-
-
 let posFx;
 let posFy;
 let posIx;
@@ -277,8 +288,6 @@ const animText = document.querySelector('.modal__text--anim');
 
 function posModal(pos) {
 
-    clearInterval(refreshIntervalId1);
-    refreshIntervalId1 = setInterval(changeOpacityAnim, 200);
     finish = false;
     switch (pos) {
         case 'right':
@@ -315,10 +324,34 @@ function posModal(pos) {
             break;
 
         case 'shoot':
-            secondModal.style.transform = 'none';
-            secondModal.style.transform = 'translate(0px, 0px)';
+            posIx = 0;
+            posIy = 0;
+            posFx = 0;
+            posFy = 0;
+            animText.innerHTML = 'Shoot!';
+            shoot();
             break;
     }
 
+}
 
+function shoot() {
+    secondModal.style.opacity = '0';
+    secondModal.style.transition = 'transform .001s ease';
+    secondModal.style.transform = `translate(${posIx}px, ${posIy}px)`;
+    setTimeout(appearShoot, 10);
+}
+
+function appearShoot() {
+    secondModal.style.transition = 'opacity 0.4s ease-in-out';
+    secondModal.style.opacity = '1';
+}
+
+function shootLeave() {
+    secondModal.style.opacity = '0';
+    setTimeout(
+        () => {
+            finish = true;
+        }, 100
+    );
 }
