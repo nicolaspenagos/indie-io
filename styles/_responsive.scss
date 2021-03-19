@@ -49,7 +49,7 @@
     }
 }
 
-@media(max-width:700px) {
+@media(max-width:850px) {
     .input {
         display: none;
     }
@@ -156,6 +156,18 @@
             width: 40px;
             height: 39px;
         }
+        &__play {
+            width: 100px;
+            height: 70px;
+        }
+        &__share {
+            width: 62px;
+            height: 71px;
+        }
+        &__code {
+            width: 75px;
+            height: 66px;
+        }
     }
     .gallery {
         margin-top: 3%;
@@ -187,5 +199,21 @@
     }
     .hamburgermenu__row {
         width: 30px;
+    }
+}
+
+@media(max-width:400px) {
+    .text {
+        &__mtop {
+            font-size: 18px;
+        }
+    }
+}
+
+@media(max-width:325px) {
+    .text {
+        &__mtop {
+            font-size: 15px;
+        }
     }
 }
