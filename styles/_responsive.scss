@@ -19,6 +19,12 @@
         &__shadow {
             width: 30vw;
             height: 30vw;
+            &--carrousel {
+                margin-top: 10px;
+                margin-bottom: 10px;
+                width: 400px;
+                height: 55px;
+            }
         }
     }
     .advertising__info {
@@ -49,6 +55,10 @@
         &__shadow {
             width: 30vw;
             height: 30vw;
+            &--carrousel {
+                width: 400px;
+                height: 55px;
+            }
         }
     }
     .advertising {
@@ -59,6 +69,44 @@
 }
 
 @media(max-width:850px) {
+    .footer {
+        height: auto;
+        flex-direction: column;
+        background-color: black;
+        position: relative;
+        &__left {
+            width: 100%;
+            padding: 20px;
+            padding-top: 40px;
+        }
+        &__right {
+            width: 100%;
+            padding: 60px;
+            margin-bottom: 80px;
+            position: static;
+        }
+        &__text {
+            &--header {
+                font-size: 45px;
+                text-align: center;
+            }
+        }
+        &__container {
+            flex-direction: column;
+            height: auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        &__input {
+            width: 90%;
+        }
+        &__bigcontainer {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+    }
     .input {
         display: none;
     }
@@ -117,6 +165,10 @@
         &__shadow {
             width: 50vw;
             height: 50vw;
+            &--carrousel {
+                width: 400px;
+                height: 55px;
+            }
         }
     }
     .gallery {
@@ -151,10 +203,34 @@
         &__cuphead {
             width: 80%;
         }
+        &__responsivelogo {
+            position: absolute;
+            bottom: 30px;
+            left: 30px;
+        }
+        &__facebook {
+            position: absolute;
+            bottom: 30px;
+            right: 30px;
+        }
+    }
+    .button {
+        &__shadow {
+            &--footer {
+                width: 100px;
+            }
+        }
     }
 }
 
 @media(max-width:500px) {
+    .footer {
+        &__text {
+            &--header {
+                font-size: 35px;
+            }
+        }
+    }
     .header {
         padding-left: 20px;
         padding-right: 20px;
@@ -162,7 +238,7 @@
     .infoblock {
         &__logo {
             width: 256px;
-            height: 55px;
+            height: 53px;
         }
     }
     .card {
@@ -173,6 +249,10 @@
         &__shadow {
             width: 60vw;
             height: 60vw;
+            &--carrousel {
+                width: 300px;
+                height: 55px;
+            }
         }
     }
     .image {
@@ -236,13 +316,35 @@
     }
     .advertising {
         &__text {
-            margin-top: 20px;
+            margin-top: 10px;
             font-size: 37px;
+        }
+    }
+    .carrousel {
+        &__container {
+            width: 300px;
+        }
+        &__title {
+            font-size: 28px;
+        }
+    }
+    .button {
+        &__shadow {
+            &--footer {
+                width: 100px;
+            }
         }
     }
 }
 
 @media(max-width:400px) {
+    .footer {
+        &__text {
+            &--header {
+                font-size: 25px;
+            }
+        }
+    }
     .text {
         &__mtop {
             font-size: 18px;
@@ -253,12 +355,31 @@
             width: 95%;
         }
     }
+    .button {
+        &__shadow {
+            &--footer {
+                width: 100px;
+            }
+        }
+        &__div {
+            &--footer {
+                margin-top: 20px;
+            }
+        }
+    }
 }
 
 @media(max-width:325px) {
     .text {
         &__mtop {
             font-size: 15px;
+        }
+    }
+    .button {
+        &__shadow {
+            &--footer {
+                width: 100px;
+            }
         }
     }
 }
