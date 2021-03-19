@@ -31,6 +31,11 @@
         width: 90%;
         height: 40vw;
     }
+    .footer {
+        &__container {
+            width: 120%;
+        }
+    }
 }
 
 @media(max-width:1000px) {
@@ -220,6 +225,9 @@
                 width: 100px;
             }
         }
+    }
+    .button__div--footer {
+        margin-top: 20px;
     }
 }
 

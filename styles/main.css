@@ -1361,6 +1361,9 @@ h2 {
     width: 90%;
     height: 40vw;
   }
+  .footer__container {
+    width: 120%;
+  }
 }
 
 @media (max-width: 1000px) {
@@ -1562,6 +1565,9 @@ h2 {
   }
   .button__shadow--footer {
     width: 100px;
+  }
+  .button__div--footer {
+    margin-top: 20px;
   }
 }
 
