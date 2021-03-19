@@ -15,3 +15,44 @@
         width: 100%;
     }
 }
+
+@media(max-width:700px) {
+    .input {
+        display: none;
+    }
+    .infoblock {
+        width: 100%;
+    }
+    .hamburgermenu {
+        display: block;
+    }
+    .navigator {
+        display: none;
+    }
+    .header {
+        &__acontainer {
+            display: none;
+        }
+    }
+    .banner {
+        height: 500px;
+        &__card {
+            margin-bottom: 0px;
+        }
+        &__text {
+            font-size: 60px;
+        }
+    }
+    .gallery {
+        margin-top: 5%;
+        width: 90%;
+        &__row {
+            flex-direction: column;
+        }
+        &__container {
+            &--left {
+                margin-right: 0px;
+            }
+        }
+    }
+}

@@ -106,6 +106,15 @@
   opacity: 0;
 }
 
+.hamburgermenu {
+  background-color: white;
+  height: 3px;
+  width: 40px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  display: none;
+}
+
 .banner {
   background-size: cover;
   background-position: center;
@@ -1103,6 +1112,46 @@ h2 {
 @media (max-width: 1000px) {
   .infoblock {
     width: 100%;
+  }
+}
+
+@media (max-width: 700px) {
+  .input {
+    display: none;
+  }
+  .infoblock {
+    width: 100%;
+  }
+  .hamburgermenu {
+    display: block;
+  }
+  .navigator {
+    display: none;
+  }
+  .header__acontainer {
+    display: none;
+  }
+  .banner {
+    height: 500px;
+  }
+  .banner__card {
+    margin-bottom: 0px;
+  }
+  .banner__text {
+    font-size: 60px;
+  }
+  .gallery {
+    margin-top: 5%;
+    width: 90%;
+  }
+  .gallery__row {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .gallery__container--left {
+    margin-right: 0px;
   }
 }
 
