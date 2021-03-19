@@ -8,11 +8,44 @@
     .gallery {
         width: 100%;
     }
+    .infoblock {
+        width: 100%;
+    }
+    .card {
+        width: 30vw;
+        height: 30vw;
+        margin-top: 15px;
+        margin-bottom: 15px;
+        &__shadow {
+            width: 30vw;
+            height: 30vw;
+        }
+    }
 }
 
 @media(max-width:1000px) {
-    .infoblock {
-        width: 100%;
+    .image {
+        &__slimes {
+            width: 100px;
+            height: 85px;
+        }
+        &__mushroom {
+            right: 20px;
+            top: -60px;
+            width: 47px;
+            height: 45px;
+            margin-top: 20px;
+        }
+    }
+    .card {
+        width: 30vw;
+        height: 30vw;
+        margin-top: 15px;
+        margin-bottom: 15px;
+        &__shadow {
+            width: 30vw;
+            height: 30vw;
+        }
     }
 }
 
@@ -23,7 +56,7 @@
     .infoblock {
         width: 100%;
     }
-    .hamburgermenu {
+    .hamburgermenu__row {
         display: block;
     }
     .navigator {
@@ -43,6 +76,25 @@
             font-size: 60px;
         }
     }
+    .infoblock {
+        &__text {
+            width: 90%;
+        }
+        &__container {
+            flex-direction: column;
+            align-items: center;
+        }
+    }
+    .card {
+        width: 50vw;
+        height: 50vw;
+        margin-top: 15px;
+        margin-bottom: 15px;
+        &__shadow {
+            width: 50vw;
+            height: 50vw;
+        }
+    }
     .gallery {
         margin-top: 5%;
         width: 90%;
@@ -53,6 +105,87 @@
             &--left {
                 margin-right: 0px;
             }
+            &--right {
+                margin-top: 10px;
+            }
         }
+    }
+    .image {
+        &__slimes {
+            width: 78px;
+            height: 70px;
+            left: 20px;
+            top: 125px;
+        }
+        &__mushroom {
+            right: 20px;
+            top: -60px;
+            width: 47px;
+            height: 45px;
+            margin-bottom: 30px;
+        }
+    }
+}
+
+@media(max-width:500px) {
+    .infoblock {
+        &__logo {
+            width: 256px;
+            height: 55px;
+        }
+    }
+    .card {
+        width: 60vw;
+        height: 60vw;
+        margin-top: 15px;
+        margin-bottom: 15px;
+        &__shadow {
+            width: 60vw;
+            height: 60vw;
+        }
+    }
+    .image {
+        &__slimes {
+            width: 65px;
+            height: 54px;
+            top: -60px;
+        }
+        &__mushroom {
+            right: 20px;
+            top: -50px;
+            width: 40px;
+            height: 39px;
+        }
+    }
+    .gallery {
+        margin-top: 3%;
+        width: 94%;
+        &__row {
+            padding: 7px;
+            &--down {
+                padding-top: 0px;
+            }
+        }
+        &__container {
+            &--right {
+                margin-top: 7px;
+            }
+        }
+    }
+    .banner {
+        &__text {
+            font-size: 44px;
+        }
+    }
+    .button {
+        width: 190px;
+        height: 40px;
+        &__shadow {
+            width: 190px;
+            height: 40px;
+        }
+    }
+    .hamburgermenu__row {
+        width: 30px;
     }
 }
