@@ -401,6 +401,7 @@ a {
 
 body {
   margin: 0;
+  overflow-x: hidden;
 }
 
 ul {
@@ -446,8 +447,8 @@ main {
   font-size: 13px;
   letter-spacing: 2px;
   position: absolute;
-  bottom: 20px;
-  right: 20px;
+  bottom: 30px;
+  right: 30px;
 }
 
 .button--tryme:hover {
@@ -570,6 +571,13 @@ h2 {
 .text__footer:hover {
   margin-left: 20px;
   color: #a0a0a0;
+}
+
+.text__card--title {
+  font-family: "Fira Mono", "Roboto Mono", monospace, monospace;
+  font-weight: bold;
+  font-size: 20px;
+  color: #646464;
 }
 
 .animtext {
@@ -1054,6 +1062,33 @@ h2 {
 
 .carrousel__imagecontainer {
   position: relative;
+}
+
+.carrousel__text {
+  color: #646464;
+}
+
+.carrousel__text--title {
+  font-family: "Fira Mono", "Roboto Mono", monospace;
+  font-size: 33px;
+  font-weight: bold;
+  margin: 0px;
+  margin-top: 20px;
+  margin-left: 30px;
+}
+
+.carrousel__text--cuerpo {
+  margin-left: 30px;
+  margin-bottom: 5px;
+  margin-top: 5px;
+}
+
+.carrousel__date {
+  position: absolute;
+  color: #EA3F4F;
+  font-family: "Fira Mono", "Roboto Mono", monospace, monospace;
+  top: 193px;
+  right: 30px;
 }
 
 @media (max-width: 1300px) {

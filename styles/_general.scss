@@ -10,6 +10,7 @@ a {
 
 body {
     margin: 0;
+    overflow-x: hidden;
 }
 
 ul {
@@ -47,8 +48,8 @@ main {
         font-size: 13px;
         letter-spacing: 2px;
         position: absolute;
-        bottom: 20px;
-        right: 20px;
+        bottom: 30px;
+        right: 30px;
         &:hover {
             box-shadow: inset 120px 0 20px 0 rgb(255, 255, 255);
             color: #EA3F4F;
@@ -147,6 +148,14 @@ h2 {
         &:hover {
             margin-left: 20px;
             color: rgb(160, 160, 160);
+        }
+    }
+    &__card {
+        &--title {
+            font-family: $font-mono, monospace;
+            font-weight: bold;
+            font-size: 20px;
+            color: rgb(100, 100, 100);
         }
     }
 }
