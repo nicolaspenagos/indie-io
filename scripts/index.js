@@ -13,6 +13,31 @@ const forwardBtn = document.querySelector('.image__slider--forward');
 const backBtn = document.querySelector('.image__slider--back');
 const cards = document.querySelectorAll('.carrousel__card');
 const secondModal = document.querySelector('.modal__content--two');
+const hmenu = document.querySelector('.header__items');
+const nav = document.querySelector('.navigator');
+
+// -------------------------------------
+// H_MENU
+// -------------------------------------
+let showed = false;
+
+console.log(nav);
+
+function handleHmenu() {
+
+
+    if (!showed) {
+        nav.style.display = 'block';
+        showed = true;
+    } else {
+        nav.style.display = 'none';
+        showed = false;
+    }
+
+
+}
+
+hmenu.addEventListener('click', handleHmenu);
 
 
 
