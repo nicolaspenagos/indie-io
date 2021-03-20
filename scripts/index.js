@@ -27,7 +27,7 @@ function handleHmenu() {
 
 
     if (!showed) {
-        nav.style.display = 'block';
+        nav.style.display = 'flex';
         showed = true;
     } else {
         nav.style.display = 'none';
