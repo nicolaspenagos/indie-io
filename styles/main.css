@@ -109,7 +109,7 @@
 .hamburgermenu__row {
   background-color: white;
   height: 3px;
-  width: 40px;
+  width: 35px;
   margin-top: 5px;
   margin-bottom: 5px;
   display: none;
@@ -1536,6 +1536,7 @@ h2 {
   }
   .banner {
     height: 500px;
+    background-position: left;
   }
   .banner__card {
     margin-bottom: 0px;
@@ -1603,13 +1604,13 @@ h2 {
   }
   .image__responsivelogo {
     position: absolute;
-    bottom: 30px;
-    left: 30px;
+    bottom: 20px;
+    left: 20px;
   }
   .image__facebook {
     position: absolute;
-    bottom: 30px;
-    right: 30px;
+    bottom: 20px;
+    right: 20px;
   }
   .button__shadow--footer {
     width: 100px;

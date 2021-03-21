@@ -186,6 +186,7 @@
     }
     .banner {
         height: 500px;
+        background-position: left;
         &__card {
             margin-bottom: 0px;
         }
@@ -250,13 +251,13 @@
         }
         &__responsivelogo {
             position: absolute;
-            bottom: 30px;
-            left: 30px;
+            bottom: 20px;
+            left: 20px;
         }
         &__facebook {
             position: absolute;
-            bottom: 30px;
-            right: 30px;
+            bottom: 20px;
+            right: 20px;
         }
     }
     .button {
