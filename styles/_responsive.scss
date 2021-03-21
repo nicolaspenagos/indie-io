@@ -81,11 +81,22 @@
 }
 
 @media(max-width:850px) {
+    .carrousel {
+        &__card {
+            width: 300px;
+        }
+        &__date {
+            font-size: 12px;
+            margin-top: 3px;
+        }
+    }
     .header__items {
         z-index: 3;
     }
     .navigator {
         height: auto;
+        position: absolute;
+        top: 0;
     }
     .footer {
         height: auto;
