@@ -251,13 +251,17 @@
         }
         &__responsivelogo {
             position: absolute;
-            bottom: 20px;
-            left: 20px;
+            bottom: 15px;
+            left: 15px;
+            margin-left: 20px;
+            margin-bottom: 20px;
         }
         &__facebook {
             position: absolute;
-            bottom: 20px;
-            right: 20px;
+            bottom: 15px;
+            right: 15px;
+            margin-right: 20px;
+            margin-bottom: 20px;
         }
     }
     .button {
