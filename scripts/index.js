@@ -37,6 +37,14 @@ function handleHmenu() {
 
 }
 
+window.addEventListener("resize", function() {
+
+    if (windowSize()[0] >= 850) {
+        nav.style.display = 'flex';
+    }
+
+});
+
 hmenu.addEventListener('click', handleHmenu);
 
 
