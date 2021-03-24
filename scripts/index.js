@@ -19,9 +19,8 @@ const nav = document.querySelector('.navigator');
 // -------------------------------------
 // H_MENU
 // -------------------------------------
-let showed = false;
+let showed = true;
 
-console.log(nav);
 
 function handleHmenu() {
 
@@ -41,6 +40,17 @@ window.addEventListener("resize", function() {
 
     if (windowSize()[0] >= 850) {
         nav.style.display = 'flex';
+        buttonsModal.forEach(function(value, index) {
+            value.style.display = 'block';
+        });
+
+        console.log(false);
+
+    } else {
+        buttonsModal.forEach(function(value, index) {
+            value.style.display = 'none';
+        });
+        console.log(true);
     }
 
 });
@@ -63,8 +73,7 @@ buttons.forEach(function(value, index) {
 
 
     function handleButtonClick() {
-        console.log(index);
-        console.log(linksMap.get(index));
+
         window.open(linksMap.get(index));
     }
     value.addEventListener('click', handleButtonClick);
@@ -181,7 +190,6 @@ function random(min, max) { return Math.floor(Math.random() * (max - min + 1) + 
 function handleOpenModal() {
     if (open) {
         open = false;
-        console.log('OpenModal');
         document.body.style.overflow = 'hidden';
         modal.style.display = 'block';
         modalTextAnim();
@@ -232,7 +240,7 @@ function handleCloseModal() {
 }
 
 function modalTextAnim() {
-    console.log('Anim!');
+
     refreshIntervalId = setInterval(changeOpacity, 800);
     refreshIntervalId1 = setInterval(changeOpacityAnim, 200);
 }
@@ -268,36 +276,55 @@ function changeOpacityAnim() {
 document.addEventListener('keydown', function(event) {
     if (event.keyCode == 37 || event.keyCode == 65) {
         if (current === 'left') {
-            console.log("L")
+            okFeedback();
             handleLeave();
             setTimeout(startGame, 300);
+
+        } else {
+            wrongFeedback();
         }
     } else if (event.keyCode == 39 || event.keyCode == 68) {
         if (current === 'right') {
-            console.log("R")
+            okFeedback();
             handleLeave();
             setTimeout(startGame, 300);
+        } else {
+            wrongFeedback();
         }
     } else if (event.keyCode == 32 || event.keyCode == 87 || event.keyCode == 38) {
         if (current === 'jump') {
-            console.log("J")
+            okFeedback();
             handleLeave();
             setTimeout(startGame, 300);
+        } else {
+            wrongFeedback();
         }
     } else if (event.keyCode == 13) {
         if (current === 'shoot') {
-            console.log("S")
+            okFeedback();
             shootLeave();
             setTimeout(startGame, 300);
+        } else {
+            wrongFeedback();
         }
     } else {
-        secondModal.style.background = 'rgb(216,77,84)';
-        setTimeout(() => {
-            secondModal.style.background = 'black';
-        }, 100);
+        wrongFeedback();
     }
 });
 
+function wrongFeedback() {
+    secondModal.style.background = 'rgb(216,77,84)';
+    setTimeout(() => {
+        secondModal.style.background = 'black';
+    }, 100);
+}
+
+function okFeedback() {
+    secondModal.style.background = '#B2D32C';
+    setTimeout(() => {
+        secondModal.style.background = 'black';
+    }, 100);
+}
 
 function setInitialPos() {
 
