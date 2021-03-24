@@ -290,6 +290,11 @@ document.addEventListener('keydown', function(event) {
             shootLeave();
             setTimeout(startGame, 300);
         }
+    } else {
+        secondModal.style.background = 'rgb(216,77,84)';
+        setTimeout(() => {
+            secondModal.style.background = 'black';
+        }, 100);
     }
 });
 
