@@ -7,6 +7,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Monofett&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300&display=swap");
 .image__code {
   width: 116px;
   height: 102px;
@@ -104,6 +106,12 @@
 .image__preload {
   position: absolute;
   opacity: 0;
+}
+
+.image__loginlogo {
+  width: 200px;
+  margin-top: 30px;
+  margin-bottom: 30px;
 }
 
 .hamburgermenu__row {
@@ -424,6 +432,10 @@ main {
   display: flex;
 }
 
+.body__background {
+  background-color: #F9F9F9;
+}
+
 .button {
   background-color: white;
   border: 0;
@@ -592,6 +604,10 @@ h2 {
 .test {
   width: 100%;
   height: 0px;
+}
+
+.hidden {
+  display: none !important;
 }
 
 .animtext {
@@ -1237,10 +1253,6 @@ h2 {
   width: 100vw;
   height: 100vh;
   padding: 20px;
-  display: none;
-  -webkit-transition: opacity .5s ease;
-  transition: opacity .5s ease;
-  opacity: 0;
 }
 
 .modal__backdrop {
@@ -1269,12 +1281,6 @@ h2 {
   height: 300px;
   width: 100%;
   max-width: 400px;
-  -webkit-transition: -webkit-transform .5s ease;
-  transition: -webkit-transform .5s ease;
-  transition: transform .5s ease;
-  transition: transform .5s ease, -webkit-transform .5s ease;
-  -webkit-transform: translate(0px, -500px);
-          transform: translate(0px, -500px);
   position: relative;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
@@ -1283,6 +1289,15 @@ h2 {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+
+.modal__content--login {
+  background-color: white;
+  position: relative;
+  color: black;
+  height: auto;
+  padding: 40px;
+  padding-bottom: 60px;
 }
 
 .modal__content--two {
@@ -1329,6 +1344,82 @@ h2 {
   color: #EA3F4F;
   -webkit-transition: opacity 0.1s ease-in-out;
   transition: opacity 0.1s ease-in-out;
+}
+
+.modal__close--login {
+  height: 30px;
+  width: 30px;
+  color: white;
+  font-family: "Fira Mono", "Roboto Mono", monospace;
+  border: 0;
+  background-color: black;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.modal__input {
+  width: 100%;
+  height: 40px;
+  margin-top: 15px;
+  border: solid 1px;
+  padding: 15px;
+  border: solid 1px #B3B3B3;
+}
+
+.modal__button {
+  background-color: #EA3F4F;
+  height: 40px;
+  border: 0px;
+  color: white;
+}
+
+.modal__button--alt {
+  color: black;
+  background-color: #eeeeee;
+}
+
+.modal__form {
+  width: 100%;
+}
+
+.modal__bottomcontainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.modal__sepcontainer {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  height: 25px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.modal__sepline {
+  width: 40%;
+  height: 1px;
+  background-color: #B3B3B3;
+}
+
+.modal__septext {
+  margin: 0;
+  font-size: 16px;
 }
 
 @media (max-width: 1300px) {
@@ -1743,5 +1834,200 @@ h2 {
   .button__shadow--footer {
     width: 100px;
   }
+}
+
+.productForm {
+  margin-left: 50px;
+  margin-top: 50px;
+}
+
+.productForm__label {
+  display: block;
+  margin-top: 10px;
+}
+
+.productForm__label--checkbox {
+  margin-top: 2px;
+}
+
+.productForm__input {
+  display: block;
+}
+
+.productForm__btn {
+  margin-top: 15px;
+  display: block;
+}
+
+.productForm__success {
+  color: green;
+}
+
+.productForm__error {
+  color: red;
+}
+
+.productForm__img {
+  width: 200px;
+  margin: 4px 10px 0 0;
+}
+
+.productForm__images {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.product {
+  background-color: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 230px;
+  -webkit-box-shadow: 0px 0px 5px 1px #ebebeb;
+          box-shadow: 0px 0px 5px 1px #ebebeb;
+  margin: 15px;
+  -webkit-transition: all .4s ease;
+  transition: all .4s ease;
+}
+
+.product__tag {
+  position: relative;
+}
+
+.product__tag--label {
+  position: absolute;
+  top: -103px;
+  left: 0px;
+  height: 25px;
+  width: 36px;
+  font-size: 12px;
+  line-height: 25px;
+  text-align: center;
+  color: white;
+  font-family: "Lato";
+  background-color: #EA3F4F;
+}
+
+.product__tag--label--new {
+  background-color: #EA9639;
+}
+
+.product__rate {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  height: 20px;
+}
+
+.product__score {
+  margin-left: 5px;
+  font-family: "Roboto Mono", monospace;
+  font-weight: 300;
+  line-height: 20px;
+  font-size: 13px;
+  color: #999999;
+  padding-bottom: 2px;
+}
+
+.product__car {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 40px;
+  height: 30px;
+  background-color: #EA3F4F;
+  margin-bottom: 10px;
+  margin-right: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.product__img {
+  width: 230px;
+}
+
+.product__bag {
+  width: 17px;
+  margin-bottom: 2px;
+}
+
+.product__discount {
+  color: #999999;
+  margin-left: 5px;
+  font-size: 12px;
+  font-family: "Roboto Mono", monospace;
+  font-weight: 300;
+  text-decoration: line-through;
+  line-height: 20px;
+}
+
+.product__info {
+  padding: 10px;
+  padding-left: 15px;
+  height: 110px;
+  position: relative;
+}
+
+.product__title {
+  margin: 0px;
+  font-size: 14px;
+  font-weight: 700;
+  color: #999999;
+}
+
+.product__price {
+  color: black;
+  font-family: "Fira Mono", "Roboto Mono", monospace;
+  position: absolute;
+  margin-bottom: 15px;
+  margin-left: 15px;
+  height: 20px;
+  line-height: 20px;
+  bottom: 0px;
+  left: 0px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  height: 20px;
+}
+
+.product__price--whole {
+  font-size: 15px;
+}
+
+.product__star {
+  width: 16px;
+}
+
+.product:hover {
+  -webkit-transform: translateY(-10px);
+          transform: translateY(-10px);
+  -webkit-box-shadow: 0px 40px 19px -30px rgba(216, 216, 216, 0.54);
+          box-shadow: 0px 40px 19px -30px rgba(216, 216, 216, 0.54);
+}
+
+.list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  padding: 15px;
 }
 /*# sourceMappingURL=main.css.map */

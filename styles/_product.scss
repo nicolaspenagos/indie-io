@@ -1,0 +1,112 @@
+.product {
+    background-color: white;
+    display: flex;
+    width: 230px;
+    box-shadow: 0px 0px 5px 1px rgb(235, 235, 235);
+    margin: 15px;
+    transition: all .4s ease;
+    &__tag {
+        position: relative;
+        &--label {
+            position: absolute;
+            top: -103px;
+            left: 0px;
+            height: 25px;
+            width: 36px;
+            font-size: 12px;
+            line-height: 25px;
+            text-align: center;
+            color: white;
+            font-family: $font-main;
+            background-color: $pink-color;
+            &--new {
+                background-color: $orange-color;
+            }
+        }
+    }
+    &__rate {
+        display: flex;
+        flex-direction: row;
+        height: 20px;
+    }
+    &__score {
+        margin-left: 5px;
+        font-family: $font-roboto;
+        font-weight: 300;
+        line-height: 20px;
+        font-size: 13px;
+        color: $product-text-color;
+        padding-bottom: 2px;
+    }
+    &__car {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        width: 40px;
+        height: 30px;
+        background-color: $pink-color;
+        margin-bottom: 10px;
+        margin-right: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    &__img {
+        width: 230px;
+    }
+    &__bag {
+        width: 17px;
+        margin-bottom: 2px;
+    }
+    &__discount {
+        color: $product-text-color;
+        margin-left: 5px;
+        font-size: 12px;
+        font-family: $font-roboto;
+        font-weight: 300;
+        text-decoration: line-through;
+        line-height: 20px;
+    }
+    &__info {
+        padding: 10px;
+        padding-left: 15px;
+        height: 110px;
+        position: relative;
+    }
+    &__title {
+        margin: 0px;
+        font-size: 14px;
+        font-weight: 700;
+        color: $product-text-color;
+    }
+    &__price {
+        color: black;
+        font-family: $font-mono;
+        position: absolute;
+        margin-bottom: 15px;
+        margin-left: 15px;
+        height: 20px;
+        line-height: 20px;
+        bottom: 0px;
+        left: 0px;
+        display: flex;
+        flex-direction: row;
+        height: 20px;
+        &--whole {
+            font-size: 15px;
+        }
+    }
+    &__star {
+        width: 16px;
+    }
+    &:hover {
+        transform: translateY(-10px);
+        box-shadow: 0px 40px 19px -30px rgba(216, 216, 216, 0.54);
+    }
+}
+
+.list {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 15px;
+}

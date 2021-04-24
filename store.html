@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./styles/main.css">
+</head>
+
+<body class="body__background">
+
+    <header class="header">
+        <div class="header__container">
+            <img class="header__logo" src="./images/logo.png">
+            <div class="header__acontainer">
+                <h1 class="banner__anim">Fine and share indie games..<span class="span__anim">&#160</span></h1>
+            </div>
+
+        </div>
+
+        <section class="header__items">
+            <div class="hamburgermenu">
+                <div class="hamburgermenu__row">
+
+                </div>
+                <div class="hamburgermenu__row">
+
+                </div>
+                <div class="hamburgermenu__row">
+
+                </div>
+
+            </div>
+            <input class="input" placeholder="Search"></input>
+        </section>
+    </header>
+
+    <a href="/store.html?type=t-shirt">View T-Shirts</a>
+    <a href="/store.html?type=mug">View Mugs</a>
+    <a href="/store.html?type=sticker">View Stickers</a>
+
+    <form class="filters">
+        <label for="type" class="productForm__label">Type of product</label>
+        <select id="type" class="productForm__input" name="type">
+      <option value="">Select a type</option>
+      <option value="sticker">Sticker</option>
+      <option value="t-shirt">T-Shirt</option>
+      <option value="mug">Mug</option>
+    </select>
+
+        <label class="productForm__label productForm__label--checkbox">
+      <input data-type="t-shirt" class="productForm__checkbox" type="checkbox" name="test">
+      T-Shirt
+    </label>
+        <label class="productForm__label productForm__label--checkbox">
+      <input data-type="mug" class="productForm__checkbox" type="checkbox" name="test">
+      Mug
+    </label>
+        <label class="productForm__label productForm__label--checkbox">
+      <input data-type="sticker" class="productForm__checkbox" type="checkbox" name="test">
+      Sticker
+    </label>
+
+        <label for="price" class="productForm__label">Price range</label>
+        <select id="price" class="productForm__input" name="price">
+      <option value="">Select a type</option>
+      <option value="0">less than 10000</option>
+      <option value="1">between 10000 and 30000</option>
+      <option value="2">more than 30000</option>
+    </select>
+    </form>
+
+    <section class="list">
+
+
+    </section>
+
+
+
+    <script src="https://www.gstatic.com/firebasejs/8.3.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.3.2/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.3.2/firebase-storage.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.3.2/firebase-auth.js"></script>
+    <script src="./scripts/general.js"></script>
+    <script src="./scripts/store.js"></script>
+</body>
+
+</html>

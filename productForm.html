@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles/main.css">
+    <title>productForm</title>
+</head>
+
+<body>
+
+    <form class="productForm">
+
+        <p class="productForm__loader hidden">
+            Loading...
+        </p>
+
+        <p class="productForm__success hidden">
+            Document successfully added
+        </p>
+
+        <p class="productForm__error hidden">
+            We had a problem, try again
+        </p>
+
+        <label class="productForm__label">
+           Name
+          <input class="productForm__input" name="name" type="text" placeholder="Name of the product">
+        </label>
+
+        <label class="productForm__label">
+          Price
+          <input id="price" class="productForm__input" type="number" name="price">
+        </label>
+
+        <label class="productForm__Label">
+          Popularity
+           <select class="productForm__input" name="popularity">
+            <option value="1">1 star</option>
+            <option value="2">2 stars</option>
+            <option value="3">3 stars</option>
+            <option value="4">4 stars</option>
+            <option value="5">5 stars</option>
+          </select>
+          
+        </label>
+
+        <label class="productForm__Label">
+          Discount
+          <select class="productForm__input" name="discount">
+            <option value="1">No discount</option>
+            <option value="0">New!</option>
+            <option value="0.75">25%</option>
+            <option value="0.5">50%</option>
+          </select>
+        </label>
+
+        <label class="productForm__label">
+          Release year
+          <input id="year" type="number" min="1980" max="2021" step="1" value="2016" />
+        </label>
+
+        <label class="productForm__label">
+          Minimun CPU
+        <select class="productForm__input" name="cpu">
+          <option value="">Select a type</option>
+          <option value="3">Intel I3</option>
+          <option value="5">Intel I5</option>
+          <option value="7">Intel I3</option>
+        </select>
+      </label>
+
+        <label class="productForm__label">
+          Minimun RAM
+        <select class="productForm__input" name="ram">
+          <option value="">Select a type</option>
+          <option value="2">2gb</option>
+          <option value="4">4gb</option>
+          <option value="6">6gb</option>
+          <option value="8">8gb</option>
+        </select>
+      </label>
+
+        <label class="productForm__label">
+          Operative System
+        <select class="productForm__input" name="os">
+          <option value="">Select an Os</option>
+          <option value="0">MacOS</option>
+          <option value="1">Windows</option>
+          <option value="2">MacOS and Windows</option>
+        </select>
+      </label>
+
+        <label for="description" class="productForm__label">
+          Description:
+        </label>
+        <textarea class="productForm__input" id="description" name="description" rows="5" cols="33">
+         
+        </textarea>
+
+        <label for="image" class="productForm__label">Image</label>
+        <div class="productForm__images"></div>
+        <input accept=".jpg,.png,.webp,.jfif" id="image" class="productForm__input" name="image" type="file">
+
+
+        <button class="productForm__btn" type="submit">send</button>
+
+        <!--
+        <div class="tshirtFields hidden">
+            <label class="productForm__label">Sizes</label>
+            <label class="productForm__label productForm__label--checkbox">
+            <input class="productForm__checkbox" type="checkbox" name="size_s">
+            Size S
+          </label>
+            <label class="productForm__label productForm__label--checkbox">
+            <input class="productForm__checkbox" type="checkbox" name="size_m">
+            Size M
+          </label>
+            <label class="productForm__label productForm__label--checkbox">
+            <input class="productForm__checkbox" type="checkbox" name="size_l">
+            Size L
+          </label>
+        </div>
+
+        <div class="stickerFields hidden">
+            <label class="productForm__label">Sizes</label>
+            <label class="productForm__label productForm__label--checkbox">
+            <input class="productForm__checkbox" type="checkbox" name="size_10">
+            10cm
+          </label>
+            <label class="productForm__label productForm__label--checkbox">
+            <input class="productForm__checkbox" type="checkbox" name="size_20">
+            20cm
+          </label>
+        </div>
+
+        <div class="mugFields hidden">
+            <label for="color" class="productForm__label">Color</label>
+            <input id="color" type="color" name="color">
+        </div>
+
+        <label for="image" class="productForm__label">Image</label>
+        <div class="productForm__images"></div>
+        <input multiple accept=".jpg,.png,.webp,.jfif" id="image" class="productForm__input" name="image" type="file">
+
+        <button class="productForm__btn" type="submit">send</button>-->
+    </form>
+
+</body>
+
+</html>
+
+<script src="https://www.gstatic.com/firebasejs/8.3.2/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.3.2/firebase-firestore.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.3.2/firebase-storage.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.3.2/firebase-auth.js"></script>
+
+<script src="./scripts/general.js"></script>
+<script src="./scripts/productForm.js"></script>
+<script src="./scripts/authmodal.js"></script>

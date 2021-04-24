@@ -6,9 +6,9 @@
     width: 100vw;
     height: 100vh;
     padding: 20px;
-    display: none;
-    transition: opacity .5s ease;
-    opacity: 0;
+    //display: none;
+    //transition: opacity .5s ease;
+    // opacity: 0;
     &__backdrop {
         position: absolute;
         left: 0;
@@ -29,12 +29,20 @@
         height: 300px;
         width: 100%;
         max-width: 400px;
-        transition: transform .5s ease;
-        transform: translate(0px, -500px);
+        // transition: transform .5s ease;
+        // transform: translate(0px, -500px);
         position: relative;
         justify-content: center;
         text-align: center;
         align-items: center;
+        &--login {
+            background-color: white;
+            position: relative;
+            color: black;
+            height: auto;
+            padding: 40px;
+            padding-bottom: 60px;
+        }
         &--two {
             margin-top: 50px;
             height: 400px;
@@ -69,5 +77,61 @@
             color: $pink-color;
             transition: opacity 0.1s ease-in-out;
         }
+    }
+    &__close {
+        &--login {
+            height: 30px;
+            width: 30px;
+            color: white;
+            font-family: $font-mono;
+            border: 0;
+            background-color: black;
+            position: absolute;
+            top: 0;
+            right: 0;
+        }
+    }
+    &__input {
+        width: 100%;
+        height: 40px;
+        margin-top: 15px;
+        border: solid 1px;
+        padding: 15px;
+        border: solid 1px $light-gray;
+    }
+    &__button {
+        background-color: $pink-color;
+        height: 40px;
+        border: 0px;
+        color: white;
+        &--alt {
+            color: black;
+            background-color: $very-light-gray;
+        }
+    }
+    &__form {
+        width: 100%;
+    }
+    &__bottomcontainer {
+        display: flex;
+        flex-direction: column;
+    }
+    &__sepcontainer {
+        margin-top: 20px;
+        margin-bottom: 20px;
+        height: 25px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+    }
+    &__sepline {
+        width: 40%;
+        height: 1px;
+        background-color: $light-gray;
+    }
+    &__septext {
+        margin: 0;
+        font-size: 16px;
     }
 }

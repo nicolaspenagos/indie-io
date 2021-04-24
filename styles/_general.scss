@@ -22,6 +22,10 @@ main {
     display: flex;
 }
 
+.body__background {
+    background-color: $body-background-color;
+}
+
 .button {
     background-color: white;
     border: 0;
@@ -163,4 +167,8 @@ h2 {
 .test {
     width: 100%;
     height: 0px;
+}
+
+.hidden {
+    display: none !important;
 }
