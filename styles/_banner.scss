@@ -22,6 +22,18 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    &--store {
+        height: 300px;
+        flex-direction: row;
+        animation: none;
+        background-image: url('../images/banner__two.png');
+        &--text {
+            position: absolute;
+            left: 110px;
+            bottom: 80px;
+            opacity: 0.8;
+        }
+    }
     &__info {
         height: 560px;
         width: 75%;
@@ -132,6 +144,9 @@
     flex-direction: row;
     justify-content: center;
     align-items: center;
+    &--store {
+        align-self: flex-start;
+    }
     &__item {
         font-family: Roboto Mono, monospace;
         font-weight: 900;

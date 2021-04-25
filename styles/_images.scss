@@ -86,4 +86,22 @@
         margin-top: 30px;
         margin-bottom: 30px;
     }
+    &__storeasset {
+        position: absolute;
+        width: 160px;
+        left: 0;
+        margin-left: 120px;
+        margin-top: 15px;
+    }
+    &__filter {
+        height: 85px;
+        position: absolute;
+        right: 0px;
+        &--top {
+            top: 0;
+        }
+        &--bottom {
+            margin-bottom: 3px;
+        }
+    }
 }

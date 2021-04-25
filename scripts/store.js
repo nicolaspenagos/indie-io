@@ -2,7 +2,6 @@ const list = document.querySelector('.list');
 
 const handleCollectionResult = (querySnapshot) => {
 
-    console.log("hola");
 
     list.innerHTML = '';
     querySnapshot.forEach((doc) => {
