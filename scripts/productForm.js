@@ -29,16 +29,27 @@ productForm.addEventListener('submit', function(event) {
     event.preventDefault();
 
     let tempDiscount = 1;
+    let toRealPrice = 1;
     console.log(productForm.discount.value);
     if (productForm.discount.value === '0.5') {
         tempDiscount = 0.5;
+        toRealPrice = 0.5;
     } else if (productForm.discount.value === '0.75') {
         tempDiscount = 0.75;
+        toRealPrice = 0.75;
     } else if (productForm.discount.value === '0') {
         tempDiscount = 0;
     }
 
     console.log(tempDiscount)
+    let performanceNumber = (parseFloat(productForm.ram.value) + parseFloat(productForm.cpu.value));
+
+    let performanceString = "MOD";
+    if (performanceNumber < 6) {
+        performanceString = "LOW";
+    } else if (performanceNumber > 14) {
+        performanceString = "HIGH";
+    }
 
     const product = {
         name: productForm.name.value,
@@ -50,7 +61,10 @@ productForm.addEventListener('submit', function(event) {
         discount: tempDiscount,
         popularity: parseFloat(productForm.popularity.value),
         type: productForm.type.value,
-        priceReal: parseFloat(productForm.price.value) * tempDiscount;
+        priceReal: parseFloat(productForm.price.value) * toRealPrice,
+        performance: performanceString,
+        year: productForm.year.value
+
 
     };
 

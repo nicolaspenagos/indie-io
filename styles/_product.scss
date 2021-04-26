@@ -5,6 +5,25 @@
     box-shadow: 0px 0px 5px 1px rgb(235, 235, 235);
     margin: 15px;
     transition: all .4s ease;
+    &__performance {
+        font-family: $font-mono;
+        font-size: 13px;
+        display: flex;
+        position: absolute;
+        top: 0px;
+        right: 0px;
+        margin-top: 11px;
+        margin-right: 13px;
+        &--green {
+            color: #53E06A;
+        }
+        &--purple {
+            color: #6E7DF8;
+        }
+        &--red {
+            color: $pink-color;
+        }
+    }
     &__tag {
         position: relative;
         &--label {

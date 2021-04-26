@@ -2,6 +2,8 @@ const list = document.querySelector('.list');
 
 const aFilters = document.querySelectorAll('.filterscontainer__filter');
 
+let productsCollection = db.collection('products');
+
 
 
 aFilters.forEach((value) => {
@@ -43,6 +45,21 @@ const handleCollectionResult = (querySnapshot) => {
         let innerStar = '';
         let pressed = true;
 
+        let performance = 'MOD';
+
+        //let color = '#6E7DF8'
+        let color = 'purple';
+        if (data.performance == 'LOW') {
+            performance = 'LOW';
+            color = 'green';
+            //color = '#53E06A';
+        } else if (data.performance == 'HIGH') {
+            performance = 'HIGH';
+            color = 'red';
+            //color = '#EB3F4F';
+
+        }
+
         for (let i = 1; i <= 5; i++) {
 
             if (pressed) {
@@ -75,6 +92,7 @@ const handleCollectionResult = (querySnapshot) => {
           </h1>
           <div class="product__price"> ${html}</div>
           <div class="product__car"><img src="./images/market_bag.png" class="product__bag"></div>
+          <div class="product__performance product__performance--${color}">${performance}</div>
         </div>
         </a>
       `;
@@ -89,7 +107,86 @@ const handleCollectionResult = (querySnapshot) => {
 
 }
 
-let productsCollection = db.collection('products');
+const filters = document.querySelector('.filters');
+
+filters.addEventListener('change', function() {
+
+  let productsCollection = db.collection('products');
+
+    if(filters.year.value){
+                productsCollection = productsCollection.where('year', '==', filters.year.value);
+            
+    }
+
+  
+
+    if (filters.price.value) {
+        switch (filters.price.value) {
+            case '1':
+
+                productsCollection = productsCollection.where('priceReal', '<', 6);
+                break;
+            case '2':
+
+                productsCollection = productsCollection.where('priceReal', '>=', 6).where('priceReal', '<', 16);
+                break;
+            case '3':
+
+                productsCollection = productsCollection.where('priceReal', '>=', 16).where('priceReal', '<', 31);
+                break;
+            case '4':
+
+                productsCollection = productsCollection.where('priceReal', '>=', 31).where('priceReal', '<', 61);
+                break;
+            case '5':
+
+                productsCollection = productsCollection.where('priceReal', '>', 60);
+                break;
+        }
+    }
+
+
+    if (filters.os.value) {
+        switch (filters.os.value) {
+            case '0':
+
+                productsCollection = productsCollection.where('os', '==', 0);
+                break;
+            case '1':
+
+                productsCollection = productsCollection.where('os', '==', 1);
+                break;
+            case '2':
+
+                productsCollection = productsCollection.where('os', '==', 2);
+                break;
+
+        }
+    }
+
+    if (filters.performance.value) {
+        switch (filters.performance.value) {
+            case '1':
+                productsCollection = productsCollection.where('performance', '==', 'LOW');
+                break;
+            case '2':
+                productsCollection = productsCollection.where('performance', '==', 'MOD');
+                break;
+            case '3':
+                productsCollection = productsCollection.where('performance', '==', 'HIGH');
+                break;
+
+        }
+    }
+
+
+
+    productsCollection.get().then(handleCollectionResult);
+
+
+});
+
+
 
 
 let params = new URLSearchParams(location.search);

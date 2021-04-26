@@ -109,38 +109,43 @@
 
     </section>
 
-    <section class="filters1container ">
+    <form class="filters filters1container ">
         <div class="filters1container--filter filters1container--filter--left">
             <label class="filters1container__text">Price range</label>
-            <select class="filters1container__select">
+            <select class="filters1container__select" name="price">
                 <option>Select a type</option>
-                <option>Up to $5</option>
-                <option>From $6 to $15</option>
-                <option>From $16 to $30</option>
-                <option>From $31 to $60</option>
-                <option>More than $60</option>
+                <option value="1"> Up to $5</option>
+                <option value="2">From $6 to $15</option>
+                <option value="3">From $16 to $30</option>
+                <option value="4">From $31 to $60</option>
+                <option value="5">More than $60</option>
 
             </select>
         </div>
         <div class="filters1container--filter">
             <label class="filters1container__text">Year</label>
-            <select class="filters1container__select">
-    <option>Select a type</option>
-            </select>
+            <input class="filters1container__select" placeholder="Type the year and enter" name="year">
         </div>
         <div class="filters1container--filter">
             <label class="filters1container__text">Operative System</label>
-            <select class="filters1container__select">
-    <option>Select a type</option>
+            <select class="filters1container__select" name="os">
+                <option>Select a type</option>
+                <option value="1">Windows</option>
+                <option value="0">MacOs</option>
+                <option value="2">Windows and MacOs </option>
             </select>
         </div>
         <div class="filters1container--filter filters1container--filter--right">
             <label class="filters1container__text">Performance</label>
-            <select class="filters1container__select">
-    <option>Select a type</option>
+            <select class="filters1container__select" name="performance">
+
+                <option>Select a type</option>
+                <option value="1">Low</option>
+                <option value="2">Moderate</option>
+                <option value="3">High</option>
             </select>
         </div>
-    </section>
+    </form>
 
 
 

@@ -135,7 +135,7 @@
 }
 
 .image__filter--bottom {
-  margin-top: 4px;
+  margin-top: 4 px;
   margin-bottom: 3px;
 }
 
@@ -1940,6 +1940,31 @@ h2 {
   margin: 15px;
   -webkit-transition: all .4s ease;
   transition: all .4s ease;
+}
+
+.product__performance {
+  font-family: "Fira Mono", "Roboto Mono", monospace;
+  font-size: 13px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  margin-top: 11px;
+  margin-right: 13px;
+}
+
+.product__performance--green {
+  color: #53E06A;
+}
+
+.product__performance--purple {
+  color: #6E7DF8;
+}
+
+.product__performance--red {
+  color: #EA3F4F;
 }
 
 .product__tag {
