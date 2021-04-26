@@ -1,5 +1,15 @@
 const list = document.querySelector('.list');
 
+const aFilters = document.querySelectorAll('.filterscontainer__filter');
+
+
+
+aFilters.forEach((value) => {
+    value.addEventListener('click', () => {
+        console.log('hola');
+    });
+});
+
 const handleCollectionResult = (querySnapshot) => {
 
 
@@ -80,4 +90,15 @@ const handleCollectionResult = (querySnapshot) => {
 }
 
 let productsCollection = db.collection('products');
-productsCollection.get().then(handleCollectionResult)
+
+
+let params = new URLSearchParams(location.search);
+if (params.get('type')) {
+    productsCollection = productsCollection.where('type', '==', params.get('type'));
+    let filter = document.querySelector('.' + params.get('type'));
+    let border = document.querySelector('.' + params.get('type') + '--border')
+    filter.classList.add('filterscontainer__filter--selected');
+    border.classList.add('filterscontainer__visible');
+}
+
+productsCollection.get().then(handleCollectionResult);

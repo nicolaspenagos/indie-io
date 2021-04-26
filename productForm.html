@@ -11,9 +11,34 @@
 
 <body>
 
-    <article class="banner">
+    <header class="header">
+        <div class="header__container">
+            <img class="header__logo" src="./images/logo.png">
+            <div class="header__acontainer">
+                <h1 class="banner__anim">Fine and share indie games..<span class="span__anim">&#160</span></h1>
+            </div>
 
-        <nav class="navigator">
+        </div>
+
+        <section class="header__items">
+            <div class="hamburgermenu">
+                <div class="hamburgermenu__row">
+
+                </div>
+                <div class="hamburgermenu__row">
+
+                </div>
+                <div class="hamburgermenu__row">
+
+                </div>
+
+            </div>
+
+        </section>
+    </header>
+    <article class="banner banner--store">
+
+        <nav class="navigator navigator--store">
             <div class="navigator__block">
                 <a class="navigator__item navigator__item--one" href="./index.html#infoblock">Who We Are</a>
                 <div class="navigator__feedback">
@@ -38,20 +63,10 @@
                 </div>
             </div>
         </nav>
-        <aside class="banner__info">
-            <article class="banner__card">
-                <div class="container">
-                    <h1 class="banner__text">Develop,<br>share<br>and play!</h1>
-                </div>
-                <div class="button__div">
-                    <button class="button">LEARN MORE </button>
-                    <div class="button__shadow">
 
-                    </div>
-                </div>
+        <img src="./images/store__asset.png" class="image__storeasset">
+        <h1 class="banner__text banner--store--text">GameShop</h1>
 
-            </article>
-        </aside>
     </article>
 
     <form class="productForm">
@@ -86,6 +101,18 @@
             <option value="3">3 stars</option>
             <option value="4">4 stars</option>
             <option value="5">5 stars</option>
+          </select>
+          
+        </label>
+
+        <label class="productForm__Label">
+          Type
+           <select class="productForm__input" name="type">
+            <option value="computer-videogames">Select a type</option>
+            <option value="computer-videogames">Computer Videogame</option>
+            <option value="handheld-videogames">Handheld Videogame</option>
+            <option value="console-videogames">Console Videogame</option>
+
           </select>
           
         </label>

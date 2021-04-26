@@ -48,7 +48,9 @@ productForm.addEventListener('submit', function(event) {
         os: parseFloat(productForm.os.value),
         description: productForm.description.value,
         discount: tempDiscount,
-        popularity: parseFloat(productForm.popularity.value)
+        popularity: parseFloat(productForm.popularity.value),
+        type: productForm.type.value,
+        priceReal: parseFloat(productForm.price.value) * tempDiscount;
 
     };
 

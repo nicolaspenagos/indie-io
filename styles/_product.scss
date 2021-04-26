@@ -151,18 +151,33 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    &__border {
+        width: 30%;
+        height: 105px;
+        padding: 5px;
+        outline: solid 1px;
+        outline-color: $light-gray;
+        visibility: hidden;
+    }
     &__filter {
         display: flex;
         align-items: center;
         position: relative;
-        height: 100;
-        width: 30%;
+        height: 100%;
+        width: 100%;
         vertical-align: middle;
         background-color: $filter-gray-color;
         box-shadow: 0px 0px 5px 1px rgb(235, 235, 235);
+        visibility: visible;
         &:hover {
+            background-color: #ff6877;
+        }
+        &--selected {
             background-color: $pink-color;
         }
+    }
+    &__visible {
+        visibility: visible;
     }
     &__text {
         color: white;

@@ -97,10 +97,13 @@
         height: 85px;
         position: absolute;
         right: 0px;
+        top: 0px;
+        margin-top: 7px;
         &--top {
-            top: 0;
+            margin-top: 0px;
         }
         &--bottom {
+            margin-top: 4 px;
             margin-bottom: 3px;
         }
     }

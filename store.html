@@ -82,20 +82,30 @@
     </section>
 
     <section class="filterscontainer">
-        <div class="filterscontainer__filter">
-            <p class="filterscontainer__text">Console<br>Videogames</p>
-            <img class="image__filter" src="./images/controller1.png">
 
+        <div class="filterscontainer__border console-videogames--border">
+            <a href="/store.html?type=console-videogames" name="console" class="filterscontainer__filter console-videogames">
+                <p class="filterscontainer__text">Console<br>Videogames</p>
+                <img class="image__filter" src="./images/controller1.png">
+            </a>
         </div>
-        <div class="filterscontainer__filter">
-            <p class="filterscontainer__text">Handheld<br>Videogames</p>
-            <img class="image__filter image__filter--top" src="./images/ds.png">
 
+
+        <div class="filterscontainer__border handheld-videogames--border">
+            <a href="/store.html?type=handheld-videogames" class="filterscontainer__filter handheld-videogames" name="handheld">
+                <p class="filterscontainer__text">Handheld<br>Videogames</p>
+                <img class="image__filter image__filter--top" src="./images/ds.png">
+
+            </a>
         </div>
-        <div class="filterscontainer__filter">
-            <p class="filterscontainer__text">Computer<br>Videogames</p>
-            <img class="image__filter image__filter--bottom" src="./images/keryboard1.png">
+
+        <div class="filterscontainer__border computer-videogames--border">
+            <a href="/store.html?type=computer-videogames" class="filterscontainer__filter computer-videogames" name="computer">
+                <p class="filterscontainer__text">Computer<br>Videogames</p>
+                <img class="image__filter image__filter--bottom" src="./images/keryboard1.png">
+            </a>
         </div>
+
 
     </section>
 
@@ -103,7 +113,12 @@
         <div class="filters1container--filter filters1container--filter--left">
             <label class="filters1container__text">Price range</label>
             <select class="filters1container__select">
-              <option>Select a type</option>
+                <option>Select a type</option>
+                <option>Up to $5</option>
+                <option>From $6 to $15</option>
+                <option>From $16 to $30</option>
+                <option>From $31 to $60</option>
+                <option>More than $60</option>
 
             </select>
         </div>
@@ -127,40 +142,10 @@
         </div>
     </section>
 
-    <a href="/store.html?type=t-shirt">View T-Shirts</a>
-    <a href="/store.html?type=mug">View Mugs</a>
-    <a href="/store.html?type=sticker">View Stickers</a>
 
-    <form class="filters">
-        <label for="type" class="productForm__label">Type of product</label>
-        <select id="type" class="productForm__input" name="type">
-      <option value="">Select a type</option>
-      <option value="sticker">Sticker</option>
-      <option value="t-shirt">T-Shirt</option>
-      <option value="mug">Mug</option>
-    </select>
 
-        <label class="productForm__label productForm__label--checkbox">
-      <input data-type="t-shirt" class="productForm__checkbox" type="checkbox" name="test">
-      T-Shirt
-    </label>
-        <label class="productForm__label productForm__label--checkbox">
-      <input data-type="mug" class="productForm__checkbox" type="checkbox" name="test">
-      Mug
-    </label>
-        <label class="productForm__label productForm__label--checkbox">
-      <input data-type="sticker" class="productForm__checkbox" type="checkbox" name="test">
-      Sticker
-    </label>
 
-        <label for="price" class="productForm__label">Price range</label>
-        <select id="price" class="productForm__input" name="price">
-      <option value="">Select a type</option>
-      <option value="0">less than 10000</option>
-      <option value="1">between 10000 and 30000</option>
-      <option value="2">more than 30000</option>
-    </select>
-    </form>
+
 
     <section class="list">
 
