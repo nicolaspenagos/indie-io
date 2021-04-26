@@ -2,7 +2,20 @@ const list = document.querySelector('.list');
 
 const aFilters = document.querySelectorAll('.filterscontainer__filter');
 
+const cartBtnNumber = document.querySelector('.cart__span');
+let cart = [];
+const cartFromLS = localStorage.getItem('store__cart');
+if (cartFromLS) {
+    cart = JSON.parse(cartFromLS);
+}
+
+
+
+
+
 let productsCollection = db.collection('products');
+
+
 
 
 
@@ -78,9 +91,9 @@ const handleCollectionResult = (querySnapshot) => {
         }
 
 
-
+        //<a href = "./product.html?id=${doc.id}&name=${data.name}" >
         product.innerHTML = `
-        <a href="./product.html?id=${doc.id}&name=${data.name}"> 
+        <a> 
         <img class="product__img" src="${img}" alt="">
         <div class="product__info">
         ${tag}
@@ -97,6 +110,16 @@ const handleCollectionResult = (querySnapshot) => {
         </a>
       `;
 
+        const cartBtn = product.querySelector('.product__car');
+        cartBtn.addEventListener('click', () => {
+            console.log('Hola');
+            cart.push(data);
+            localStorage.setItem('store__cart', JSON.stringify(cart));
+
+            cartBtnNumber.innerText = cart.length;
+
+            console.log(JSON.stringify(cart));
+        });
         list.appendChild(product);
 
 
@@ -111,14 +134,14 @@ const filters = document.querySelector('.filters');
 
 filters.addEventListener('change', function() {
 
-  let productsCollection = db.collection('products');
+    let productsCollection = db.collection('products');
 
-    if(filters.year.value){
-                productsCollection = productsCollection.where('year', '==', filters.year.value);
-            
+    if (filters.year.value) {
+        productsCollection = productsCollection.where('year', '==', filters.year.value);
+
     }
 
-  
+
 
     if (filters.price.value) {
         switch (filters.price.value) {

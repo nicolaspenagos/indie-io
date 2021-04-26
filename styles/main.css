@@ -1929,6 +1929,10 @@ h2 {
   display: flex;
 }
 
+.cart {
+  color: white;
+}
+
 .product {
   background-color: white;
   display: -webkit-box;
