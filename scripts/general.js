@@ -25,3 +25,16 @@ firebase.auth().onAuthStateChanged((user) => {
         // ...
     }
 });
+
+
+let cart = [];
+const cartFromLS = localStorage.getItem('store__cart');
+
+const cartBtnNumber = document.querySelector('.cart__span');
+
+if (cartFromLS) {
+    cart = JSON.parse(cartFromLS);
+    if (cartBtnNumber) {
+        cartBtnNumber.innerText = cart.length;
+    }
+}

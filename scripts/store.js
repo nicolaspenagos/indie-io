@@ -2,13 +2,6 @@ const list = document.querySelector('.list');
 
 const aFilters = document.querySelectorAll('.filterscontainer__filter');
 
-const cartBtnNumber = document.querySelector('.cart__span');
-let cart = [];
-const cartFromLS = localStorage.getItem('store__cart');
-if (cartFromLS) {
-    cart = JSON.parse(cartFromLS);
-}
-
 
 
 
