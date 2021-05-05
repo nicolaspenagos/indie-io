@@ -152,13 +152,35 @@
 
 
 
+    <section class="productscontainer">
+
+        <article class="productscontainer__orders">
+
+            <p class="filters1container__text">Order by</p>
+
+            <div class="productscontainer__orders--row">
+                <input type="radio" id="popularity" name="order" value="popularity" class="order">
+                <label for="popularity">Popularity</label><br>
+            </div>
+
+            <div class="productscontainer__orders--row">
+                <input type="radio" id="price_asc" name="order" value="price_asc" class="order">
+                <label for="price_asc">Price: Low to High</label><br>
+            </div>
+            <div class="productscontainer__orders--row">
+                <input type="radio" id="price_desc" name="order" value="price_desc" class="order">
+                <label for="price_desc">Price: High to Low</label><br>
+            </div>
+
+        </article>
+
+        <section class="list">
 
 
-    <section class="list">
+        </section>
 
 
     </section>
-
 
 
     <script src="https://www.gstatic.com/firebasejs/8.3.2/firebase-app.js"></script>

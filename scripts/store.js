@@ -1,6 +1,19 @@
 const list = document.querySelector('.list');
-
+const orders = document.querySelectorAll('.order');
 const aFilters = document.querySelectorAll('.filterscontainer__filter');
+
+let currentOrder = -1;
+
+
+orders.forEach((value) => {
+
+    value.addEventListener('click', () => {
+        currentOrder = value.value;
+        change();
+
+    });
+
+});
 
 
 
@@ -125,9 +138,15 @@ const handleCollectionResult = (querySnapshot) => {
 
 const filters = document.querySelector('.filters');
 
-filters.addEventListener('change', function() {
+filters.addEventListener('change', change);
+
+function change(argument) {
+    // bodylet productsCollection = db.collection('products');
+
 
     let productsCollection = db.collection('products');
+
+
 
     if (filters.year.value) {
         productsCollection = productsCollection.where('year', '==', filters.year.value);
@@ -137,6 +156,7 @@ filters.addEventListener('change', function() {
 
 
     if (filters.price.value) {
+
         switch (filters.price.value) {
             case '1':
 
@@ -157,6 +177,47 @@ filters.addEventListener('change', function() {
             case '5':
 
                 productsCollection = productsCollection.where('priceReal', '>', 60);
+                break;
+
+        }
+    }
+
+    if (currentOrder != -1) {
+
+        switch (currentOrder) {
+
+            case 'popularity':
+
+                if (filters.price.value) productsCollection = productsCollection.orderBy('priceReal', 'asc');
+
+
+                console.log('popularity-');
+                productsCollection = productsCollection.orderBy('popularity', 'dsc');
+
+                break;
+
+
+            case 'year':
+
+                if (filters.price.value) productsCollection = productsCollection.orderBy('priceReal', 'asc');
+                console.log('year-');
+                productsCollection = productsCollection.orderBy('year', 'asc');
+
+                break;
+
+            case 'price_asc':
+
+
+                productsCollection = productsCollection.orderBy('priceReal', 'asc');
+
+                break;
+
+
+            case 'price_desc':
+
+
+                productsCollection = productsCollection.orderBy('priceReal', 'dsc');
+
                 break;
         }
     }
@@ -184,23 +245,23 @@ filters.addEventListener('change', function() {
         switch (filters.performance.value) {
             case '1':
                 productsCollection = productsCollection.where('performance', '==', 'LOW');
+                console.log('LOW');
                 break;
             case '2':
                 productsCollection = productsCollection.where('performance', '==', 'MOD');
+                console.log('MOD');
                 break;
             case '3':
                 productsCollection = productsCollection.where('performance', '==', 'HIGH');
+                console.log('HIGH');
                 break;
 
         }
     }
 
 
-
     productsCollection.get().then(handleCollectionResult);
-
-
-});
+}
 
 
 
