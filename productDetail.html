@@ -17,14 +17,8 @@
             <div class="header__acontainer">
                 <h1 class="banner__anim">Fine and share indie games..<span class="span__anim">&#160</span></h1>
             </div>
-
-
-
         </div>
 
-        <a href="#" class="cart"><img class="image__marketbagfilled" src="./images/market_bag_filled.png">
-            <div class="cart__span"></div>
-        </a>
         <section class="header__items">
             <div class="hamburgermenu">
                 <div class="hamburgermenu__row">
@@ -82,110 +76,91 @@
             <p class="indicator__text">GameShop</p>
         </div>
         <div class="indicator__purple">
-            <p class="indicator__text">Products</p>
+            <p class="indicator__text">ProductDetail</p>
         </div>
     </section>
 
-    <section class="filterscontainer">
-
-        <div class="filterscontainer__border console-videogames--border">
-            <a href="/store.html?type=console-videogames" name="console" class="filterscontainer__filter console-videogames">
-                <p class="filterscontainer__text">Console<br>Videogames</p>
-                <img class="image__filter" src="./images/controller1.png">
-            </a>
+    <div class="productDetail__title">
+        <div>
+            <h1 class="productDetail__title__text gameName">Loading...</h1>
         </div>
-
-
-        <div class="filterscontainer__border handheld-videogames--border">
-            <a href="/store.html?type=handheld-videogames" class="filterscontainer__filter handheld-videogames" name="handheld">
-                <p class="filterscontainer__text">Handheld<br>Videogames</p>
-                <img class="image__filter image__filter--top" src="./images/ds.png">
-
-            </a>
-        </div>
-
-        <div class="filterscontainer__border computer-videogames--border">
-            <a href="/store.html?type=computer-videogames" class="filterscontainer__filter computer-videogames" name="computer">
-                <p class="filterscontainer__text">Computer<br>Videogames</p>
-                <img class="image__filter image__filter--bottom" src="./images/keryboard1.png">
-            </a>
-        </div>
-
-
-    </section>
-
-    <form class="filters filters1container ">
-        <div class="filters1container--filter filters1container--filter--left">
-            <label class="filters1container__text">Price range</label>
-            <select class="filters1container__select" name="price">
-                <option>Select a type</option>
-                <option value="1"> Up to $5</option>
-                <option value="2">From $6 to $15</option>
-                <option value="3">From $16 to $30</option>
-                <option value="4">From $31 to $60</option>
-                <option value="5">More than $60</option>
-
-            </select>
-        </div>
-        <div class="filters1container--filter">
-            <label class="filters1container__text">Year</label>
-            <input class="filters1container__select" placeholder="Type the year and enter" name="year">
-        </div>
-        <div class="filters1container--filter">
-            <label class="filters1container__text">Operative System</label>
-            <select class="filters1container__select" name="os">
-                <option>Select a type</option>
-                <option value="1">Windows</option>
-                <option value="0">MacOs</option>
-                <option value="2">Windows and MacOs </option>
-            </select>
-        </div>
-        <div class="filters1container--filter filters1container--filter--right">
-            <label class="filters1container__text">Performance</label>
-            <select class="filters1container__select" name="performance">
-
-                <option>Select a type</option>
-                <option value="1">Low</option>
-                <option value="2">Moderate</option>
-                <option value="3">High</option>
-            </select>
-        </div>
-    </form>
-
-
-
-
-    <section class="productscontainer">
-
-        <article class="productscontainer__orders">
-
-            <p class="filters1container__text">Order by</p>
-
-            <div class="productscontainer__orders--row">
-                <input type="radio" id="popularity" name="order" value="popularity" class="order">
-                <label for="popularity">Popularity</label><br>
+        <div class="productDetail__images">
+            <div class="productDetail_images">
+                <img src="./images/gray_star.png" class="product__star--detail star">
+                <img src="./images/gray_star.png" class="product__star--detail star">
+                <img src="./images/gray_star.png" class="product__star--detail star">
+                <img src="./images/gray_star.png" class="product__star--detail star">
+                <img src="./images/gray_star.png" class="product__star--detail star">
             </div>
-
-            <div class="productscontainer__orders--row">
-                <input type="radio" id="price_asc" name="order" value="price_asc" class="order">
-                <label for="price_asc">Price: Low to High</label><br>
+            <div class="productDetail__rate">
+                <div class="product__score product__score--detail starLabel">Loading...</div>
             </div>
-            <div class="productscontainer__orders--row">
-                <input type="radio" id="price_desc" name="order" value="price_desc" class="order">
-                <label for="price_desc">Price: High to Low</label><br>
-            </div>
+        </div>
 
-        </article>
-
-        <section class="list">
-
+    </div>
+    <article class="productDetail">
+        <section class="productDetail__container productDetail__container--left">
 
         </section>
+        <section class="productDetail__container productDetail__container--center">
+            <div class="productDetail__currentImage--div">
+                <img class="productDetail__currentImage" src="./images/pureya-gameplay1.png">
+            </div>
 
+        </section>
+        <section class="productDetail__container productDetail__container--right">
+            <div class="productDetail__price">
+                <h1 class="productDetail__price--real gamePrice">Loading...</h1>
+                <h3 class="productDetail__price--discount gameDiscount"></h3>
+            </div>
+            <div class="productDetail__info">
+                <div class="productDetail__column">
+                    <img src="./images/cpu.png" class="image__cpu">
+                    <p class="productDetail__info--text cpu">Intel i7</p>
+                </div>
 
-    </section>
+                <div class="productDetail__sep">
 
-    <footer class="footer">
+                </div>
+                <div class="productDetail__column">
+                    <img src="./images/memory.png" class="image__ram">
+                    <p class="productDetail__info--text productDetail__info--bottom ram">8gb</p>
+                </div>
+                <div class="productDetail__sep">
+
+                </div>
+                <div class="productDetail__column">
+                    <img src="./images/calendar.png" class="image__calendar">
+                    <p class="productDetail__info--text year">2019</p>
+                </div>
+                <div class="productDetail__sep">
+
+                </div>
+                <div class="productDetail__column">
+                    <img src="./images/windows_black.png" class="image__os_black osImage">
+                    <p class="productDetail__info--text os">Windows</p>
+                </div>
+            </div>
+            <div class="productDetail__description">
+                <h2 class="productDetail__description__title">Description</h2>
+                <p class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis
+                    aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            </div>
+            <div class="productDetail__info productDetail__info--buttons">
+                <div class="productDetail__buttons">
+                    <button class="productDetail__button--counter subtractItemBtn">-</button>
+                    <p class="productDetail__button--text itemCounter">1</p>
+                    <button class="productDetail__button--counter addItemBtn">+</button>
+                </div>
+                <button class="productDetail__button">
+                    Add to cart
+                </button>
+            </div>
+
+        </section>
+    </article>
+
+    <footer class="footer footer--productDetail">
         <section class="footer__left">
             <div class="footer__bigcontainer">
 
@@ -219,13 +194,12 @@
             <img src="./images/facebook.png" class="image__facebook" loading="lazy">
         </section>
     </footer>
-
-    <script src="https://www.gstatic.com/firebasejs/8.3.2/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.3.2/firebase-firestore.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.3.2/firebase-storage.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.3.2/firebase-auth.js"></script>
-    <script src="./scripts/general.js"></script>
-    <script src="./scripts/store.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.3.2/firebase-app.js "></script>
+    <script src="https://www.gstatic.com/firebasejs/8.3.2/firebase-firestore.js "></script>
+    <script src="https://www.gstatic.com/firebasejs/8.3.2/firebase-storage.js "></script>
+    <script src="https://www.gstatic.com/firebasejs/8.3.2/firebase-auth.js "></script>
+    <script src="./scripts/general.js "></script>
+    <script src="./scripts/productDetail.js "></script>
 </body>
 
 </html>

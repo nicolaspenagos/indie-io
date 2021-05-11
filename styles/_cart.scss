@@ -1,0 +1,11 @@
+.checkout {
+    display: flex;
+    &__list {
+        width: 70%;
+        display: flex;
+        flex-wrap: wrap;
+    }
+    &__summary {
+        flex-grow: 1;
+    }
+}

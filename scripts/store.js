@@ -27,7 +27,7 @@ let productsCollection = db.collection('products');
 
 aFilters.forEach((value) => {
     value.addEventListener('click', () => {
-        console.log('hola');
+
     });
 });
 
@@ -47,6 +47,7 @@ const handleCollectionResult = (querySnapshot) => {
 
         let html = '';
         let tag = '';
+        let osImage = '';
 
         if (data.discount != 1 && data.discount != 0) {
             let p = data.price * data.discount;
@@ -58,6 +59,14 @@ const handleCollectionResult = (querySnapshot) => {
             if (data.discount == 0) {
                 tag = `<div class="product__tag--label product__tag--label--new">New!</div>`
             }
+        }
+
+        if (data.os == 1) {
+            osImage = '<img src="./images/mac.png" class="image__os">';
+        } else if (data.os == 2) {
+            osImage = '<img src="./images/windows.png" class="image__os">';
+        } else {
+            osImage = '<img src="./images/windows_and_mac.png" class="image__os">';
         }
 
         let stars = data.popularity;
@@ -99,7 +108,7 @@ const handleCollectionResult = (querySnapshot) => {
 
         //<a href = "./product.html?id=${doc.id}&name=${data.name}" >
         product.innerHTML = `
-        <a> 
+        <div> 
         <img class="product__img" src="${img}" alt="">
         <div class="product__info">
         ${tag}
@@ -107,24 +116,35 @@ const handleCollectionResult = (querySnapshot) => {
             <div class="product__stars">${innerStar}</div><div class="product__score">${data.popularity}.0</div>
           </div>
           <h1 class="product__title">
-            ${data.name}
+            ${data.name} (${data.year})
           </h1>
+          <a href="./productDetail.html?id=${doc.id}&name=${data.name}" class="product__link">See details</a>
+
           <div class="product__price"> ${html}</div>
           <div class="product__car"><img src="./images/market_bag.png" class="product__bag"></div>
+          ${osImage}
           <div class="product__performance product__performance--${color}">${performance}</div>
         </div>
-        </a>
+        </div>
       `;
 
         const cartBtn = product.querySelector('.product__car');
         cartBtn.addEventListener('click', () => {
-            console.log('Hola');
-            cart.push(data);
-            localStorage.setItem('store__cart', JSON.stringify(cart));
 
+            cart.push(data);
+
+
+            cartBtn.classList.add('product__car__pressed');
+
+            setTimeout(() => {
+                cartBtn.classList.remove('product__car__pressed');
+
+            }, 200);
+            localStorage.setItem('store__cart', JSON.stringify(cart));
             cartBtnNumber.innerText = cart.length;
 
-            console.log(JSON.stringify(cart));
+
+
         });
         list.appendChild(product);
 
@@ -191,8 +211,8 @@ function change(argument) {
                 if (filters.price.value) productsCollection = productsCollection.orderBy('priceReal', 'asc');
 
 
-                console.log('popularity-');
-                productsCollection = productsCollection.orderBy('popularity', 'dsc');
+
+                productsCollection = productsCollection.orderBy('popularity', 'desc');
 
                 break;
 
@@ -200,7 +220,7 @@ function change(argument) {
             case 'year':
 
                 if (filters.price.value) productsCollection = productsCollection.orderBy('priceReal', 'asc');
-                console.log('year-');
+
                 productsCollection = productsCollection.orderBy('year', 'asc');
 
                 break;
@@ -216,7 +236,7 @@ function change(argument) {
             case 'price_desc':
 
 
-                productsCollection = productsCollection.orderBy('priceReal', 'dsc');
+                productsCollection = productsCollection.orderBy('priceReal', 'desc');
 
                 break;
         }
@@ -227,15 +247,15 @@ function change(argument) {
         switch (filters.os.value) {
             case '0':
 
-                productsCollection = productsCollection.where('os', '==', 0);
+                productsCollection = productsCollection.where('os', '==', 1);
                 break;
             case '1':
 
-                productsCollection = productsCollection.where('os', '==', 1);
+                productsCollection = productsCollection.where('os', '==', 2);
                 break;
             case '2':
 
-                productsCollection = productsCollection.where('os', '==', 2);
+                productsCollection = productsCollection.where('os', '==', 3);
                 break;
 
         }
@@ -245,15 +265,15 @@ function change(argument) {
         switch (filters.performance.value) {
             case '1':
                 productsCollection = productsCollection.where('performance', '==', 'LOW');
-                console.log('LOW');
+
                 break;
             case '2':
                 productsCollection = productsCollection.where('performance', '==', 'MOD');
-                console.log('MOD');
+
                 break;
             case '3':
                 productsCollection = productsCollection.where('performance', '==', 'HIGH');
-                console.log('HIGH');
+
                 break;
 
         }

@@ -1,16 +1,6 @@
 .productForm {
     margin-left: 50px;
     margin-top: 50px;
-    &__label {
-        display: block;
-        margin-top: 10px;
-        &--checkbox {
-            margin-top: 2px;
-        }
-    }
-    &__input {
-        display: block;
-    }
     &__btn {
         margin-top: 15px;
         display: block;
@@ -27,5 +17,19 @@
     }
     &__images {
         display: flex;
+    }
+}
+
+.field,
+.productForm {
+    &__label {
+        display: block;
+        margin-top: 10px;
+        &--checkbox {
+            margin-top: 2px;
+        }
+    }
+    &__input {
+        display: block;
     }
 }

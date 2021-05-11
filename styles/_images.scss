@@ -107,4 +107,25 @@
             margin-bottom: 3px;
         }
     }
+    &__marketbagfilled {
+        width: 20px;
+    }
+    &__os {
+        height: 15px;
+        position: absolute;
+        bottom: 18px;
+        right: 60px;
+    }
+    &__cpu {
+        height: 35px;
+    }
+    &__ram {
+        height: 40px;
+    }
+    &__calendar {
+        height: 30px;
+    }
+    &__os_black {
+        height: 25px;
+    }
 }

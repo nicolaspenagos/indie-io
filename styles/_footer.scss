@@ -4,6 +4,9 @@
     background-color: $main-black;
     display: flex;
     flex-direction: row;
+    &--productDetail {
+        margin-top: 200px
+    }
     &__left {
         width: 50%;
         padding: 100px;

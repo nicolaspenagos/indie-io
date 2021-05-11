@@ -38,3 +38,5 @@ if (cartFromLS) {
         cartBtnNumber.innerText = cart.length;
     }
 }
+
+const ORDERS_COLLECTION = db.collection('orders');
