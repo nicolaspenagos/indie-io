@@ -59,6 +59,10 @@
         font-size: 14px;
         font-weight: lighter;
         margin-left: 20px;
+        &__noleft {
+            float: right;
+            margin-left: auto;
+        }
     }
 }
 

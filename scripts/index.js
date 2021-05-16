@@ -226,6 +226,8 @@ let opacity = true;
 let refreshIntervalId;
 
 function handleCloseModal() {
+
+    console.log('Hola111');
     open = true;
     clearInterval(refreshIntervalId);
     clearInterval(refreshIntervalId1);

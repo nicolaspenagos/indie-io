@@ -64,6 +64,8 @@ db.collection('products').doc(id).get().then(
         let images = data.images;
         let thumbsHtml = '';
 
+        currentImage.setAttribute('src', images[0].url);
+
         for (let i = 0; i < images.length; i++) {
             thumbsHtml += `
             <div class="productDetail__image--div">

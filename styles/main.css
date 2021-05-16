@@ -255,6 +255,11 @@
   margin-left: 20px;
 }
 
+.banner__anim__noleft {
+  float: right;
+  margin-left: auto;
+}
+
 .span__anim {
   position: absolute;
   right: 0;
@@ -526,6 +531,13 @@ main {
   transition: ease-out 0.3s;
   position: relative;
   z-index: 1;
+}
+
+.button__logout {
+  background-color: transparent;
+  border: none;
+  color: white;
+  margin-left: 10px;
 }
 
 .button--tryme {
@@ -1332,6 +1344,8 @@ h2 {
   width: 100vw;
   height: 100vh;
   padding: 20px;
+  -webkit-transition: opacity .5s ease;
+  transition: opacity .5s ease;
 }
 
 .modal__backdrop {
@@ -1360,6 +1374,10 @@ h2 {
   height: 300px;
   width: 100%;
   max-width: 400px;
+  -webkit-transition: -webkit-transform .5s ease;
+  transition: -webkit-transform .5s ease;
+  transition: transform .5s ease;
+  transition: transform .5s ease, -webkit-transform .5s ease;
   position: relative;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
@@ -1499,6 +1517,11 @@ h2 {
 .modal__septext {
   margin: 0;
   font-size: 16px;
+}
+
+.modal__Error {
+  color: #EA3F4F;
+  font-size: 14px;
 }
 
 @media (max-width: 1300px) {
@@ -1923,19 +1946,6 @@ h2 {
   margin-top: 50px;
 }
 
-.productForm__label {
-  display: block;
-  margin-top: 10px;
-}
-
-.productForm__label--checkbox {
-  margin-top: 2px;
-}
-
-.productForm__input {
-  display: block;
-}
-
 .productForm__btn {
   margin-top: 15px;
   display: block;
@@ -1960,9 +1970,25 @@ h2 {
   display: flex;
 }
 
+.field__label,
+.productForm__label {
+  display: block;
+  margin-top: 10px;
+}
+
+.field__label--checkbox,
+.productForm__label--checkbox {
+  margin-top: 2px;
+}
+
+.field__input,
+.productForm__input {
+  display: block;
+}
+
 .cart {
   color: white;
-  margin-left: auto;
+  margin-left: 20px;
   position: relative;
 }
 
@@ -1997,6 +2023,25 @@ h2 {
   margin: 15px;
   -webkit-transition: all .4s ease;
   transition: all .4s ease;
+}
+
+.product__delete {
+  height: 40px;
+  background-color: #ff7371;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  color: white;
+}
+
+.product__delete:hover {
+  background-color: #EA3F4F;
 }
 
 .product__link {
@@ -2651,5 +2696,26 @@ h2 {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+}
+
+.checkout {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.checkout__list {
+  width: 70%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.checkout__summary {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
 }
 /*# sourceMappingURL=main.css.map */

@@ -11,18 +11,53 @@ firebase.initializeApp(firebaseConfig);
 
 const db = firebase.firestore();
 const storage = firebase.storage();
+const logOut = document.querySelector('.button__logout');
+const auth = firebase.auth();
+const userTag = document.querySelector('.usertag');
+
+let loggedUser = null;
+
+
+logOut.addEventListener('click', () => {
+
+
+    if (loggedUser != null) {
+        auth.signOut().then(
+            () => {
+
+            }
+        ).catch(
+            (error) => {
+                alert(error.message);
+            }
+        );
+    } else {
+
+        handleOpenModal();
+    }
+
+});
+
 
 
 firebase.auth().onAuthStateChanged((user) => {
     if (user) {
-        console.log('onAuthStateChanged', user);
+
+
 
         db.collection('users').doc(user.uid).get().then(function(doc) {
-            console.log(doc.data());
+
+            loggedUser = doc.data();
+            loggedUser.uid = user.uid;
+            userTag.innerText = loggedUser.email;
+            userLoggedIn();
         });
     } else {
         // User is signed out
         // ...
+        loggedUser = null;
+        userTag.innerText = '';
+        userLoggedOut();
     }
 });
 

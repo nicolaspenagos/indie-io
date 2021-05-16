@@ -6,9 +6,8 @@
     width: 100vw;
     height: 100vh;
     padding: 20px;
-    //display: none;
-    //transition: opacity .5s ease;
-    // opacity: 0;
+    // display: none;
+    transition: opacity .5s ease;
     &__backdrop {
         position: absolute;
         left: 0;
@@ -29,8 +28,8 @@
         height: 300px;
         width: 100%;
         max-width: 400px;
-        // transition: transform .5s ease;
-        // transform: translate(0px, -500px);
+        transition: transform .5s ease;
+        //transform: translate(0px, -800px);
         position: relative;
         justify-content: center;
         text-align: center;
@@ -133,5 +132,9 @@
     &__septext {
         margin: 0;
         font-size: 16px;
+    }
+    &__Error {
+        color: $pink-color;
+        font-size: 14px;
     }
 }

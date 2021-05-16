@@ -39,6 +39,12 @@ main {
     transition: ease-out 0.3s;
     position: relative;
     z-index: 1;
+    &__logout {
+        background-color: transparent;
+        border: none;
+        color: white;
+        margin-left: 10px;
+    }
     &--tryme {
         background-color: transparent;
         border: solid white 1px;

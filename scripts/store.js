@@ -5,6 +5,8 @@ const aFilters = document.querySelectorAll('.filterscontainer__filter');
 let currentOrder = -1;
 
 
+
+
 orders.forEach((value) => {
 
     value.addEventListener('click', () => {
@@ -125,6 +127,9 @@ const handleCollectionResult = (querySnapshot) => {
           ${osImage}
           <div class="product__performance product__performance--${color}">${performance}</div>
         </div>
+            <div class="product__delete showLoggedAdmin hidden">
+                Delete
+            </div>
         </div>
       `;
 
