@@ -126,7 +126,8 @@ productForm.addEventListener('submit', function(event) {
                             });
 
                             db.collection('products').doc(docRef.id).update({
-                                    images: images
+                                    images: images,
+                                    id: docRef.id
                                 }).then(function() {
                                     productFormLoader.classList.add('hidden');
                                     productFormSuccess.classList.remove('hidden');

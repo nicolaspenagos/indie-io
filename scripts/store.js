@@ -127,13 +127,24 @@ const handleCollectionResult = (querySnapshot) => {
           ${osImage}
           <div class="product__performance product__performance--${color}">${performance}</div>
         </div>
-            <div class="product__delete showLoggedAdmin hidden">
+            <div class="product__delete showLoggedAdmin hidden delete">
                 Delete
             </div>
         </div>
       `;
 
         const cartBtn = product.querySelector('.product__car');
+        const deleteBtn = product.querySelector('.delete');
+
+        deleteBtn.addEventListener('click', () => {
+            console.log(data.id);
+            db.collection('products').doc(data.id).delete().then(() => {
+                console.log("Document successfully deleted!");
+            }).catch((error) => {
+                console.error("Error removing document: ", error);
+            });;
+        });
+
         cartBtn.addEventListener('click', () => {
 
             cart.push(data);
