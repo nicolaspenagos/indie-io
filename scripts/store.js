@@ -213,7 +213,10 @@ function change(argument) {
 
             case 'popularity':
 
-                if (filters.price.value) productsCollection = productsCollection.orderBy('priceReal', 'asc');
+                if (filters.price.value && filters.price.value != 'Select a type') {
+                    productsCollection = productsCollection.orderBy('priceReal', 'asc')
+                    console.log(filters.price.value);
+                };
 
 
 
@@ -222,11 +225,11 @@ function change(argument) {
                 break;
 
 
-            case 'year':
+            case 'alpha_desc':
 
                 if (filters.price.value) productsCollection = productsCollection.orderBy('priceReal', 'asc');
 
-                productsCollection = productsCollection.orderBy('year', 'asc');
+                productsCollection = productsCollection.orderBy('name', 'desc');
 
                 break;
 
