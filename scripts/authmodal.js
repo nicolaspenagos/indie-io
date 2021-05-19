@@ -96,11 +96,27 @@ authForm.addEventListener('submit', function(event) {
                 var user = userCredential.user;
                 console.log(user);
 
-                db.collection('users').doc(user.uid).set({
+                const userDoc = {
                     firstname,
                     lastname: lastname,
                     email: email,
+                }
+
+                setLoggedUser(userDoc, user.uid);
+
+                db.collection('users').doc(user.uid).set({
+                    userDoc
+                }).then(() => {
+                    authForm.firstname.value = '';
+                    authForm.lastname.value = '';
+                    authForm.email.value = '';
+                    authForm.password.value = '';
                 });
+
+
+
+
+                handleCloseModal();
             })
             .catch((error) => {
                 modalError.innerText = error.message;

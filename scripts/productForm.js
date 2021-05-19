@@ -78,6 +78,22 @@ productForm.addEventListener('submit', function(event) {
     if (product.price < 1) {
         error += 'The product price can\'t be less than 1. <br/>';
     }
+    if (!product.ram) {
+        error += 'The product ram is required. <br/>';
+    }
+    if (!product.cpu) {
+        error += 'The product cpu is required. <br/>';
+    }
+    if (!product.os) {
+        error += 'The product os is required. <br/>';
+    }
+    if (!product.description) {
+        error += 'The product os is required. <br/>';
+    }
+
+
+
+
 
     if (error) {
         productFormError.innerHTML = error;
@@ -141,6 +157,16 @@ productForm.addEventListener('submit', function(event) {
         .catch(genericCatch);
 
 });
+
+//validateAuth
+const validateAuth = () => {
+
+    if (!loggedUser) {
+        window.location.href = './store.html';
+    }
+
+}
+
 
 
 

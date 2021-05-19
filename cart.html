@@ -18,10 +18,15 @@
                 <h1 class="banner__anim">Fine and share indie games..<span class="span__anim">&#160</span></h1>
             </div>
 
-            <a href="#" class="cart"><span class="cart__span"></span></a>
+
 
         </div>
 
+        <p class="banner__anim banner__anim__noleft usertag"></p>
+        <a href="./cart.html" class="cart showLoggedIn"><img class="image__marketbagfilled" src="./images/market_bag_filled.png">
+            <div class="cart__span"></div>
+        </a>
+        <button class="button__logout banner__anim">Log Out</button>
         <section class="header__items">
             <div class="hamburgermenu">
                 <div class="hamburgermenu__row">
@@ -67,11 +72,11 @@
         </nav>
 
         <img src="./images/store__asset.png" class="image__storeasset">
-        <h1 class="banner__text banner--store--text">GameShop</h1>
+        <h1 class="banner__text banner--store--text">ShoppingCart</h1>
 
     </article>
 
-    <main>
+    <main class="cart__main">
         <section class="checkout__list cartList">
 
 
@@ -98,7 +103,40 @@
     </main>
 
 
+    <footer class="footer">
+        <section class="footer__left">
+            <div class="footer__bigcontainer">
 
+                <h1 class="footer__text--header">Subscribe to our<br>newsletter</h1>
+                <div class="footer__container">
+                    <input class="footer__input" placeholder="Email">
+                    <div class="button__div button__div--footer">
+                        <button class="button">SUBMIT</button>
+                        <div class="button__shadow button__shadow--footer">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <img src="./images/responisve_logo.png" class="image__responsivelogo" loading="lazy">
+        </section>
+        <section class="footer__right">
+            <div class="footer__grid footer__grid--left">
+                <p class="text text__white text__heading text__mleft text__light text__footer">Legal</p>
+                <p class="text text__white text__heading text__mleft text__light text__footer">FAQ</p>
+                <p class="text text__white text__heading text__mleft text__light text__footer">About</p>
+                <p class="text text__white text__heading text__mleft text__light text__footer">Terms of use</p>
+
+            </div>
+            <div class="footer__grid">
+                <p class="text text__white text__heading text__mleft text__light text__footer">Private</p>
+                <p class="text text__white text__heading text__mleft text__light text__footer">Get in touch</p>
+                <p class="text text__white text__heading text__mleft text__light text__footer">Info</p>
+                <p class="text text__white text__heading text__mleft text__light text__footer">Creators</p>
+            </div>
+            <img src="./images/facebook.png" class="image__facebook" loading="lazy">
+        </section>
+    </footer>
 
 
 
@@ -107,7 +145,9 @@
     <script src="https://www.gstatic.com/firebasejs/8.3.2/firebase-storage.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.3.2/firebase-auth.js"></script>
     <script src="./scripts/general.js"></script>
+    <script src="./scripts/authmodal.js"></script>
     <script src="./scripts/cart.js"></script>
+    <script src="./scripts/authUtils.js"></script>
 </body>
 
 </html>

@@ -2,6 +2,8 @@ const list = document.querySelector('.list');
 const orders = document.querySelectorAll('.order');
 const aFilters = document.querySelectorAll('.filterscontainer__filter');
 
+
+
 let currentOrder = -1;
 
 
@@ -64,11 +66,11 @@ const handleCollectionResult = (querySnapshot) => {
         }
 
         if (data.os == 1) {
-            osImage = '<img src="./images/mac.png" class="image__os">';
+            osImage = '<img src="./images/mac.png" class="image__os ">';
         } else if (data.os == 2) {
-            osImage = '<img src="./images/windows.png" class="image__os">';
+            osImage = '<img src="./images/windows.png" class="image__os ">';
         } else {
-            osImage = '<img src="./images/windows_and_mac.png" class="image__os">';
+            osImage = '<img src="./images/windows_and_mac.png" class="image__os ">';
         }
 
         let stars = data.popularity;
@@ -123,7 +125,7 @@ const handleCollectionResult = (querySnapshot) => {
           <a href="./productDetail.html?id=${doc.id}&name=${data.name}" class="product__link">See details</a>
 
           <div class="product__price"> ${html}</div>
-          <div class="product__car"><img src="./images/market_bag.png" class="product__bag"></div>
+          <div class="product__car showLoggedIn hidden"><img src="./images/market_bag.png" class="product__bag"></div>
           ${osImage}
           <div class="product__performance product__performance--${color}">${performance}</div>
         </div>
@@ -136,18 +138,30 @@ const handleCollectionResult = (querySnapshot) => {
         const cartBtn = product.querySelector('.product__car');
         const deleteBtn = product.querySelector('.delete');
 
+
+
+
         deleteBtn.addEventListener('click', () => {
-            console.log(data.id);
-            db.collection('products').doc(data.id).delete().then(() => {
+
+
+            let stringId = data.id;
+
+
+            if (stringId == 'gVbjOBci5jsTJpmX4Pfi') {
+                console.log('Oe');
+            }
+
+            db.collection('products').doc(stringId).delete().then(() => {
+                location.reload();
                 console.log("Document successfully deleted!");
             }).catch((error) => {
                 console.error("Error removing document: ", error);
-            });;
+            });
         });
 
         cartBtn.addEventListener('click', () => {
 
-            cart.push(data);
+
 
 
             cartBtn.classList.add('product__car__pressed');
@@ -156,8 +170,14 @@ const handleCollectionResult = (querySnapshot) => {
                 cartBtn.classList.remove('product__car__pressed');
 
             }, 200);
-            localStorage.setItem('store__cart', JSON.stringify(cart));
-            cartBtnNumber.innerText = cart.length;
+            addToMyCart({
+                ...data,
+                id: doc.id,
+
+
+            });
+            //localStorage.setItem('store__cart', JSON.stringify(cart));
+
 
 
 
@@ -238,9 +258,13 @@ function change(argument) {
 
             case 'alpha_desc':
 
-                if (filters.price.value) productsCollection = productsCollection.orderBy('priceReal', 'asc');
 
-                productsCollection = productsCollection.orderBy('name', 'desc');
+
+                if (filters.price.value && filters.price.value != 'Select a type') {
+                    productsCollection = productsCollection.orderBy('priceReal', 'asc')
+                    console.log(filters.price.value);
+                };
+                productsCollection = productsCollection.orderBy('name');
 
                 break;
 

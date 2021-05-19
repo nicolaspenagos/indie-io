@@ -4,6 +4,16 @@ const checkoutForm = document.querySelector('.checkout__form');
 
 let total = 0;
 
+const validateAuth = () => {
+
+    if (!loggedUser) {
+        window.location.href = './store.html';
+    }
+
+}
+
+
+
 renderCart = () => {
     cart.forEach((data) => {
 
@@ -12,7 +22,7 @@ renderCart = () => {
 
         const product = document.createElement('div');
         product.classList.add("product");
-        let img = data.images[0] ? .url;
+        let img = data.images[0]?.url;
         if (!img) {
             img = './images/placeholder-image.png';
         }
@@ -118,5 +128,8 @@ renderCart = () => {
             //Enviar a pagina de agradeciniento
         });
     });
+
+    //validateAuth
+
 
 }

@@ -17,26 +17,83 @@ const userTag = document.querySelector('.usertag');
 
 let loggedUser = null;
 
+const CART_COLLECTION = db.collection('cart');
 
-logOut.addEventListener('click', () => {
+const addToMyCart = (product) => {
 
+    console.log('repedito1');
 
-    if (loggedUser != null) {
-        auth.signOut().then(
-            () => {
+    let repeated = false;
 
+    cart.forEach(
+        element => {
+            if (element.id == product.id) {
+                repeated = true;
             }
-        ).catch(
-            (error) => {
-                alert(error.message);
-            }
-        );
-    } else {
+        }
+    );
 
-        handleOpenModal();
+    if (!repeated) {
+        cart.push(product);
+        CART_COLLECTION.doc(loggedUser.uid).set({ cart });
+        cartBtnNumber.innerText = cart.length;
     }
 
-});
+
+
+
+
+
+
+}
+
+const getMyCart = (uid) => {
+    CART_COLLECTION.doc(uid).get().then(
+        snapshot => {
+
+            const data = snapshot.data();
+            if (!data) return;
+            if (cartBtnNumber)
+                cartBtnNumber.innerText = data.cart.length;
+            data.cart.forEach(
+                element => {
+                    cart.push(element);
+                }
+            );
+
+        }
+    )
+}
+
+const setLoggedUser = (info, id) => {
+    loggedUser = info;
+    loggedUser.uid = id;
+    userTag.innerText = loggedUser.email;
+    userLoggedIn();
+}
+
+if (logOut) {
+    logOut.addEventListener('click', () => {
+
+
+        if (loggedUser != null) {
+            auth.signOut().then(
+                () => {
+
+                }
+            ).catch(
+                (error) => {
+                    alert(error.message);
+                }
+            );
+        } else {
+
+            handleOpenModal();
+        }
+
+    });
+
+}
 
 
 
@@ -47,18 +104,30 @@ firebase.auth().onAuthStateChanged((user) => {
 
         db.collection('users').doc(user.uid).get().then(function(doc) {
 
-            loggedUser = doc.data();
-            loggedUser.uid = user.uid;
-            userTag.innerText = loggedUser.email;
-            userLoggedIn();
+            if (!doc.data()) return;
+            setLoggedUser(doc.data(), user.uid);
+            getMyCart(user.uid);
+            if (typeof validateAuth === 'function') {
+                validateAuth();
+            }
+
+
         });
     } else {
         // User is signed out
         // ...
         loggedUser = null;
-        userTag.innerText = '';
+
+        if (userTag)
+            userTag.innerText = '';
+        cart = [];
         userLoggedOut();
+        if (typeof validateAuth === 'function') {
+            validateAuth();
+        }
     }
+
+
 });
 
 
@@ -67,11 +136,6 @@ const cartFromLS = localStorage.getItem('store__cart');
 
 const cartBtnNumber = document.querySelector('.cart__span');
 
-if (cartFromLS) {
-    cart = JSON.parse(cartFromLS);
-    if (cartBtnNumber) {
-        cartBtnNumber.innerText = cart.length;
-    }
-}
+
 
 const ORDERS_COLLECTION = db.collection('orders');

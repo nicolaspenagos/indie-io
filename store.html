@@ -23,7 +23,7 @@
         </div>
 
         <p class="banner__anim banner__anim__noleft usertag"></p>
-        <a href="#" class="cart"><img class="image__marketbagfilled" src="./images/market_bag_filled.png">
+        <a href="./cart.html" class="cart showLoggedIn"><img class="image__marketbagfilled" src="./images/market_bag_filled.png">
             <div class="cart__span"></div>
         </a>
         <button class="button__logout banner__anim">Log Out</button>
@@ -117,6 +117,8 @@
     </section>
 
     <form class="filters filters1container ">
+
+
         <div class="filters1container--filter filters1container--filter--left">
             <label class="filters1container__text">Price range</label>
             <select class="filters1container__select" name="price">
@@ -129,6 +131,7 @@
 
             </select>
         </div>
+
         <div class="filters1container--filter">
             <label class="filters1container__text">Year</label>
             <input class="filters1container__select" placeholder="Type the year and enter" name="year">
@@ -159,30 +162,38 @@
 
     <section class="productscontainer">
 
-        <article class="productscontainer__orders">
+        <div>
+            <article class="productscontainer__orders">
 
-            <p class="filters1container__text">Order by</p>
+                <p class="filters1container__text">Order by</p>
 
-            <div class="productscontainer__orders--row">
-                <input type="radio" id="popularity" name="order" value="popularity" class="order">
-                <label for="popularity">Popularity</label><br>
-            </div>
+                <div class="productscontainer__orders--row">
+                    <input type="radio" id="popularity" name="order" value="popularity" class="order">
+                    <label for="popularity">Popularity</label><br>
+                </div>
 
-            <div class="productscontainer__orders--row">
-                <input type="radio" id="price_asc" name="order" value="price_asc" class="order">
-                <label for="price_asc">Price: Low to High</label><br>
-            </div>
-            <div class="productscontainer__orders--row">
-                <input type="radio" id="price_desc" name="order" value="price_desc" class="order">
-                <label for="price_desc">Price: High to Low</label><br>
-            </div>
-            <div class="productscontainer__orders--row">
-                <input type="radio" id="alpha_desc" name="order" value="alpha_desc" class="order">
-                <label for="aplha_desc">Name</label><br>
-            </div>
+                <div class="productscontainer__orders--row">
+                    <input type="radio" id="price_asc" name="order" value="price_asc" class="order">
+                    <label for="price_asc">Price: Low to High</label><br>
+                </div>
+                <div class="productscontainer__orders--row">
+                    <input type="radio" id="price_desc" name="order" value="price_desc" class="order">
+                    <label for="price_desc">Price: High to Low</label><br>
+                </div>
+                <div class="productscontainer__orders--row">
+                    <input type="radio" id="alpha_desc" name="order" value="alpha_desc" class="order">
+                    <label for="aplha_desc">Name</label><br>
+                </div>
 
-        </article>
 
+            </article>
+
+            <a href="./productForm.html" class="filterscontainer__filter filterscontainer__filter--editf showLoggedAdmin hidden">
+                <p class="filterscontainer__text">Edit Products</p>
+
+            </a>
+
+        </div>
         <section class="list">
 
 
