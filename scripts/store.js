@@ -110,6 +110,8 @@ const handleCollectionResult = (querySnapshot) => {
         }
 
 
+
+
         //<a href = "./product.html?id=${doc.id}&name=${data.name}" >
         product.innerHTML = `
         <div> 

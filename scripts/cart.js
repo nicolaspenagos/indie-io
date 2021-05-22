@@ -1,6 +1,17 @@
 const list = document.querySelector('.cartList');
 const totalSpan = document.querySelector('.checkout__total span');
 const checkoutForm = document.querySelector('.checkout__form');
+const itemsLabel = document.querySelectorAll('.items');
+const subtotal = document.querySelector('.subtotal');
+const tax = document.querySelector('.tax');
+const bagCounter = document.querySelector('.cart__span');
+const creditCard = document.querySelector('.ccnumber');
+const fullname = document.querySelector('.fullname');
+const address = document.querySelector('.address');
+const id = document.querySelector('.id');
+const checkOutButton = document.querySelector('.checkoutBtn');
+const error = document.querySelector('.error');
+let productsCounter = 0;
 
 let total = 0;
 
@@ -18,48 +29,27 @@ renderCart = () => {
     cart.forEach((data) => {
 
 
+        productsCounter++;
+
+        let lastone = '';
+        if (productsCounter == cart.length) {
+            lastone = 'cart__product--lastone';
+        }
+
+
+
         total += data.priceReal;
 
-        const product = document.createElement('div');
-        product.classList.add("product");
+        let product = document.createElement('div');
+
         let img = data.images[0]?.url;
         if (!img) {
             img = './images/placeholder-image.png';
         }
 
-        let html = '';
-        let tag = '';
-
-        if (data.discount != 1 && data.discount != 0) {
-            let p = data.price * data.discount;
-            html = '<div class="product__price--whole">$' + p + '</div>' + '<div class="product__discount">$' + data.price + '</div>';
-            tag = `<div class="product__tag--label">%${(1-data.discount)*100}</div>`;
-        } else {
-            html = '<div class="product__price--whole">$' + data.price + '</div>';
-
-            if (data.discount == 0) {
-                tag = `<div class="product__tag--label product__tag--label--new">New!</div>`
-            }
-        }
-
         let stars = data.popularity;
         let innerStar = '';
         let pressed = true;
-
-        let performance = 'MOD';
-
-        //let color = '#6E7DF8'
-        let color = 'purple';
-        if (data.performance == 'LOW') {
-            performance = 'LOW';
-            color = 'green';
-            //color = '#53E06A';
-        } else if (data.performance == 'HIGH') {
-            performance = 'HIGH';
-            color = 'red';
-            //color = '#EB3F4F';
-
-        }
 
         for (let i = 1; i <= 5; i++) {
 
@@ -78,58 +68,207 @@ renderCart = () => {
 
         }
 
+        let discount = '';
+        if (data.priceReal == data.price) {
+            discount = 'hidden';
+        }
 
-        //<a href = "./product.html?id=${doc.id}&name=${data.name}" >
+
         product.innerHTML = `
-        <a> 
-        <img class="product__img" src="${img}" alt="">
-        <div class="product__info">
-        ${tag}
-          <div class="product__rate">
-            <div class="product__stars">${innerStar}</div><div class="product__score">${data.popularity}.0</div>
-          </div>
-          <h1 class="product__title">
-            ${data.name}
-          </h1>
-          <div class="product__price"> ${html}</div>
-          
-          <div class="product__performance product__performance--${color}">${performance}</div>
-        </div>
-        </a>
-      `;
+        
+        <div class="cart__product ${lastone}">
+                <div class="checkout__one">
+                    <img src="${img}" class="cart__image">
+                    <div>
+                        <h1 class="game__title">${data.name}</h1>
+                        <div class="product__rate game__rate">
+                            <div class="product__stars">
+                              ${innerStar}
+                            </div>
+                            <div class="product__score">${data.popularity}.0</div>
+                        </div>
+                            <div class="product__score game__rate">id:${data.id}</div>
+                    </div>
+                </div>
+                <div>
+
+                </div>
+                <div class="checkout__two">
+                    <div class="game__os">
+                        <button class="game__os__button game__os__button--left"><</button>
+                        <img src="images/mac.png" class="os">
+                        <button class="game__os__button game__os__button--right">></button>
+                    </div>
+                </div>
+
+                <div class="checkout__three">
+
+                    <div class="productDetail__price game__price">
+                        <h1 class="productDetail__price--real gamePrice game__price1">$${data.priceReal}</h1>
+                        <h3 class="productDetail__price--discount gameDiscount game__price2 ${discount}">$${data.price}</h3>
+                    </div>
+                    <button class="game__button delete">X</button>
+
+                </div>
+            </div>
+        
+        
+        `;
+
+        const delteBtn = product.querySelector('.delete');
+        delteBtn.addEventListener('click', () => {
+
+            let index = searchProduct(data.id);
+            if (index != -1) {
+                cart.splice(index, 1);
+                list.innerHTML = '';
+                total = 0;
+                productsCounter = 0;
+                CART_COLLECTION.doc(loggedUser.uid).set({ cart });
+                bagCounter.innerText = cart.length;
+                setCartCounterColor();
+                renderCart();
+
+            }
+
+
+        });
+
+        const osImg = product.querySelector('.os');
+
+        const leftBtn = product.querySelector('.game__os__button--left');
+        leftBtn.addEventListener('click', () => {
+
+            changeOs();
+        });
+
+        const rightBtn = product.querySelector('.game__os__button--right');
+        rightBtn.addEventListener('click', () => {
+            changeOs();
+        });
+
+
+
+        const changeOs = () => {
+
+            let array = osImg.src.split('/');
+            let src = array[array.length - 1];
+
+
+            if (src == 'mac.png') {
+
+                osImg.setAttribute('src', './images/windows.png');
+
+            } else {
+
+                osImg.setAttribute('src', './images/mac.png');
+
+            }
+
+        }
+
+
+
 
 
         list.appendChild(product);
 
+        itemsLabel.forEach((elem) => {
+            elem.innerText = cart.length + ' items';
+        });
+
+        subtotal.innerText = '$' + total;
+        tax.innerText = '$' + (total * 0.10).toFixed(2);
+
+        let grandTotal = total + (total * 0.10);
+        totalSpan.innerText = '$' + grandTotal.toFixed(2);
+
 
     });
 
-    totalSpan.innerHTML = total;
-    checkoutForm.addEventListener('submit', function(event) {
-        event.preventDefault();
-
-        const productsIds = [];
-        cart.forEach(function(data) {
-            productsIds.push(data.id);
-        });
 
 
-        const order = {
-            ccNumber: checkoutForm.ccnumber.value,
-            address: checkoutForm.address.value,
-            date: Date.now(),
-            productsIds,
-            total: total,
-            //uid: loggedUser.uid
-        }
-
-        ORDERS_COLLECTION.add(order).then(function(docRef) {
-            cart = [];
-            //Enviar a pagina de agradeciniento
-        });
-    });
 
     //validateAuth
 
+
+}
+
+
+checkOutButton.addEventListener('click', () => {
+
+    error.classList.add('hidden');
+
+
+    console.log('Holaaa');
+
+    let errorMsg = '';
+    error.innerText = '';
+
+
+ 
+    if (creditCard.value.length == 0) {
+        errorMsg += 'Please enter your credir card \n';
+
+    }
+
+
+    if (fullname.value.length == 0) {
+        errorMsg += 'Please enter your full name \n';
+    }
+
+
+    if (id.value.length == 0) {
+        errorMsg += 'Please enter your ID \n';
+    }
+
+    if (address.value.length == 0) {
+        errorMsg += 'Please enter your address \n';
+    }
+
+
+    console.log(errorMsg);
+    if (errorMsg == '') {
+        buy();
+    } else {
+        error.innerText = errorMsg;
+        error.classList.remove('hidden');
+    }
+
+
+});
+
+
+buy = () => {
+    const productsIds = [];
+    cart.forEach(function(data) {
+        productsIds.push(data.id);
+    });
+
+
+    const order = {
+        ccNumber: creditCard.value,
+        address: address.value,
+        date: Date.now(),
+        productsIds,
+        total: total,
+        //uid: loggedUser.uid
+    }
+
+    ORDERS_COLLECTION.add(order).then(function(docRef) {
+        cart = [];
+        //Enviar a pagina de agradeciniento
+    });
+}
+
+
+
+searchProduct = (id) => {
+
+    for (let i = 0; i < cart.length; i++) {
+        if (cart[i].id == id) return i;
+    }
+
+    return -1;
 
 }

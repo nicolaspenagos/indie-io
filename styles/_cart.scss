@@ -1,18 +1,179 @@
-.checkout {
-    display: flex;
-    &__list {
-        width: 70%;
-        display: flex;
-        flex-wrap: wrap;
-    }
-    &__summary {
-        flex-grow: 1;
-    }
-}
-
-.cart {
-    &__main {
-        padding-top: 50px;
-        padding-bottom: 50px;
-    }
-}
+        .checkout {
+            display: flex;
+            &__button {
+                background-color: $pink-color;
+                border: none;
+                height: 40px;
+                color: white;
+                font-weight: bold;
+            }
+            &__line {
+                background-color: $light-gray;
+                height: 1px;
+                margin-top: 3px;
+                opacity: 0.3;
+                width: auto;
+            }
+            &__text {
+                margin: 0;
+                color: $product-text-color;
+                margin-top: 3px;
+                margin-bottom: 3px;
+            }
+            &__row {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+            }
+            &__label {
+                font-size: 12px;
+                color: $product-text-color;
+                text-align: right;
+                margin-right: 2px;
+            }
+            &__input {
+                &--top {
+                    margin-top: 0px;
+                }
+                &--bottom {
+                    margin-bottom: 10px;
+                }
+            }
+            &__data {
+                display: flex;
+                flex-direction: column;
+                background-color: white;
+                margin-right: 110px;
+                padding: 30px;
+                padding-top: 10px;
+                box-shadow: 0px 0px 5px 1px rgb(235, 235, 235);
+                margin-bottom: 20px;
+            }
+            &__list {
+                width: 60%;
+                display: flex;
+                flex-direction: column;
+                margin-left: 110px;
+            }
+            &__summary {
+                flex-grow: 1;
+                margin-left: 15px;
+            }
+            &__title {
+                display: flex;
+                flex-direction: row;
+                color: $product-text-color;
+            }
+            &__one {
+                width: 60%;
+                display: flex;
+            }
+            &__two {
+                width: 15%;
+                display: flex;
+            }
+            &__three {
+                height: 100%;
+                width: 25%;
+                display: flex;
+                align-items: flex-end;
+            }
+        }
+        
+        .cart {
+            &__product {
+                position: relative;
+                border-top: solid $product-text-color 1px;
+                height: 180px;
+                background-color: transparent;
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                margin-right: 20px;
+                &--lastone {
+                    border-bottom: solid $product-text-color 1px;
+                }
+            }
+            &__image {
+                height: 140px;
+            }
+            &__main {
+                padding-bottom: 50px;
+            }
+            &__title {
+                display: flex;
+                display: row;
+                align-items: center;
+                margin-left: 110px;
+                margin-top: 50px;
+                &--title {
+                    font-family: $font-mono;
+                }
+                &--subtitle {
+                    font-size: 14px;
+                    color: $product-text-color;
+                    margin-left: 10px;
+                }
+            }
+        }
+        
+        .game {
+            &__button {
+                color: $pink-color;
+                font-weight: bold;
+                font-size: 18px;
+                background-color: transparent;
+                border: none;
+                position: absolute;
+                margin: 0;
+                top: 15px;
+                right: 50px;
+            }
+            &__price {
+                margin-bottom: 20px;
+                width: auto;
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: center;
+            }
+            &__price1 {
+                font-size: 20px;
+                color: black;
+            }
+            &__price2 {
+                font-size: 15px;
+                margin: 0;
+                margin-left: 5px;
+            }
+            &__title {
+                margin-left: 15px;
+                margin-bottom: 0;
+                margin-top: 0px;
+                color: $product-text-color;
+            }
+            &__rate {
+                margin-left: 15px;
+            }
+            &__os {
+                width: 93px;
+                height: 50px;
+                border: solid $product-text-color 1px;
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                align-items: center;
+                &__button {
+                    border: none;
+                    background-color: transparent;
+                    font-size: 18px;
+                    &--left {
+                        margin-right: 5px;
+                    }
+                    &--right {
+                        margin-left: 5px;
+                    }
+                }
+            }
+        }

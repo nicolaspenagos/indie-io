@@ -76,29 +76,71 @@
 
     </article>
 
+    <div class="cart__title">
+        <h1 class="cart__title--title">Products Summary</h1>
+        <h3 class="cart__title--subtitle items">Loading...</h3>
+    </div>
     <main class="cart__main">
         <section class="checkout__list cartList">
+            <div class="checkout__title">
+                <div class="checkout__one">
+                    Product
+                </div>
+
+                <div class="checkout__two">
+                    Os
+                </div>
+                <div class="checkout__three">
+                    Price
+                </div>
+            </div>
+
+
+
 
 
         </section>
+
         <section class="checkout__summary">
-            <h3 class="checkout__total">Total: $<span></span></h3>
-            <form class="checkout__form">
-                <div class="field">
-                    <label class="field__label" for="ccnumber">
-                        Credit card number
-                    </label>
-                    <input class="field__input" id="ccnumber" type="number" placeholder="">
-                </div>
-                <div class="field">
-                    <label class="field__label" for="address">
-                        Delivery address
-                    </label>
-                    <input class="field__input" id="address" type="text" placeholder="">
+            <form class="checkout__data">
+                <p class="filters1container__text">Delivery Info</p>
+                <label for="fullname" class="checkout__label">
+                    Personal info
+                </label>
+                <input placeholder="Enter your full name" class="modal__input checkout__input--top fullname" id="fullname">
+                <input placeholder="Enter your address" class="modal__input checkout__input--bottom address">
+                <label for="fullname" class="checkout__label" for="creditcard">
+                    Payment and delivery
+                </label>
+                <input placeholder="Enter your credit card number" class="modal__input checkout__input--top ccnumber">
+                <input placeholder="Enter your ID" class="modal__input id">
+            </form>
+
+
+            <article class="checkout__form checkout__data">
+                <div class="field checkout__row">
+                    <p class="filters1container__text">Bill</p>
+                    <p class="checkout__label items">Loading...</p>
                 </div>
 
-                <button>Send</button>
-            </form>
+                <div class="field checkout__row">
+                    <p class="checkout__text">Subtotal</p>
+                    <p class="subtotal checkout__text subtotal">...</p>
+                </div>
+
+                <div class="field checkout__row">
+                    <p class="checkout__text">Extra taxes & fees</p>
+                    <p class="subtotal checkout__text tax">...</p>
+                </div>
+                <div class="checkout__line"></div>
+                <div class="field checkout__row">
+                    <p class="checkout__text">Est. Total</p>
+                    <h3 class="checkout__total"><span>...</span></h3>
+                </div>
+                <p class="productForm__error error"></p>
+                <button class="checkout__button checkoutBtn">Proceed to checkout</button>
+            </article>
+
         </section>
     </main>
 

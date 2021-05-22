@@ -21,10 +21,17 @@
     background-color: white;
     display: flex;
     width: 230px;
-    height: 225px;
+    height: auto;
     box-shadow: 0px 0px 5px 1px rgb(235, 235, 235);
     margin: 15px;
     transition: all .4s ease;
+    &--cart {
+        background-color: transparent;
+        box-shadow: none;
+        margin-left: 0px;
+        width: 100%;
+        padding-right: 15px;
+    }
     &__delete {
         height: 40px;
         background-color: $red-color;
@@ -254,7 +261,9 @@
         &--editf {
             height: 60px;
             margin-left: 110px;
+            position: absolute;
             width: auto;
+            width: 300px;
             margin-top: 30px;
             &:hover {
                 background-color: $pink-color;

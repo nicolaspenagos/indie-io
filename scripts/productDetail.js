@@ -96,7 +96,7 @@ db.collection('products').doc(id).get().then(
 
         gameTitleLbl.innerHTML = data.name;
         starLabel.innerHTML = data.popularity + '.0';
-        priceLabel.innerHTML = data.priceReal;
+        priceLabel.innerHTML = '$' + data.priceReal;
 
         switch (data.cpu) {
             case 3:
@@ -143,7 +143,7 @@ db.collection('products').doc(id).get().then(
         descriptionLabel.innerHTML = data.description;
 
         if (data.price != data.priceReal) {
-            priceDiscount.innerHTML = data.price;
+            priceDiscount.innerHTML = '$' + data.price;
         }
 
         let counter = 0;

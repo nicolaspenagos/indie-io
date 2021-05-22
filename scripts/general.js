@@ -14,6 +14,7 @@ const storage = firebase.storage();
 const logOut = document.querySelector('.button__logout');
 const auth = firebase.auth();
 const userTag = document.querySelector('.usertag');
+const bagCounter1 = document.querySelector('.cart__span');
 
 let loggedUser = null;
 
@@ -60,6 +61,9 @@ const getMyCart = (uid) => {
                     cart.push(element);
                 }
             );
+
+            renderCart();
+            setCartCounterColor();
 
         }
     )
@@ -129,6 +133,17 @@ firebase.auth().onAuthStateChanged((user) => {
 
 
 });
+
+const setCartCounterColor = () => {
+
+    if (bagCounter1) {
+        if (bagCounter1.innerText == 0) {
+            bagCounter1.classList.add('hidden');
+        } else {
+            bagCounter1.classList.remove('hidden');
+        }
+    }
+}
 
 
 let cart = [];
