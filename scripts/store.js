@@ -2,12 +2,7 @@ const list = document.querySelector('.list');
 const orders = document.querySelectorAll('.order');
 const aFilters = document.querySelectorAll('.filterscontainer__filter');
 
-
-
 let currentOrder = -1;
-
-
-
 
 orders.forEach((value) => {
 
@@ -65,13 +60,7 @@ const handleCollectionResult = (querySnapshot) => {
             }
         }
 
-        if (data.os == 1) {
-            osImage = '<img src="./images/mac.png" class="image__os ">';
-        } else if (data.os == 2) {
-            osImage = '<img src="./images/windows.png" class="image__os ">';
-        } else {
-            osImage = '<img src="./images/windows_and_mac.png" class="image__os ">';
-        }
+  
 
         let stars = data.popularity;
         let innerStar = '';
@@ -109,6 +98,30 @@ const handleCollectionResult = (querySnapshot) => {
 
         }
 
+        let adminLogged = 'hidden';
+        let loggerU = 'hidden';
+        let os = '';
+
+        if (loggedUser) {
+            loggerU = '';
+            os = 'marketOs';
+
+            if (loggedUser.admin) {
+                adminLogged = '';
+            }
+
+        }
+
+        if (data.os == 1) {
+            osImage = `<img src="./images/mac.png" class="image__os ${os}" >`;
+        } else if (data.os == 2) {
+            osImage = `<img src="./images/windows.png" class="image__os ${os}">`;
+        } else {
+            osImage = `<img src="./images/windows_and_mac.png" class="image__os ${os}">`;
+        }
+
+
+
 
 
 
@@ -127,11 +140,11 @@ const handleCollectionResult = (querySnapshot) => {
           <a href="./productDetail.html?id=${doc.id}&name=${data.name}" class="product__link">See details</a>
 
           <div class="product__price"> ${html}</div>
-          <div class="product__car showLoggedIn hidden"><img src="./images/market_bag.png" class="product__bag"></div>
+          <div class="product__car showLoggedIn ${loggerU}"><img src="./images/market_bag.png" class="product__bag"></div>
           ${osImage}
           <div class="product__performance product__performance--${color}">${performance}</div>
         </div>
-            <div class="product__delete showLoggedAdmin hidden delete">
+            <div class="product__delete showLoggedAdmin ${adminLogged} delete">
                 Delete
             </div>
         </div>
@@ -167,6 +180,9 @@ const handleCollectionResult = (querySnapshot) => {
 
 
             cartBtn.classList.add('product__car__pressed');
+        
+
+       
 
             setTimeout(() => {
                 cartBtn.classList.remove('product__car__pressed');
@@ -179,7 +195,11 @@ const handleCollectionResult = (querySnapshot) => {
 
             });
             //localStorage.setItem('store__cart', JSON.stringify(cart));
-
+     if(cart.length>0){
+                console.log('hola');
+                bagCounter1.classList.remove('hidden');
+            }
+            bagCounter1.innerText = cart.length;
 
 
 
@@ -201,10 +221,13 @@ filters.addEventListener('change', change);
 function change(argument) {
     // bodylet productsCollection = db.collection('products');
 
-
     let productsCollection = db.collection('products');
 
 
+    if (params.get('type')) {
+        productsCollection = productsCollection.where('type', '==', params.get('type'));
+
+    }
 
     if (filters.year.value) {
         productsCollection = productsCollection.where('year', '==', filters.year.value);
@@ -330,6 +353,12 @@ function change(argument) {
 
 
 
+console.log(loggedUser);
+if (loggedUser) {
+    productsCollection.get().then(handleCollectionResult);
+
+}
+
 
 let params = new URLSearchParams(location.search);
 if (params.get('type')) {
@@ -340,4 +369,13 @@ if (params.get('type')) {
     border.classList.add('filterscontainer__visible');
 }
 
-productsCollection.get().then(handleCollectionResult);
+renderProducts = () => {
+    productsCollection.get().then(handleCollectionResult);
+}
+
+
+window.addEventListener("keypress", function(event) {
+    if (event.keyCode == 13) {
+        event.preventDefault();
+    }
+}, false);

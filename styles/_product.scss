@@ -122,9 +122,9 @@
             background-color: rgb(206, 53, 53);
         }
         &__pressed {
-            background-color: yellowgreen;
+            background-color: yellowgreen !important;
             &:hover {
-                background-color: yellowgreen;
+                background-color: yellowgreen !important;
             }
         }
     }

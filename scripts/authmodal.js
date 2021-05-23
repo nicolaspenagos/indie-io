@@ -68,7 +68,7 @@ closeModalBtn.addEventListener('click', handleCloseModal);
 
 authForm.addEventListener('submit', function(event) {
     event.preventDefault();
-    console.log('submit');
+
 
     const firstname = authForm.firstname.value;
     const lastname = authForm.lastname.value;

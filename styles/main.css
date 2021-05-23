@@ -1237,6 +1237,10 @@ h2 {
           flex-direction: row;
 }
 
+.footer--store {
+  margin-top: 50px;
+}
+
 .footer--productDetail {
   margin-top: 200px;
 }
@@ -1974,6 +1978,12 @@ h2 {
   display: flex;
 }
 
+.productForm__goBack {
+  margin-top: 20px;
+  margin-left: 50px;
+  margin-bottom: 50px;
+}
+
 .field__label,
 .productForm__label {
   display: block;
@@ -2165,11 +2175,11 @@ h2 {
 }
 
 .product__car__pressed {
-  background-color: yellowgreen;
+  background-color: yellowgreen !important;
 }
 
 .product__car__pressed:hover {
-  background-color: yellowgreen;
+  background-color: yellowgreen !important;
 }
 
 .product__img {
@@ -2472,6 +2482,10 @@ h2 {
   margin-top: 10px;
 }
 
+.marketOs {
+  margin-right: 40px;
+}
+
 .productDetail {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -2487,6 +2501,37 @@ h2 {
   margin-top: 10px;
 }
 
+.productDetail__goback {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  height: auto;
+}
+
+.productDetail__goback--a {
+  margin-left: 0px;
+  margin-right: 110px;
+  width: 100px;
+  height: 30px;
+  font-size: 16px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-decoration: none;
+  color: white;
+  font-family: "Fira Mono", "Roboto Mono", monospace;
+}
+
 .productDetail__button {
   background-color: #EA3F4F;
   height: 40px;
@@ -2496,6 +2541,18 @@ h2 {
   margin-left: 20px;
   font-size: 15px;
   border: none;
+}
+
+.productDetail__button:hover {
+  background-color: #ce3535;
+}
+
+.productDetail__button--green {
+  background-color: greenyellow;
+}
+
+.productDetail__button--green:hover {
+  background-color: greenyellow;
 }
 
 .productDetail__button--counter {
@@ -2510,6 +2567,11 @@ h2 {
 .productDetail__button--text {
   line-height: 40px;
   text-align: center;
+}
+
+.productDetail__button--add {
+  margin-top: 20px;
+  width: auto;
 }
 
 .productDetail__buttons {

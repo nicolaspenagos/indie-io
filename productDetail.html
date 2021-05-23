@@ -11,14 +11,24 @@
 
 <body class="body__background">
 
+
+
     <header class="header">
         <div class="header__container">
             <img class="header__logo" src="./images/logo.png">
             <div class="header__acontainer">
                 <h1 class="banner__anim">Fine and share indie games..<span class="span__anim">&#160</span></h1>
             </div>
+
+
+
         </div>
 
+        <p class="banner__anim banner__anim__noleft usertag"></p>
+        <a href="./cart.html" class="cart showLoggedIn"><img class="image__marketbagfilled" src="./images/market_bag_filled.png">
+            <div class="cart__span hidden showLoggedIn"></div>
+        </a>
+        <button class="button__logout banner__anim">Log Out</button>
         <section class="header__items">
             <div class="hamburgermenu">
                 <div class="hamburgermenu__row">
@@ -79,6 +89,13 @@
             <p class="indicator__text">ProductDetail</p>
         </div>
     </section>
+
+    <div class="productDetail__goback">
+        <a href="./store.html" class="filterscontainer__filter filterscontainer__filter--editf  productDetail__goback--a">
+          Go back
+
+        </a>
+    </div>
 
     <div class="productDetail__title">
         <div>
@@ -145,19 +162,17 @@
                 <h2 class="productDetail__description__title">Description</h2>
                 <p class="description">Loading...</p>
             </div>
-            <div class="productDetail__info productDetail__info--buttons">
-                <div class="productDetail__buttons">
-                    <button class="productDetail__button--counter subtractItemBtn">-</button>
-                    <p class="productDetail__button--text itemCounter">1</p>
-                    <button class="productDetail__button--counter addItemBtn">+</button>
-                </div>
-                <button class="productDetail__button">
+
+
+            <button class="productDetail__button productDetail__button--add showLoggedIn">
                     Add to cart
                 </button>
-            </div>
+
 
         </section>
     </article>
+
+
 
     <footer class="footer footer--productDetail">
         <section class="footer__left">
@@ -197,7 +212,9 @@
     <script src="https://www.gstatic.com/firebasejs/8.3.2/firebase-firestore.js "></script>
     <script src="https://www.gstatic.com/firebasejs/8.3.2/firebase-storage.js "></script>
     <script src="https://www.gstatic.com/firebasejs/8.3.2/firebase-auth.js "></script>
-    <script src="./scripts/general.js "></script>
+    <script src="./scripts/general.js"></script>
+    <script src="./scripts/authmodal.js"></script>
+    <script src="./scripts/authUtils.js"></script>
     <script src="./scripts/productDetail.js "></script>
 </body>
 

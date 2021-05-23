@@ -1,3 +1,7 @@
+.marketOs {
+    margin-right: 40px;
+}
+
 .productDetail {
     display: flex;
     flex-direction: row;
@@ -6,6 +10,25 @@
     margin-left: 110px;
     margin-right: 110px;
     margin-top: 10px;
+    &__goback {
+        width: 100%;
+        display: flex;
+        justify-content: flex-end;
+        height: auto;
+        &--a {
+            margin-left: 0px;
+            margin-right: 110px;
+            width: 100px;
+            height: 30px;
+            font-size: 16px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-decoration: none;
+            color: white;
+            font-family: $font-mono;
+        }
+    }
     &__button {
         background-color: $pink-color;
         height: 40px;
@@ -15,6 +38,15 @@
         margin-left: 20px;
         font-size: 15px;
         border: none;
+        &:hover {
+            background-color: #ce3535;
+        }
+        &--green {
+            background-color: greenyellow;
+            &:hover {
+                background-color: greenyellow;
+            }
+        }
         &--counter {
             background-color: transparent;
             border: none;
@@ -26,6 +58,10 @@
         &--text {
             line-height: 40px;
             text-align: center;
+        }
+        &--add {
+            margin-top: 20px;
+            width: auto;
         }
     }
     &__buttons {

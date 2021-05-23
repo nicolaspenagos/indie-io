@@ -4,7 +4,6 @@ const checkoutForm = document.querySelector('.checkout__form');
 const itemsLabel = document.querySelectorAll('.items');
 const subtotal = document.querySelector('.subtotal');
 const tax = document.querySelector('.tax');
-const bagCounter = document.querySelector('.cart__span');
 const creditCard = document.querySelector('.ccnumber');
 const fullname = document.querySelector('.fullname');
 const address = document.querySelector('.address');
@@ -26,6 +25,9 @@ const validateAuth = () => {
 
 
 renderCart = () => {
+
+    total = 0;
+    console.log('hola');
     cart.forEach((data) => {
 
 
@@ -125,7 +127,7 @@ renderCart = () => {
                 total = 0;
                 productsCounter = 0;
                 CART_COLLECTION.doc(loggedUser.uid).set({ cart });
-                bagCounter.innerText = cart.length;
+                bagCounter1.innerText = cart.length;
                 setCartCounterColor();
                 renderCart();
 
@@ -173,19 +175,21 @@ renderCart = () => {
 
         list.appendChild(product);
 
-        itemsLabel.forEach((elem) => {
-            elem.innerText = cart.length + ' items';
-        });
-
-        subtotal.innerText = '$' + total;
-        tax.innerText = '$' + (total * 0.10).toFixed(2);
-
-        let grandTotal = total + (total * 0.10);
-        totalSpan.innerText = '$' + grandTotal.toFixed(2);
 
 
     });
 
+
+
+    itemsLabel.forEach((elem) => {
+        elem.innerText = cart.length + ' items';
+    });
+
+    subtotal.innerText = '$' + total;
+    tax.innerText = '$' + (total * 0.10).toFixed(2);
+
+    let grandTotal = total + (total * 0.10);
+    totalSpan.innerText = '$' + grandTotal.toFixed(2);
 
 
 
@@ -206,7 +210,7 @@ checkOutButton.addEventListener('click', () => {
     error.innerText = '';
 
 
- 
+
     if (creditCard.value.length == 0) {
         errorMsg += 'Please enter your credir card \n';
 
@@ -224,6 +228,10 @@ checkOutButton.addEventListener('click', () => {
 
     if (address.value.length == 0) {
         errorMsg += 'Please enter your address \n';
+    }
+
+    if (cart.length == 0) {
+        errorMsg += 'Please add at least one item\n';
     }
 
 
@@ -272,3 +280,5 @@ searchProduct = (id) => {
     return -1;
 
 }
+
+//validateAuth

@@ -4,6 +4,9 @@
     background-color: $main-black;
     display: flex;
     flex-direction: row;
+    &--store {
+        margin-top: 50px;
+    }
     &--productDetail {
         margin-top: 200px
     }

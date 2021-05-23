@@ -21,6 +21,7 @@ const nav = document.querySelector('.navigator');
 // -------------------------------------
 let showed = true;
 
+handleCloseModal();
 
 function handleHmenu() {
 
@@ -229,8 +230,8 @@ function handleCloseModal() {
 
     console.log('Hola111');
     open = true;
-    clearInterval(refreshIntervalId);
-    clearInterval(refreshIntervalId1);
+    //clearInterval(refreshIntervalId);
+    // clearInterval(refreshIntervalId1);
     handleLeave();
     modal.style.opacity = 0;
     modalContent.style.transform = 'translate(0px, -500px)';
@@ -344,7 +345,7 @@ function handleInteractionEvent() {
 }
 
 function handleLeave() {
-    secondModal.style.transform = `translate(${posFx}px, ${posFy}px)`;
+    //secondModal.style.transform = `translate(${posFx}px, ${posFy}px)`;
     setTimeout(
         () => {
             finish = true;

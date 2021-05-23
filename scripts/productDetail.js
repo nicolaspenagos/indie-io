@@ -23,15 +23,42 @@ const osLabel = document.querySelector('.os');
 const descriptionLabel = document.querySelector('.description');
 const osImage = document.querySelector('.osImage');
 const containerLeft = document.querySelector('.productDetail__container--left');
+const addToCartBtn = document.querySelector('.productDetail__button--add');
 
 // -------------------------------------
 // GLOBAL VARIABLES
 // -------------------------------------
 let itemCounter = 1;
+let currentProduct;
+let currentId;
 
 // -------------------------------------
 // FUNCTIONS
 // -------------------------------------
+
+addToCartBtn.addEventListener('click', () => {
+
+    console.log('hola-oneeeeee');
+
+
+    addToCartBtn.classList.add('product__car__pressed');
+
+    setTimeout(() => {
+        addToCartBtn.classList.remove('product__car__pressed');
+    }, 200);
+    addToMyCart({
+        ...currentProduct,
+        id: currentId,
+    });
+    //localStorage.setItem('store__cart', JSON.stringify(cart));
+    if (cart.length > 0) {
+
+        bagCounter1.classList.remove('hidden');
+    }
+    bagCounter1.innerText = cart.length;
+});
+
+/*
 addItemBtn.addEventListener('click', () => {
     itemCounter++;
     labelItemCounter.innerHTML = itemCounter;
@@ -43,6 +70,7 @@ subtractItemBtn.addEventListener('click', () => {
         labelItemCounter.innerHTML = itemCounter;
     }
 });
+*/
 
 
 
@@ -61,6 +89,8 @@ db.collection('products').doc(id).get().then(
 
 
         const data = doc.data();
+        currentProduct = data;
+        currentId = doc.id;
         let images = data.images;
         let thumbsHtml = '';
 

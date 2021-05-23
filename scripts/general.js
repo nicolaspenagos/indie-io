@@ -15,6 +15,16 @@ const logOut = document.querySelector('.button__logout');
 const auth = firebase.auth();
 const userTag = document.querySelector('.usertag');
 const bagCounter1 = document.querySelector('.cart__span');
+const goback = document.querySelector('.goBackToStoreBtn');
+const bagCounter = document.querySelector('.cart__span');
+let path = window.location.href;
+let currentFile = path.split('/');
+
+if (goback) {
+    goback.addEventListener('click', () => {
+        window.location.href = './store.html';
+    });
+}
 
 let loggedUser = null;
 
@@ -62,7 +72,10 @@ const getMyCart = (uid) => {
                 }
             );
 
-            renderCart();
+
+
+            if (currentFile[currentFile.length - 1] == 'cart.html')
+                renderCart();
             setCartCounterColor();
 
         }
@@ -70,9 +83,19 @@ const getMyCart = (uid) => {
 }
 
 const setLoggedUser = (info, id) => {
+
     loggedUser = info;
     loggedUser.uid = id;
     userTag.innerText = loggedUser.email;
+
+
+    let currentPath = currentFile[currentFile.length - 1];
+
+    if (currentPath == 'store.html' || currentPath == 'store.html?type=handheld-videogames' || currentPath == 'store.html?type=computer-videogames' || currentPath == 'store.html?type=console-videogames') {
+        renderProducts();
+    }
+
+
     userLoggedIn();
 }
 
@@ -109,7 +132,10 @@ firebase.auth().onAuthStateChanged((user) => {
         db.collection('users').doc(user.uid).get().then(function(doc) {
 
             if (!doc.data()) return;
+
             setLoggedUser(doc.data(), user.uid);
+            console.log('++++++++');
+            userLoggedIn();
             getMyCart(user.uid);
             if (typeof validateAuth === 'function') {
                 validateAuth();
@@ -121,10 +147,16 @@ firebase.auth().onAuthStateChanged((user) => {
         // User is signed out
         // ...
         loggedUser = null;
+        if (typeof renderProducts === 'function') {
+            renderProducts();
+        }
+
 
         if (userTag)
             userTag.innerText = '';
         cart = [];
+
+
         userLoggedOut();
         if (typeof validateAuth === 'function') {
             validateAuth();
