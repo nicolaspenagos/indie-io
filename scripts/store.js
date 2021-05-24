@@ -182,7 +182,7 @@ const handleCollectionResult = (querySnapshot) => {
             cartBtn.classList.add('product__car__pressed');
         
 
-       
+
 
             setTimeout(() => {
                 cartBtn.classList.remove('product__car__pressed');
@@ -195,7 +195,7 @@ const handleCollectionResult = (querySnapshot) => {
 
             });
             //localStorage.setItem('store__cart', JSON.stringify(cart));
-     if(cart.length>0){
+             if(cart.length>0){
                 console.log('hola');
                 bagCounter1.classList.remove('hidden');
             }

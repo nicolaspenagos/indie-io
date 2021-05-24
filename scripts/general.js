@@ -101,6 +101,8 @@ const setLoggedUser = (info, id) => {
 
     if (currentPath == 'store.html' || currentPath == 'store.html?type=handheld-videogames' || currentPath == 'store.html?type=computer-videogames' || currentPath == 'store.html?type=console-videogames') {
         renderProducts();
+    } else if (currentPath == 'orders.html') {
+        loadOrders();
     }
 
 

@@ -18,6 +18,10 @@ const validateAuth = () => {
 
     if (!loggedUser) {
         window.location.href = './store.html';
+
+    } else {
+        console.log(loggedUser);
+        fullname.value = loggedUser.firstname + ' ' + loggedUser.lastname;
     }
 
 }
@@ -250,29 +254,31 @@ checkOutButton.addEventListener('click', () => {
 buy = () => {
 
     let orders = [];
-    
+
     ORDERS_COLLECTION.doc(loggedUser.uid).get().then(
         (doc) => {
-            if(doc.exists){
-        
-                doc.data().orders.forEach((elem)=>{
+            if (doc.exists) {
+
+                doc.data().orders.forEach((elem) => {
                     orders.push(elem);
                 });
                 write(orders);
-            }else{
+            } else {
                 orders = [];
-                  write(orders);
+                write(orders);
             }
         }
     );
 
-    
+
 }
 
 write = (orders) => {
     const productsIds = [];
+    const productsNames =  [];
     cart.forEach(function(data) {
         productsIds.push(data.id);
+        productsNames.push(data.name);
     });
 
 
@@ -283,24 +289,26 @@ write = (orders) => {
         address: address.value,
         date: Date.now(),
         productsIds,
+        productsNames,
         total: total,
+        id: id.value,
         //uid: loggedUser.uid
     }
 
-     orders.push(newOrder);
-     console.log(orders);
+    orders.push(newOrder);
+    console.log(orders);
 
-    ORDERS_COLLECTION.doc(loggedUser.uid).set({orders}).then(function(docRef) {
+    ORDERS_COLLECTION.doc(loggedUser.uid).set({ orders }).then(function(docRef) {
         cart = [];
 
-        CART_COLLECTION.doc(loggedUser.uid).set({cart}).then(
+        CART_COLLECTION.doc(loggedUser.uid).set({ cart }).then(
 
-            ()=>{
+            () => {
                 window.location.href = './orders.html';
             }
 
         );
-       // window.location.href = './orders.html';
+
 
     });
 }
