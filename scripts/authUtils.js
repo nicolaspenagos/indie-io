@@ -1,5 +1,5 @@
 function userLoggedIn() {
-    console.log(' =====>>>>>>>>');
+
     logOut.innerHTML = 'Log out';
 
     const showLoggedIn = document.querySelectorAll('.showLoggedIn');
@@ -11,7 +11,6 @@ function userLoggedIn() {
 
 
 
-    console.log(showLoggedIn.length + ' >>>>>>>>');
     showLoggedIn.forEach((elem) => {
 
         elem.classList.remove('hidden');
@@ -31,7 +30,7 @@ function userLoggedOut() {
 
     const showLoggedIn = document.querySelectorAll('.showLoggedIn');
 
-    console.log('jdksdsk1111');
+
     showLoggedIn.forEach((elem) => {
         elem.classList.add('hidden');
     });

@@ -32,7 +32,7 @@ const CART_COLLECTION = db.collection('cart');
 
 const addToMyCart = (product) => {
 
-    console.log('repedito1');
+
 
     let repeated = false;
 

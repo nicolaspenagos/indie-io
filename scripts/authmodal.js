@@ -94,7 +94,7 @@ authForm.addEventListener('submit', function(event) {
             .then((userCredential) => {
                 // Signed in 
                 var user = userCredential.user;
-                console.log(email, password);
+
 
                 const userDoc = {
                     firstname,
@@ -149,7 +149,7 @@ function handleCloseModal() {
 
 
 function handleModalAppear() {
-    console.log('ModalAppear');
+
     modal.style.opacity = 1;
     modalContent.style.transform = 'translate(0px, 0px)';
 

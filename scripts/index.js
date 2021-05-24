@@ -45,13 +45,12 @@ window.addEventListener("resize", function() {
             value.style.display = 'block';
         });
 
-        console.log(false);
 
     } else {
         buttonsModal.forEach(function(value, index) {
             value.style.display = 'none';
         });
-        console.log(true);
+
     }
 
 });
@@ -228,7 +227,7 @@ let refreshIntervalId;
 
 function handleCloseModal() {
 
-    console.log('Hola111');
+
     open = true;
     //clearInterval(refreshIntervalId);
     // clearInterval(refreshIntervalId1);

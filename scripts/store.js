@@ -60,7 +60,7 @@ const handleCollectionResult = (querySnapshot) => {
             }
         }
 
-  
+
 
         let stars = data.popularity;
         let innerStar = '';
@@ -162,15 +162,13 @@ const handleCollectionResult = (querySnapshot) => {
             let stringId = data.id;
 
 
-            if (stringId == 'gVbjOBci5jsTJpmX4Pfi') {
-                console.log('Oe');
-            }
+
 
             db.collection('products').doc(stringId).delete().then(() => {
                 location.reload();
-                console.log("Document successfully deleted!");
+
             }).catch((error) => {
-                console.error("Error removing document: ", error);
+
             });
         });
 
@@ -180,7 +178,7 @@ const handleCollectionResult = (querySnapshot) => {
 
 
             cartBtn.classList.add('product__car__pressed');
-        
+
 
 
 
@@ -195,8 +193,8 @@ const handleCollectionResult = (querySnapshot) => {
 
             });
             //localStorage.setItem('store__cart', JSON.stringify(cart));
-             if(cart.length>0){
-                console.log('hola');
+            if (cart.length > 0) {
+
                 bagCounter1.classList.remove('hidden');
             }
             bagCounter1.innerText = cart.length;
@@ -271,7 +269,7 @@ function change(argument) {
 
                 if (filters.price.value && filters.price.value != 'Select a type') {
                     productsCollection = productsCollection.orderBy('priceReal', 'asc')
-                    console.log(filters.price.value);
+
                 };
 
 
@@ -287,7 +285,7 @@ function change(argument) {
 
                 if (filters.price.value && filters.price.value != 'Select a type') {
                     productsCollection = productsCollection.orderBy('priceReal', 'asc')
-                    console.log(filters.price.value);
+
                 };
                 productsCollection = productsCollection.orderBy('name');
 
@@ -353,7 +351,7 @@ function change(argument) {
 
 
 
-console.log(loggedUser);
+
 if (loggedUser) {
     productsCollection.get().then(handleCollectionResult);
 

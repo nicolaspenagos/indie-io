@@ -16,9 +16,9 @@ loadOrders = () => {
         const orders = data.data();
 
 
-        console.log(data);
+
         if (data.data() == undefined) {
-            console.log('111111');
+
             title.innerText = 'NO ODERS YET';
         } else {
             orders.orders.forEach(element => {
@@ -40,10 +40,10 @@ loadOrders = () => {
 
                 let games = '';
 
-                console.log(element.productsIds.length);
+
                 for (let i = 0; i < element.productsIds.length; i++) {
 
-                    console.log(element.productsNames[i]);
+
                     games += `
                     <p class="order__gametitle">${element.productsNames[i]}</p>
                     <p class="order__gametext">Id:${element.productsIds[i]}</p>
@@ -87,7 +87,6 @@ loadOrders = () => {
 
                 finalHtml += orderHtml;
 
-                console.log(element);
             });
 
         }

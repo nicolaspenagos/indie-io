@@ -30,7 +30,7 @@ productForm.addEventListener('submit', function(event) {
 
     let tempDiscount = 1;
     let toRealPrice = 1;
-    console.log(productForm.discount.value);
+
     if (productForm.discount.value === '0.5') {
         tempDiscount = 0.5;
         toRealPrice = 0.5;
@@ -41,7 +41,7 @@ productForm.addEventListener('submit', function(event) {
         tempDiscount = 0;
     }
 
-    console.log(tempDiscount)
+
     let performanceNumber = (parseFloat(productForm.ram.value) + parseFloat(productForm.cpu.value));
 
     let performanceString = "MOD";

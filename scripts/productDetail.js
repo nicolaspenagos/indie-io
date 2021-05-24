@@ -38,7 +38,7 @@ let currentId;
 
 addToCartBtn.addEventListener('click', () => {
 
-    console.log('hola-oneeeeee');
+
 
 
     addToCartBtn.classList.add('product__car__pressed');
@@ -189,6 +189,6 @@ db.collection('products').doc(id).get().then(
 
 
 
-        console.log(doc.id, doc.data());
+
     }
 );

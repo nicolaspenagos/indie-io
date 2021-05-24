@@ -20,7 +20,7 @@ const validateAuth = () => {
         window.location.href = './store.html';
 
     } else {
-        console.log(loggedUser);
+
         fullname.value = loggedUser.firstname + ' ' + loggedUser.lastname;
     }
 
@@ -31,7 +31,7 @@ const validateAuth = () => {
 renderCart = () => {
 
     total = 0;
-    console.log('hola');
+
     cart.forEach((data) => {
 
 
@@ -208,7 +208,7 @@ checkOutButton.addEventListener('click', () => {
     error.classList.add('hidden');
 
 
-    console.log('Holaaa');
+
 
     let errorMsg = '';
     error.innerText = '';
@@ -239,7 +239,6 @@ checkOutButton.addEventListener('click', () => {
     }
 
 
-    console.log(errorMsg);
     if (errorMsg == '') {
         buy();
     } else {
@@ -275,7 +274,7 @@ buy = () => {
 
 write = (orders) => {
     const productsIds = [];
-    const productsNames =  [];
+    const productsNames = [];
     cart.forEach(function(data) {
         productsIds.push(data.id);
         productsNames.push(data.name);
@@ -296,7 +295,7 @@ write = (orders) => {
     }
 
     orders.push(newOrder);
-    console.log(orders);
+
 
     ORDERS_COLLECTION.doc(loggedUser.uid).set({ orders }).then(function(docRef) {
         cart = [];
