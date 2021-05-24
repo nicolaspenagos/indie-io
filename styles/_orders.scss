@@ -120,3 +120,36 @@
         margin-bottom: 10px;
     }
 }
+
+//RESPONSIVE
+@media(max-width:1000px) {
+    .orders {
+        &--main {
+            padding: 20px;
+        }
+    }
+}
+
+@media(max-width:850px) {
+    .orders {
+        &--main {
+            flex-direction: column;
+        }
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+    .personalData {
+        padding-left: 10px;
+        padding-right: 10px;
+        width: 100%;
+    }
+    .usertag {
+        display: none;
+    }
+    .productscontainer {
+        &__orders {
+            width: auto;
+            margin-bottom: 30px;
+        }
+    }
+}
