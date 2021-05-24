@@ -58,8 +58,15 @@ loadOrders = () => {
                 }
 
 
+                let lastOneClass = '';
+
+                if (counter == (orders.orders.length)) {
+                    lastOneClass = 'order--lastone';
+                }
+
+
                 let orderHtml = `
-                 <div class="order">
+                 <div class="order ${lastOneClass}">
                     <div class="order__left">
                         <div class="order__counter">${counterString}</div>
 

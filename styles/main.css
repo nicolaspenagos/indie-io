@@ -3338,8 +3338,9 @@ h2 {
 
 @media (max-width: 850px) {
   .orders {
-    padding-left: 10px;
-    padding-right: 10px;
+    width: 100%;
+    padding-left: 0px;
+    padding-right: 0px;
   }
   .orders--main {
     -webkit-box-orient: vertical;
