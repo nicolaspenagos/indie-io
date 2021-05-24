@@ -47,6 +47,7 @@ renderCart = () => {
         total += data.priceReal;
 
         let product = document.createElement('div');
+        product.className = 'cart__product--container';
 
         let img = data.images[0]?.url;
         if (!img) {
@@ -85,7 +86,7 @@ renderCart = () => {
         <div class="cart__product ${lastone}">
                 <div class="checkout__one">
                     <img src="${img}" class="cart__image">
-                    <div>
+                    <div class="info">
                         <h1 class="game__title">${data.name}</h1>
                         <div class="product__rate game__rate">
                             <div class="product__stars">

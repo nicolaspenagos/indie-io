@@ -2023,6 +2023,12 @@ h2 {
   position: relative;
 }
 
+.cart--main {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
 .cart__span {
   width: 17px;
   height: 17px;
@@ -2551,6 +2557,7 @@ h2 {
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
+    padding-bottom: 0px;
   }
   .productscontainer__orders {
     margin-left: 30px;
@@ -2560,7 +2567,7 @@ h2 {
     position: relative;
     margin-left: 30px;
     margin-right: 30px;
-    margin-bottom: 30px;
+    margin-bottom: 50px;
     width: auto;
   }
 }
@@ -3031,6 +3038,16 @@ h2 {
 
 .cart__main {
   padding-bottom: 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
 }
 
 .cart__title {
@@ -3138,6 +3155,126 @@ h2 {
 
 .game__os__button--right {
   margin-left: 5px;
+}
+
+@media (max-width: 850px) {
+  .order__go {
+    margin-top: 30px;
+  }
+  .cart__title {
+    margin: 0px;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    margin-left: 30px;
+    margin-right: 30px;
+    font-size: 12px;
+  }
+  .cart__image {
+    margin-bottom: 10px;
+  }
+  .cart__main {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .cart__product {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    height: auto;
+    width: auto;
+    margin-right: 30px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    background-color: white;
+    -webkit-box-shadow: 0px 0px 5px 1px #ebebeb;
+            box-shadow: 0px 0px 5px 1px #ebebeb;
+  }
+  .cart__product--container {
+    width: auto;
+    margin-right: 30px;
+  }
+  .info {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    margin-bottom: 10px;
+  }
+  .game__title {
+    margin-left: 0px;
+  }
+  .game__rate {
+    margin-left: 0px;
+  }
+  .game__price {
+    margin-bottom: 0px;
+  }
+  .banner--store--text {
+    position: static;
+  }
+  .r {
+    margin: 0;
+  }
+  .checkout__list {
+    margin-left: 30px;
+    width: 100%;
+    margin-right: 30px;
+  }
+  .checkout__title {
+    display: none;
+  }
+  .checkout__one {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    width: auto;
+  }
+  .checkout__two {
+    width: auto;
+    margin-bottom: 10px;
+  }
+  .checkout__three {
+    width: auto;
+    margin-right: 10px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  .checkout__data {
+    margin: 0;
+    margin-top: 30px;
+  }
+  .checkout__summary {
+    width: 100%;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    margin-left: 0px;
+  }
+  .checkout__data {
+    width: auto;
+    margin-left: 30px;
+    margin-right: 30px;
+  }
 }
 
 .orders--main {
@@ -3359,6 +3496,10 @@ h2 {
   .productscontainer__orders {
     width: auto;
     margin-bottom: 30px;
+  }
+  .order__go {
+    margin-top: 30px;
+    margin-left: 30px;
   }
 }
 /*# sourceMappingURL=main.css.map */
