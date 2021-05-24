@@ -166,6 +166,18 @@
   height: 25px;
 }
 
+.image__name {
+  width: 30px;
+  margin-right: 10px;
+  height: 30px;
+}
+
+.image__user {
+  width: 30px;
+  margin-right: 10px;
+  height: 30px;
+}
+
 .hamburgermenu__row {
   background-color: white;
   height: 3px;
@@ -3055,5 +3067,82 @@ h2 {
 
 .game__os__button--right {
   margin-left: 5px;
+}
+
+.orders--main {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding-left: 110px;
+  padding-right: 110px;
+  padding-top: 110px;
+  padding-bottom: 110px;
+  height: auto;
+  width: 100%;
+  background-color: #F9F9F9;
+}
+
+.orders__title {
+  font-family: "Fira Mono", "Roboto Mono", monospace;
+  font-size: 35px;
+  text-align: center;
+  margin: 0;
+  margin-bottom: 20px;
+}
+
+.orders__subtitle {
+  font-family: "Fira Mono", "Roboto Mono", monospace;
+}
+
+.personalData {
+  width: 50%;
+  height: 500px;
+  background-color: lightgray;
+  -webkit-box-shadow: 0px 0px 5px 1px #ebebeb;
+          box-shadow: 0px 0px 5px 1px #ebebeb;
+  padding: 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.personalData__row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.orders {
+  width: 50%;
+  height: 500px;
+  background-color: white;
+  -webkit-box-shadow: 0px 0px 5px 1px #ebebeb;
+          box-shadow: 0px 0px 5px 1px #ebebeb;
 }
 /*# sourceMappingURL=main.css.map */

@@ -6,9 +6,152 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="./styles/main.css">
 </head>
 
 <body>
+    <header class="header">
+        <div class="header__container">
+            <img class="header__logo" src="./images/logo.png">
+            <div class="header__acontainer">
+                <h1 class="banner__anim">Fine and share indie games..<span class="span__anim">&#160</span></h1>
+            </div>
+
+
+
+        </div>
+
+        <p class="banner__anim banner__anim__noleft usertag"></p>
+        <a href="./cart.html" class="cart showLoggedIn"><img class="image__marketbagfilled" src="./images/market_bag_filled.png">
+            <div class="cart__span hidden"></div>
+        </a>
+        <button class="button__logout banner__anim">Log Out</button>
+        <section class="header__items">
+            <div class="hamburgermenu">
+                <div class="hamburgermenu__row">
+
+                </div>
+                <div class="hamburgermenu__row">
+
+                </div>
+                <div class="hamburgermenu__row">
+
+                </div>
+
+            </div>
+
+        </section>
+    </header>
+    <article class="banner banner--store">
+
+        <nav class="navigator navigator--store">
+            <div class="navigator__block">
+                <a class="navigator__item navigator__item--one" href="./index.html#infoblock">Who We Are</a>
+                <div class="navigator__feedback">
+                </div>
+            </div>
+            <div class="navigator__sep"></div>
+            <div class="navigator__block">
+                <a class="navigator__item navigator__item--one">Upload Game</a>
+                <div class="navigator__feedback">
+                </div>
+            </div>
+            <div class="navigator__sep navigator__sep--purple"></div>
+            <div class="navigator__block">
+                <a class="navigator__item navigator__item--one">Game Shop</a>
+                <div class="navigator__feedback">
+                </div>
+            </div>
+            <div class="navigator__sep navigator__sep--pink"></div>
+            <div class="navigator__block">
+                <a class="navigator__item navigator__item--one">Community</a>
+                <div class="navigator__feedback">
+                </div>
+            </div>
+        </nav>
+
+        <img src="./images/store__asset.png" class="image__storeasset">
+        <h1 class="banner__text banner--store--text">Orders</h1>
+
+    </article>
+
+    <main class="orders--main">
+
+        <article class="personalData">
+            <div class="personalData__info">
+                <h1 class="orders__title">PERSONAL<br> INFORMATION</h1>
+                <div class="personalData__row">
+                    <img src="./images/user.png" class="image__user">
+                    <p class="orders__subtitle">Fullname:</p>
+                    <p>...</p>
+                </div>
+                <div class="personalData__row">
+                    <img src="./images/name.png" class="image__name">
+                    <p class="orders__subtitle">Id:</p>
+                    <p>...</p>
+                </div>
+                <div class="personalData__row">
+                    <img src="./images/credit_card.png" class="image__name">
+                    <p class="orders__subtitle">Credit card:</p>
+                    <p>...</p>
+                </div>
+                <div class="personalData__row">
+                    <img src="./images/home.png" class="image__name">
+                    <p class="orders__subtitle">Address:</p>
+                    <p>...</p>
+                </div>
+            </div>
+
+        </article>
+        <article class="orders">
+
+        </article>
+    </main>
+
+    <footer class="footer">
+        <section class="footer__left">
+            <div class="footer__bigcontainer">
+
+                <h1 class="footer__text--header">Subscribe to our<br>newsletter</h1>
+                <div class="footer__container">
+                    <input class="footer__input" placeholder="Email">
+                    <div class="button__div button__div--footer">
+                        <button class="button">SUBMIT</button>
+                        <div class="button__shadow button__shadow--footer">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <img src="./images/responisve_logo.png" class="image__responsivelogo" loading="lazy">
+        </section>
+        <section class="footer__right">
+            <div class="footer__grid footer__grid--left">
+                <p class="text text__white text__heading text__mleft text__light text__footer">Legal</p>
+                <p class="text text__white text__heading text__mleft text__light text__footer">FAQ</p>
+                <p class="text text__white text__heading text__mleft text__light text__footer">About</p>
+                <p class="text text__white text__heading text__mleft text__light text__footer">Terms of use</p>
+
+            </div>
+            <div class="footer__grid">
+                <p class="text text__white text__heading text__mleft text__light text__footer">Private</p>
+                <p class="text text__white text__heading text__mleft text__light text__footer">Get in touch</p>
+                <p class="text text__white text__heading text__mleft text__light text__footer">Info</p>
+                <p class="text text__white text__heading text__mleft text__light text__footer">Creators</p>
+            </div>
+            <img src="./images/facebook.png" class="image__facebook" loading="lazy">
+        </section>
+    </footer>
+
+
+    <script src="https://www.gstatic.com/firebasejs/8.3.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.3.2/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.3.2/firebase-storage.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.3.2/firebase-auth.js"></script>
+
+    <script src="./scripts/general.js"></script>
+    <script src="./scripts/authmodal.js"></script>
+    <script src="./scripts/authUtils.js"></script>
 
 </body>
 
