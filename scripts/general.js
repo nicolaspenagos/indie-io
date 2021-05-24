@@ -84,8 +84,16 @@ const getMyCart = (uid) => {
 
 const setLoggedUser = (info, id) => {
 
-    loggedUser = info;
+
+    if (info.userDoc) {
+        loggedUser = info.userDoc;
+    } else {
+        loggedUser = info;
+    }
+
     loggedUser.uid = id;
+
+
     userTag.innerText = loggedUser.email;
 
 
@@ -134,7 +142,7 @@ firebase.auth().onAuthStateChanged((user) => {
             if (!doc.data()) return;
 
             setLoggedUser(doc.data(), user.uid);
-            console.log('++++++++');
+
             userLoggedIn();
             getMyCart(user.uid);
             if (typeof validateAuth === 'function') {

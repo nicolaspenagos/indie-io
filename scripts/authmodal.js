@@ -94,7 +94,7 @@ authForm.addEventListener('submit', function(event) {
             .then((userCredential) => {
                 // Signed in 
                 var user = userCredential.user;
-                console.log(user);
+                console.log(email, password);
 
                 const userDoc = {
                     firstname,
@@ -102,7 +102,7 @@ authForm.addEventListener('submit', function(event) {
                     email: email,
                 }
 
-                setLoggedUser(userDoc, user.uid);
+                setLoggedUser({ userDoc }, user.uid);
 
                 db.collection('users').doc(user.uid).set({
                     userDoc

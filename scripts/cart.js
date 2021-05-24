@@ -248,13 +248,37 @@ checkOutButton.addEventListener('click', () => {
 
 
 buy = () => {
+
+    let orders = [];
+    
+    ORDERS_COLLECTION.doc(loggedUser.uid).get().then(
+        (doc) => {
+            if(doc.exists){
+        
+                doc.data().orders.forEach((elem)=>{
+                    orders.push(elem);
+                });
+                write(orders);
+            }else{
+                orders = [];
+                  write(orders);
+            }
+        }
+    );
+
+    
+}
+
+write = (orders) => {
     const productsIds = [];
     cart.forEach(function(data) {
         productsIds.push(data.id);
     });
 
 
-    const order = {
+
+
+    const newOrder = {
         ccNumber: creditCard.value,
         address: address.value,
         date: Date.now(),
@@ -263,9 +287,21 @@ buy = () => {
         //uid: loggedUser.uid
     }
 
-    ORDERS_COLLECTION.add(order).then(function(docRef) {
+     orders.push(newOrder);
+     console.log(orders);
+
+    ORDERS_COLLECTION.doc(loggedUser.uid).set({orders}).then(function(docRef) {
         cart = [];
-        //Enviar a pagina de agradeciniento
+
+        CART_COLLECTION.doc(loggedUser.uid).set({cart}).then(
+
+            ()=>{
+                window.location.href = './orders.html';
+            }
+
+        );
+       // window.location.href = './orders.html';
+
     });
 }
 
