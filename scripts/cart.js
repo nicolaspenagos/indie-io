@@ -292,7 +292,8 @@ write = (orders) => {
         productsNames,
         total: total,
         id: id.value,
-        //uid: loggedUser.uid
+        name: fullname.value,
+        uid: loggedUser.uid
     }
 
     orders.push(newOrder);

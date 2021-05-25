@@ -10,6 +10,10 @@ loadOrders = () => {
 
     let counter = 0;
     let firstOne = false;
+    let others = false;
+
+
+
     ORDERS_COLLECTION.doc(loggedUser.uid).get().then((data) => {
 
         let finalHtml = '';
@@ -18,8 +22,7 @@ loadOrders = () => {
 
 
         if (data.data() == undefined) {
-
-            title.innerText = 'NO ODERS YET';
+            title.innerText = 'NO ORDERS YET';
         } else {
             orders.orders.forEach(element => {
 
@@ -71,6 +74,10 @@ loadOrders = () => {
                         <div class="order__counter">${counterString}</div>
 
                         <div class="order__info">
+                            <p class="order__gametitle">Name</p>
+                            <p class="order__gametext">${element.name}</p>
+                            <p class="order__gametitle">Id</p>
+                            <p class="order__gametext">${element.id}</p>
                             <p class="order__gametitle">Address</p>
                             <p class="order__gametext">${element.address}</p>
                             <p class="order__gametitle">CC Number</p>
@@ -94,12 +101,131 @@ loadOrders = () => {
 
                 finalHtml += orderHtml;
 
+                orderHtml = '';
+
+
+
+
+
+
             });
+
+
+
+            if (loggedUser.admin) {
+
+                title.innerText = 'ALL ORDERS';
+                ORDERS_COLLECTION.get().then((querySnapshot) => {
+                    querySnapshot.forEach((doc) => {
+
+
+                        if (doc.data().orders[0].uid != loggedUser.uid) {
+                            others = true;
+
+                            let allOrders = doc.data().orders;
+
+                            allOrders.forEach((element) => {
+
+
+
+                                counter++;
+
+                                if (!firstOne) {
+                                    firstOne = true;
+                                    id.innerText = element.id;
+                                    address.innerText = element.address;
+                                    ccnumber.innerText = element.ccNumber;
+                                    title.innerText = 'YOUR ORDERS';
+                                }
+
+                                let date = new Date(doc.date);
+
+                                let dateString = date.getDate() + '-' + (date.getMonth() + 1) + '-' + date.getFullYear();
+
+                                let games = '';
+
+
+                                for (let i = 0; i < element.productsIds.length; i++) {
+
+
+                                    games += `
+                    <p class="order__gametitle">${element.productsNames[i]}</p>
+                    <p class="order__gametext">Id:${element.productsIds[i]}</p>
+                `;
+                                }
+
+                                let counterString = '';
+                                if (counter < 9) {
+                                    counterString = '0' + counter;
+                                } else {
+                                    counterString = '' + counter;
+                                }
+
+
+                                let lastOneClass = '';
+
+                                if (counter == (orders.orders.length)) {
+                                    lastOneClass = 'order--lastone';
+                                }
+
+
+                                let orderHtml = `
+                 <div class="order ${lastOneClass}">
+                    <div class="order__left">
+                        <div class="order__counter">${counterString}</div>
+
+                        <div class="order__info">
+                            <p class="order__gametitle">Name</p>
+                            <p class="order__gametext">${element.name}</p>
+                            <p class="order__gametitle">Id</p>
+                            <p class="order__gametext">${element.id}</p>
+                            <p class="order__gametitle">Address</p>
+                            <p class="order__gametext">${element.address}</p>
+                            <p class="order__gametitle">CC Number</p>
+                            <p class="order__gametext">${element.ccNumber}</p>
+                            <p class="order__gametitle">Total</p>
+                            <p class="order__gametext">$${element.total}</p>
+                            <p class="order__gametitle">Date</p>
+                            <p class="order__gametext">${dateString}</p>
+
+                        </div>
+                    </div>
+
+                    <div class="order__gameinfo">
+                        ${games}
+                    </div>
+
+                </div>
+            
+            
+            `;
+
+                                finalHtml += orderHtml;
+
+                            });
+
+
+                        } else {
+
+                        }
+
+                    });
+
+
+                    orderContainer.innerHTML = finalHtml;
+                });
+            } else {
+
+                orderContainer.innerHTML = finalHtml;
+            }
 
         }
 
 
-        orderContainer.innerHTML = finalHtml;
+
+
+
+
     });
 }
 
