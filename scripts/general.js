@@ -103,6 +103,8 @@ const setLoggedUser = (info, id) => {
         renderProducts();
     } else if (currentPath == 'orders.html') {
         loadOrders();
+    } else if (currentPath == 'productForm.html') {
+        isAdmin();
     }
 
 

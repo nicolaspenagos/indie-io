@@ -3339,6 +3339,10 @@ h2 {
   .game__price {
     margin-bottom: 0px;
   }
+  .game__button {
+    top: 0;
+    right: 3px;
+  }
   .banner--store--text {
     position: static;
   }

@@ -5,6 +5,12 @@ const productFormError = document.querySelector('.productForm__error');
 const productFormImages = document.querySelector('.productForm__images');
 
 
+isAdmin = () => {
+    if (!loggedUser.admin) {
+        window.location.href = "./store.html";
+    }
+}
+
 const imageFiles = [];
 
 productForm.image.addEventListener('change', function() {
