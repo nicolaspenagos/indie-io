@@ -147,6 +147,7 @@ productForm.addEventListener('submit', function(event) {
                                 }).then(function() {
                                     productFormLoader.classList.add('hidden');
                                     productFormSuccess.classList.remove('hidden');
+                                    location.reload();
                                 })
                                 .catch(genericCatch);
                         })

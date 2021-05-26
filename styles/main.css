@@ -2878,6 +2878,21 @@ h2 {
           flex-direction: column;
 }
 
+@media (max-width: 850px) {
+  .productDetail__goback--a {
+    margin-top: 0;
+    margin-right: 0;
+  }
+  .productDetail__title {
+    margin-left: 30px;
+    margin-right: 0;
+  }
+  .productDetail__title__text {
+    font-size: 30px;
+    margin-top: 0;
+  }
+}
+
 .checkout {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -3158,9 +3173,6 @@ h2 {
 }
 
 @media (max-width: 850px) {
-  .order__go {
-    margin-top: 30px;
-  }
   .cart__title {
     margin: 0px;
     -webkit-box-pack: justify;
